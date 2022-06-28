@@ -31,7 +31,6 @@ public class League {
     private int conferenceLeague;
 
     @OneToMany(mappedBy = "league")
-    @JsonIgnoreProperties("league")
     private List<Team> teams;
 
 

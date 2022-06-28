@@ -10,41 +10,48 @@ public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column
     private String name;
+
     @Column
     private int domesticTrophies;
+
     @Column
     private int intTrophies;
+
     @Column
     private int leagueWins;
+
     @Column
     private int leagueLosses;
+
     @Column
     private int leagueDraws;
+
     @Column
-    private int totalGoals;
+    private int totalLeagueGoals;
 
     @ManyToOne
     @JoinColumn(name = "leagues_id")
-    private League leagues;
+    private League league;
 
     @OneToMany(mappedBy = "team")
     private List<Player> players;
 
-    private Team(){
+    public Team(){
     }
 
     public Team(String name, int domesticTrophies, int intTrophies, int leagueWins,
-                int leagueLosses, int leagueDraws, int totalGoals, League leagues) {
+                int leagueLosses, int leagueDraws, int totalLeagueGoals, League league) {
         this.name = name;
         this.domesticTrophies = domesticTrophies;
         this.intTrophies = intTrophies;
         this.leagueWins = leagueWins;
         this.leagueLosses = leagueLosses;
         this.leagueDraws = leagueDraws;
-        this.totalGoals = totalGoals;
-        this.leagues = leagues;
+        this.totalLeagueGoals = totalLeagueGoals;
+        this.league = league;
         this.players = new ArrayList<>();
     }
 
@@ -101,19 +108,19 @@ public class Team {
     }
 
     public int getTotalGoals() {
-        return totalGoals;
+        return totalLeagueGoals;
     }
 
     public void setTotalGoals(int totalGoals) {
-        this.totalGoals = totalGoals;
+        this.totalLeagueGoals = totalGoals;
     }
 
-    public League getLeagues() {
-        return leagues;
+    public League getLeague() {
+        return league;
     }
 
-    public void setLeagues(League leagues) {
-        this.leagues = leagues;
+    public void setLeague(League league) {
+        this.league = league;
     }
 
     public List<Player> getPlayers() {
@@ -134,8 +141,8 @@ public class Team {
                 ", leagueWins=" + leagueWins +
                 ", leagueLosses=" + leagueLosses +
                 ", leagueDraws=" + leagueDraws +
-                ", totalGoals=" + totalGoals +
-                ", leagues=" + leagues +
+                ", totalGoals=" + totalLeagueGoals +
+                ", league=" + league +
                 ", players=" + players +
                 '}';
     }
