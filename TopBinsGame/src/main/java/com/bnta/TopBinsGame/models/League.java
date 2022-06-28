@@ -9,36 +9,42 @@ import java.util.List;
 
 @Entity
 @Table(name = "leagues")
-public class Leagues {
+public class League {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column
     private String name;
+
     @Column
     private String country;
+
     @Column
-    private int UCLs;
+    private int championsLeagues;
+
     @Column
     private int europaLeague;
+
     @Column
     private int conferenceLeague;
-    @OneToMany(mappedBy = "leagues")
-    @JsonIgnoreProperties("leagues")
-    private List<Teams> teams;
+
+    @OneToMany(mappedBy = "league")
+    @JsonIgnoreProperties("league")
+    private List<Team> teams;
 
 
-    public Leagues(String name, String country, int UCLs, int europaLeague, int conferenceLeague, List<Teams> teams) {
+    public League(String name, String country, int championsLeagues, int europaLeague, int conferenceLeague) {
         this.name = name;
         this.country = country;
-        this.UCLs = UCLs;
+        this.championsLeagues = championsLeagues;
         this.europaLeague = europaLeague;
         this.conferenceLeague = conferenceLeague;
         this.teams = new ArrayList<>();
     }
 
-    public Leagues() {
+    public League() {
     }
 
     public Long getId() {
@@ -61,12 +67,12 @@ public class Leagues {
         this.country = country;
     }
 
-    public int getUCLs() {
-        return UCLs;
+    public int getChampionsLeagues() {
+        return championsLeagues;
     }
 
-    public void setUCLs(int UCLs) {
-        this.UCLs = UCLs;
+    public void setChampionsLeagues(int championsLeagues) {
+        this.championsLeagues = championsLeagues;
     }
 
     public int getEuropaLeague() {
@@ -85,11 +91,11 @@ public class Leagues {
         this.conferenceLeague = conferenceLeague;
     }
 
-    public List<Teams> getTeams() {
+    public List<Team> getTeams() {
         return teams;
     }
 
-    public void setTeams(List<Teams> teams) {
+    public void setTeams(List<Team> teams) {
         this.teams = teams;
     }
 
@@ -99,7 +105,7 @@ public class Leagues {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", country='" + country + '\'' +
-                ", UCLs=" + UCLs +
+                ", championsLeagues=" + championsLeagues +
                 ", europaLeague=" + europaLeague +
                 ", conferenceLeague=" + conferenceLeague +
                 ", teams=" + teams +

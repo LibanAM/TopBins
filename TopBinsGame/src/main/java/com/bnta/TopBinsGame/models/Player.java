@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "players")
-public class Players {
+public class Player {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,17 +40,17 @@ public class Players {
 
     @ManyToOne
     @JoinColumn(name = "teams_id")
-    private Teams team;
+    private Team team;
 
     @Column
     private String imgLink;
 
-    public Players() {
+    public Player() {
     }
 
-    public Players(String name, Nationality nationality, Position position, int leagueGoals,
-                   int internationalGoals, int appearances, int assists, int yellowCards,
-                   int redCards, Teams team, String imgLink) {
+    public Player(String name, Nationality nationality, Position position, int leagueGoals,
+                  int internationalGoals, int appearances, int assists, int yellowCards,
+                  int redCards, Team team, String imgLink) {
         this.name = name;
         this.nationality = nationality;
         this.position = position;
@@ -144,11 +144,11 @@ public class Players {
         this.redCards = redCards;
     }
 
-    public Teams getTeam() {
+    public Team getTeam() {
         return team;
     }
 
-    public void setTeam(Teams team) {
+    public void setTeam(Team team) {
         this.team = team;
     }
 
