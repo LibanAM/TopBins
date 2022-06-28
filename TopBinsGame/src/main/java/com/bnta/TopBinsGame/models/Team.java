@@ -21,16 +21,16 @@ public class Team {
     private int intTrophies;
 
     @Column
-    private int leagueWins;
+    private int championsLeagueWins;
 
     @Column
-    private int leagueLosses;
+    private int championsLeagueLosses;
 
     @Column
-    private int leagueDraws;
+    private int championsLeagueDraws;
 
     @Column
-    private int totalLeagueGoals;
+    private int totalChampionsLeagueGoals;
 
     @ManyToOne
     @JoinColumn(name = "leagues_id")
@@ -42,15 +42,15 @@ public class Team {
     public Team(){
     }
 
-    public Team(String name, int domesticTrophies, int intTrophies, int leagueWins,
-                int leagueLosses, int leagueDraws, int totalLeagueGoals, League league) {
+    public Team(String name, int domesticTrophies, int intTrophies, int championsLeagueWins,
+                int championsLeagueLosses, int championsLeagueDraws, int totalChampionsLeagueGoals, League league) {
         this.name = name;
         this.domesticTrophies = domesticTrophies;
         this.intTrophies = intTrophies;
-        this.leagueWins = leagueWins;
-        this.leagueLosses = leagueLosses;
-        this.leagueDraws = leagueDraws;
-        this.totalLeagueGoals = totalLeagueGoals;
+        this.championsLeagueWins = championsLeagueWins;
+        this.championsLeagueLosses = championsLeagueLosses;
+        this.championsLeagueDraws = championsLeagueDraws;
+        this.totalChampionsLeagueGoals = totalChampionsLeagueGoals;
         this.league = league;
         this.players = new ArrayList<>();
     }
@@ -83,36 +83,36 @@ public class Team {
         this.intTrophies = intTrophies;
     }
 
-    public int getLeagueWins() {
-        return leagueWins;
+    public int getChampionsLeagueWins() {
+        return championsLeagueWins;
     }
 
-    public void setLeagueWins(int leagueWins) {
-        this.leagueWins = leagueWins;
+    public void setChampionsLeagueWins(int championsLeagueWins) {
+        this.championsLeagueWins = championsLeagueWins;
     }
 
-    public int getLeagueLosses() {
-        return leagueLosses;
+    public int getChampionsLeagueLosses() {
+        return championsLeagueLosses;
     }
 
-    public void setLeaguesLosses(int leagueLosses) {
-        this.leagueLosses = leagueLosses;
+    public void setChampionsLeagueLosses(int championsLeagueLosses) {
+        this.championsLeagueLosses = championsLeagueLosses;
     }
 
-    public int getLeagueDraws() {
-        return leagueDraws;
+    public int getChampionsLeagueDraws() {
+        return championsLeagueDraws;
     }
 
-    public void setLeagueDraws(int leagueDraws) {
-        this.leagueDraws = leagueDraws;
+    public void setChampionsLeagueDraws(int championsLeagueDraws) {
+        this.championsLeagueDraws = championsLeagueDraws;
     }
 
-    public int getTotalGoals() {
-        return totalLeagueGoals;
+    public int getTotalChampionsLeagueGoals() {
+        return totalChampionsLeagueGoals;
     }
 
-    public void setTotalGoals(int totalGoals) {
-        this.totalLeagueGoals = totalGoals;
+    public void setTotalChampionsLeagueGoals(int totalChampionsLeagueGoals) {
+        this.totalChampionsLeagueGoals = totalChampionsLeagueGoals;
     }
 
     public League getLeague() {
@@ -138,10 +138,10 @@ public class Team {
                 ", name='" + name + '\'' +
                 ", domesticTrophies=" + domesticTrophies +
                 ", intTrophies=" + intTrophies +
-                ", leagueWins=" + leagueWins +
-                ", leagueLosses=" + leagueLosses +
-                ", leagueDraws=" + leagueDraws +
-                ", totalGoals=" + totalLeagueGoals +
+                ", leagueWins=" + championsLeagueWins +
+                ", leagueLosses=" + championsLeagueLosses +
+                ", leagueDraws=" + championsLeagueDraws +
+                ", totalGoals=" + totalChampionsLeagueGoals +
                 ", league=" + league +
                 ", players=" + players +
                 '}';

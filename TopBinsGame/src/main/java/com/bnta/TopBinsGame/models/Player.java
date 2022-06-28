@@ -27,7 +27,7 @@ public class Player {
     private int internationalGoals;
 
     @Column
-    private int appearances;
+    private int leagueAppearances;
 
     @Column
     private int assists;
@@ -49,14 +49,14 @@ public class Player {
     }
 
     public Player(String name, Nationality nationality, Position position, int leagueGoals,
-                  int internationalGoals, int appearances, int assists, int yellowCards,
+                  int internationalGoals, int leagueAppearances, int assists, int yellowCards,
                   int redCards, Team team, String imgLink) {
         this.name = name;
         this.nationality = nationality;
         this.position = position;
         this.leagueGoals = leagueGoals;
         this.internationalGoals = internationalGoals;
-        this.appearances = appearances;
+        this.leagueAppearances = leagueAppearances;
         this.assists = assists;
         this.yellowCards = yellowCards;
         this.redCards = redCards;
@@ -112,12 +112,12 @@ public class Player {
         this.internationalGoals = internationalGoals;
     }
 
-    public int getAppearances() {
-        return appearances;
+    public int getleagueAppearances() {
+        return leagueAppearances;
     }
 
-    public void setAppearances(int appearances) {
-        this.appearances = appearances;
+    public void setleagueAppearances(int leagueAppearances) {
+        this.leagueAppearances = leagueAppearances;
     }
 
     public int getAssists() {
@@ -169,7 +169,7 @@ public class Player {
                 ", position=" + position +
                 ", leagueGoals=" + leagueGoals +
                 ", internationalGoals=" + internationalGoals +
-                ", appearances=" + appearances +
+                ", leagueAppearances=" + leagueAppearances +
                 ", assists=" + assists +
                 ", yellowCards=" + yellowCards +
                 ", redCards=" + redCards +

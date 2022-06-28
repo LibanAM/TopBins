@@ -19,6 +19,7 @@ public enum Nationality {
     CHILEAN,
     CHINESE,
     COLOMBIAN,
+    CONGOLESE,
     COSTARICAN,
     CROATIAN,
     CUBAN,
@@ -89,6 +90,7 @@ public enum Nationality {
     SERBIAN,
     SINGAPOREAN,
     SLOVAK,
+    SLOVENIAN,
     SOUTHAFRICAN,
     KOREAN,
     SPANISH,
@@ -112,5 +114,5 @@ public enum Nationality {
     VIETNAMESE,
     WELSH,
     ZAMBIAN,
-    ZIMBABWEAN
+    ZIMBABWEAN,
 }
