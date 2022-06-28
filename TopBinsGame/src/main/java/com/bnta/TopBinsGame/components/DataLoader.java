@@ -5,6 +5,7 @@ import com.bnta.TopBinsGame.repositories.LeagueRepository;
 import com.bnta.TopBinsGame.repositories.PlayerRepository;
 import com.bnta.TopBinsGame.repositories.TeamRepository;
 import com.bnta.TopBinsGame.repositories.UserRepository;
+import jdk.jfr.Frequency;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -148,25 +149,25 @@ public class DataLoader implements ApplicationRunner {
         Player pique = new Player("Gerard Piqué", Nationality.SPANISH, Position.DEFENDER, 32, 6, 425, 9, 107, 8, barcelona, "https://img.bleacherreport.net/img/images/photos/003/331/627/hi-res-fda27e82ef0d644f3bf271472bad76b9_crop_exact.jpg?w=1200&h=1200&q=75");
         Player busquets = new Player("Sergio Busquets", Nationality.SPANISH, Position.MIDFIELDER, 11, 6, 451, 31, 121, 1, barcelona, "https://imgresizer.eurosport.com/unsafe/1200x1200/smart/filters:format(jpeg)/origin-imgresizer.eurosport.com/2015/11/27/1740487-36807946-2560-1440.jpg");
         Player dembele = new Player("Ousmane Dembele", Nationality.FRENCH, Position.FORWARD, 37, 3, 160, 45, 17, 1, barcelona, "https://i.guim.co.uk/img/media/e767a2e1d31fbec9ba11b74fb9460111f6f57e9e/338_102_3739_2245/master/3739.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=87e901130d34558303091b70e1ad114a");
-        Player aubameyang = new Player();
+        Player aubameyang = new Player("Pierre-Emerick Aubameyang", Nationality.GABONESE, );
 
         Player oblak = new Player("Jan Oblak", Nationality.SLOVENIAN, Position.GOALKEEPER, 0 );
-        Player giminez = new Player();
+        Player giminez = new Player("José María Giménez", Nationality.URUGUAYAN, Position.DEFENDER, );
         Player koke = new Player("Koke", Nationality.SPANISH, Position.MIDFIELDER,);
-        Player griezmann = new Player();
-        Player felix = new Player();
+        Player griezmann = new Player("Antoine Griezmann", Nationality.FRENCH, Position.FORWARD, );
+        Player felix = new Player("João Félix", Nationality.PORTUGUESE, Position.FORWARD);
 
-        Player bono = new Player();
-        Player kounde = new Player();
-        Player rakitic = new Player();
-        Player ocampos = new Player();
-        Player enNesyri = new Player();
+        Player bounou = new Player("Yassine Bounou", Nationality.MOROCCAN, Position.GOALKEEPER, );
+        Player kounde = new Player("Jules Kounde", Nationality.FRENCH, Position.DEFENDER, );
+        Player rakitic = new Player("Ivan Rakitic", Nationality.CROATIAN, Position.MIDFIELDER, );
+        Player ocampos = new Player("Lucas Ocampos", Nationality.ARGENTINE, Position.FORWARD);
+        Player enNesyri = new Player("Youssef En-Nesyri", Nationality.MOROCCAN, Position.FORWARD);
 
-        Player ruiSilva = new Player();
-        Player bellerin = new Player();
-        Player guardado = new Player();
-        Player fekir = new Player();
-        Player carvalho = new Player();
+        Player ruiSilva = new Player("Rui Silva", Nationality.PORTUGUESE, Position.GOALKEEPER, );
+        Player bellerin = new Player("Hector Bellerin", Nationality.SPANISH, Position.DEFENDER, );
+        Player guardado = new Player("Andrés Guardado", Nationality.MEXICAN, Position.MIDFIELDER, );
+        Player fekir = new Player("Nabil Fekir", Nationality.FRENCH, Position.FORWARD, );
+        Player carvalho = new Player("William Carvalho", Nationality.PORTUGUESE, Position.MIDFIELDER, );
 
 
         // Serie A
@@ -175,32 +176,32 @@ public class DataLoader implements ApplicationRunner {
         Player szczesny = new Player("Wojciech Szczesny", Nationality.POLISH, Position.GOALKEEPER, 0, 0, 341, 0, 11, 0, juventus, "https://pbs.twimg.com/media/EQgfebIWsAEoKx0.jpg");
         Player bonucci = new Player("Leonardo Bonucci", Nationality.ITALIAN, Position.DEFENDER, 31, 8, 415, 7, 75, 3, juventus, "https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTg1NTA2MDYyNTE2ODg4NjU4/imago1008213591h.jpg");
         Player pogba = new Player("Paul Pogba", Nationality.FRENCH, Position.MIDFIELDER, 57, 11, 281, 69, 48, 3, juventus, "https://imgresizer.eurosport.com/unsafe/1200x1200/smart/filters:format(jpeg)/origin-imgresizer.eurosport.com/2013/04/06/984586-19360789-2560-1440.jpg");
-        Player morarta = new Player("Álvaro Morata", Nationality.SPANISH, Position.FORWARD, 94, 26, 289, 44, 51, 3, juventus, "https://i2-prod.mirror.co.uk/incoming/article27084893.ece/ALTERNATES/s1200c/0_Alvaro-Morata.jpg");
-        Player deLigt = new Player("MATTHIJS DE LIGT");
+        Player morata = new Player("Álvaro Morata", Nationality.SPANISH, Position.FORWARD, 94, 26, 289, 44, 51, 3, juventus, "https://i2-prod.mirror.co.uk/incoming/article27084893.ece/ALTERNATES/s1200c/0_Alvaro-Morata.jpg");
+        Player deLigt = new Player("Matthijs De Ligt", Nationality.DUTCH, Position.DEFENDER, 16, 2, 164, 5, 21, 1, juventus, "https://i2-prod.football.london/incoming/article21699173.ece/ALTERNATES/s1200c/0_GettyImages-1235529508.jpg");
 
-        Player maignan = new Player();
-        Player romagnoli = new Player();
-        Player bennacer = new Player();
-        Player ibrahimovic = new Player();
-        Player giroud = new Player();
+        Player maignan = new Player("Mike Maignan", Nationality.FRENCH, Position.GOALKEEPER, 0, 0, 181, 1, 3, 0, acMilan, "https://assets-fr.imgfoot.com/media/cache/1200x1200/mike-maignan-ac-milan-2021.jpg");
+        Player romagnoli = new Player("Alessio Romagnoli", Nationality.ITALIAN, Position.DEFENDER, 11, 2, 240, 4, 56, 5, acMilan, "https://img.bleacherreport.net/img/images/photos/003/753/234/hi-res-2e4b49b1a58572b332087c2b21693ee5_crop_exact.jpg?w=1200&h=1200&q=75");
+        Player bennacer = new Player("Ismael Bennacer", Nationality.ALGERIAN, Position.MIDFIELDER, 3, 2, 130, 8, 32, 0, acMilan, "https://i2-prod.football.london/incoming/article18337140.ece/ALTERNATES/s1200c/0_GettyImages-1202641942.jpg");
+        Player ibrahimovic = new Player("Zlatan Ibrahimovic", Nationality.SWEDISH, Position.FORWARD, );
+        Player giroud = new Player("Olivier Giroud", Nationality.FRENCH, Position.FORWARD, );
 
-        Player handanovic = new Player();
-        Player Skriniar = new Player();
-        Player vidal = new Player();
-        Player dzeko = new Player();
-        Player alexisSanchez = new Player();
+        Player handanovic = new Player("Samir Handanovic", Nationality.SLOVENIAN, Position.GOALKEEPER, );
+        Player skriniar = new Player("Milan Skriniar", Nationality.SLOVAK, Position.DEFENDER, );
+        Player vidal = new Player("Arturo Vidal", Nationality.CHILEAN, Position.MIDFIELDER, );
+        Player dzeko = new Player("Edin Dzeko", Nationality.BOSNIAN, Position.FORWARD, );
+        Player alexisSanchez = new Player("Alexis Sanchez", Nationality.CHILEAN, Position.FORWARD, );
 
-        Player ospina = new Player();
-        Player koulibaly = new Player();
-        Player ruiz = new Player();
-        Player mertens = new Player();
-        Player osimhen = new Player();
+        Player ospina = new Player("David Ospina", Nationality.COLOMBIAN, Position.GOALKEEPER, );
+        Player koulibaly = new Player("Kalidou Koulibaly", Nationality.SENEGALESE, Position.DEFENDER, );
+        Player ruiz = new Player("Fabián Ruiz", Nationality.SPANISH, Position.MIDFIELDER, );
+        Player mertens = new Player("Dries Mertens", Nationality.BELGIAN, Position.FORWARD, );
+        Player osimhen = new Player("Victor Osimhen", Nationality.NIGERIAN, Position.FORWARD, );
 
-        Player patricio = new Player();
-        Player spinazzola = new Player();
-        Player mkhitaryan = new Player();
-        Player abraham = new Player();
-        Player oliveira = new Player();
+        Player patricio = new Player("Rui Patricio", Nationality.PORTUGUESE, Position.GOALKEEPER, );
+        Player spinazzola = new Player("Leonardo Spinazzola", Nationality.ITALIAN, Position.DEFENDER, );
+        Player mkhitaryan = new Player("Henrikh Mkhitaryan", Nationality.ARMENIAN, Position.MIDFIELDER, );
+        Player abraham = new Player("Tammy Abraham", Nationality.ENGLISH, Position.FORWARD, );
+        Player oliveira = new Player("Sergio Oliveira", Nationality.PORTUGUESE, Position.MIDFIELDER, );
 
 
 
@@ -219,8 +220,16 @@ public class DataLoader implements ApplicationRunner {
                 lopes, boateng, aouar, lacazette, paqueta,
 
                 courtois, alaba, modric, benzema, viniciusJr,
-                terStegen, pique, busquets,
-                ));
+                terStegen, pique, busquets, dembele, aubameyang,
+                oblak, giminez, koke, griezmann, felix,
+                bounou, kounde, rakitic, ocampos, enNesyri,
+                ruiSilva, bellerin, guardado, fekir, carvalho,
+
+                szczesny, bonucci, pogba, morata, deLigt,
+                maignan, romagnoli, bennacer, ibrahimovic, giroud,
+                handanovic, skriniar, vidal, dzeko, alexisSanchez,
+                ospina, koulibaly, ruiz, mertens, osimhen,
+                patricio, spinazzola, mkhitaryan, abraham, oliveira));
 
     User user1 = new User("Lily", "Lily101@gmail.com", "Chelsea1!", 0, false);
     User user2 = new User("Luke", "Luke13@gmail.com", "Arsenal1!", 0, true);
