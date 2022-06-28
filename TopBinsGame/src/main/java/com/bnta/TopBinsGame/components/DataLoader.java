@@ -177,31 +177,31 @@ public class DataLoader implements ApplicationRunner {
         Player bonucci = new Player("Leonardo Bonucci", Nationality.ITALIAN, Position.DEFENDER, 31, 8, 415, 7, 75, 3, juventus, "https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTg1NTA2MDYyNTE2ODg4NjU4/imago1008213591h.jpg");
         Player pogba = new Player("Paul Pogba", Nationality.FRENCH, Position.MIDFIELDER, 57, 11, 281, 69, 48, 3, juventus, "https://imgresizer.eurosport.com/unsafe/1200x1200/smart/filters:format(jpeg)/origin-imgresizer.eurosport.com/2013/04/06/984586-19360789-2560-1440.jpg");
         Player morata = new Player("Álvaro Morata", Nationality.SPANISH, Position.FORWARD, 94, 26, 289, 44, 51, 3, juventus, "https://i2-prod.mirror.co.uk/incoming/article27084893.ece/ALTERNATES/s1200c/0_Alvaro-Morata.jpg");
-        Player deLigt = new Player("Matthijs De Ligt", Nationality.DUTCH, Position.DEFENDER, 16, 2, 164, 5, 21, 1, juventus, "https://i2-prod.football.london/incoming/article21699173.ece/ALTERNATES/s1200c/0_GettyImages-1235529508.jpg");
+        Player deLigt = new Player("Matthijs De Ligt", Nationality.DUTCH, Position.DEFENDER, 16, 2, 164, 8, 20, 1, juventus, "https://i2-prod.football.london/incoming/article21699173.ece/ALTERNATES/s1200c/0_GettyImages-1235529508.jpg");
 
-        Player maignan = new Player("Mike Maignan", Nationality.FRENCH, Position.GOALKEEPER, 0, 0, 181, 1, 3, 0, acMilan, "https://assets-fr.imgfoot.com/media/cache/1200x1200/mike-maignan-ac-milan-2021.jpg");
-        Player romagnoli = new Player("Alessio Romagnoli", Nationality.ITALIAN, Position.DEFENDER, 11, 2, 240, 4, 56, 5, acMilan, "https://img.bleacherreport.net/img/images/photos/003/753/234/hi-res-2e4b49b1a58572b332087c2b21693ee5_crop_exact.jpg?w=1200&h=1200&q=75");
-        Player bennacer = new Player("Ismael Bennacer", Nationality.ALGERIAN, Position.MIDFIELDER, 3, 2, 130, 8, 32, 0, acMilan, "https://i2-prod.football.london/incoming/article18337140.ece/ALTERNATES/s1200c/0_GettyImages-1202641942.jpg");
-        Player ibrahimovic = new Player("Zlatan Ibrahimovic", Nationality.SWEDISH, Position.FORWARD, );
-        Player giroud = new Player("Olivier Giroud", Nationality.FRENCH, Position.FORWARD, );
+        Player maignan = new Player("Mike Maignan", Nationality.FRENCH, Position.GOALKEEPER, 0, 0, 181, 1, 3, 1, acMilan, "https://assets-fr.imgfoot.com/media/cache/1200x1200/mike-maignan-ac-milan-2021.jpg");
+        Player romagnoli = new Player("Alessio Romagnoli", Nationality.ITALIAN, Position.DEFENDER, 11, 2, 240, 4, 52, 5, acMilan, "https://img.bleacherreport.net/img/images/photos/003/753/234/hi-res-2e4b49b1a58572b332087c2b21693ee5_crop_exact.jpg?w=1200&h=1200&q=75");
+        Player bennacer = new Player("Ismaël Bennacer", Nationality.ALGERIAN, Position.MIDFIELDER, 3, 2, 120, 6, 32, 0, acMilan, "https://i2-prod.football.london/incoming/article18337140.ece/ALTERNATES/s1200c/0_GettyImages-1202641942.jpg");
+        Player ibrahimovic = new Player("Zlatan Ibrahimovic", Nationality.SWEDISH, Position.FORWARD, 388, 62, 593, 157, 92, 9, acMilan, "https://i2-prod.mirror.co.uk/incoming/article21466901.ece/ALTERNATES/s1200c/0_FC-Internazionale-v-AC-Milan-Serie-A.jpg");
+        Player giroud = new Player("Olivier Giroud", Nationality.FRENCH, Position.FORWARD, 134, 48, 357, 53, 34, 2, acMilan, "https://imgresizer.eurosport.com/unsafe/1200x1200/smart/filters:format(jpeg)/origin-imgresizer.eurosport.com/2022/01/06/3281679-67150848-2560-1440.jpg");
 
-        Player handanovic = new Player("Samir Handanovic", Nationality.SLOVENIAN, Position.GOALKEEPER, 0, 0);
-        Player skriniar = new Player("Milan Skriniar", Nationality.SLOVAK, Position.DEFENDER, );
-        Player vidal = new Player("Arturo Vidal", Nationality.CHILEAN, Position.MIDFIELDER, );
-        Player dzeko = new Player("Edin Dzeko", Nationality.BOSNIAN, Position.FORWARD, );
-        Player alexisSanchez = new Player("Alexis Sanchez", Nationality.CHILEAN, Position.FORWARD, );
+        Player handanovic = new Player("Samir Handanovic", Nationality.SLOVENIAN, Position.GOALKEEPER, 0, 0, 559, 0, 34, 2, acMilan, "https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTY4MTAyNDc1MTk3NTIzMjE3/59b54170d915b20f83000001jpg.jpg");
+        Player skriniar = new Player("Milan Skriniar", Nationality.SLOVAK, Position.DEFENDER, 22, 3, 294, 5, 39, 4, interMilan,"https://i2-prod.football.london/incoming/article19014498.ece/ALTERNATES/s1200c/0_Milan-Skriniar.jpg");
+        Player vidal = new Player("Arturo Vidal", Nationality.CHILEAN, Position.MIDFIELDER, 77, 31, 437, 63, 106, 4, interMilan,"https://pbs.twimg.com/media/Ensk-kgXcAM5xPY.jpg");
+        Player dzeko = new Player("Edin Dzeko", Nationality.BOSNIAN, Position.FORWARD,230, 63, 519, 99, 58, 1, interMilan,"https://i2-prod.mirror.co.uk/incoming/article26235026.ece/ALTERNATES/s1200c/0_FC-Internazionale-v-Venezia-FC-Serie-A.jpg");
+        Player alexisSanchez = new Player("Alexis Sánchez", Nationality.CHILEAN, Position.FORWARD, 141, 48, 439, 100, 52, 3, interMilan,"https://i2-prod.mirror.co.uk/incoming/article21836309.ece/ALTERNATES/s1200c/0_Italy-Inter-Milan-Fiorentina-Copa-dItalia-14.jpg");
 
-        Player ospina = new Player("David Ospina", Nationality.COLOMBIAN, Position.GOALKEEPER, );
-        Player koulibaly = new Player("Kalidou Koulibaly", Nationality.SENEGALESE, Position.DEFENDER, );
-        Player ruiz = new Player("Fabián Ruiz", Nationality.SPANISH, Position.MIDFIELDER, );
-        Player mertens = new Player("Dries Mertens", Nationality.BELGIAN, Position.FORWARD, );
-        Player osimhen = new Player("Victor Osimhen", Nationality.NIGERIAN, Position.FORWARD, );
+        Player ospina = new Player("David Ospina", Nationality.COLOMBIAN, Position.GOALKEEPER, 0, 0, 299, 0, 14, 4, napoli,"https://img.bleacherreport.net/img/images/photos/003/791/760/hi-res-d1d4a1b45d771c8305943f3c6d7aa366_crop_exact.jpg?w=1200&h=1200&q=75");
+        Player koulibaly = new Player("Kalidou Koulibaly", Nationality.SENEGALESE, Position.DEFENDER, 16, 0, 288, 10, 75, 6, napoli,"https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTg3NzM5MTM3MDc4NDY5ODg3/imago1010239551h.jpg");
+        Player ruiz = new Player("Fabián Ruiz", Nationality.SPANISH, Position.MIDFIELDER, 21, 1, 175, 21, 10, 1, napoli,"https://i2-prod.manchestereveningnews.co.uk/incoming/article18139426.ece/ALTERNATES/s1200c/0_GettyImages-1203461559.jpg");
+        Player mertens = new Player("Dries Mertens", Nationality.BELGIAN, Position.FORWARD, 166, 21, 422, 120, 47, 1, napoli,"https://i2-prod.football.london/chelsea-fc/transfer-news/article18215984.ece/ALTERNATES/s1200c/0_GettyImages-1208688146.jpg");
+        Player osimhen = new Player("Victor Osimhen", Nationality.NIGERIAN, Position.FORWARD, 49, 15, 117, 16, 15, 1, napoli,"https://i2-prod.manchestereveningnews.co.uk/sport/football/article24223319.ece/ALTERNATES/s1200c/0_GettyImages-1236122637.jpg");
 
-        Player patricio = new Player("Rui Patricio", Nationality.PORTUGUESE, Position.GOALKEEPER, );
-        Player spinazzola = new Player("Leonardo Spinazzola", Nationality.ITALIAN, Position.DEFENDER, );
-        Player mkhitaryan = new Player("Henrikh Mkhitaryan", Nationality.ARMENIAN, Position.MIDFIELDER, );
-        Player abraham = new Player("Tammy Abraham", Nationality.ENGLISH, Position.FORWARD, );
-        Player oliveira = new Player("Sergio Oliveira", Nationality.PORTUGUESE, Position.MIDFIELDER, );
+        Player patricio = new Player("Rui Patricio", Nationality.PORTUGUESE, Position.GOALKEEPER, 0, 0, 476, 0, 28, 1, asRoma,"https://sportstar.thehindu.com/incoming/article35315665.ece/ALTERNATES/LANDSCAPE_1200/SpainBelgiumPortugalEuro2020Soccer76547jpg-9fe1djpg");
+        Player spinazzola = new Player("Leonardo Spinazzola", Nationality.ITALIAN, Position.DEFENDER, 3, 0, 114, 15, 7, 0, asRoma,"https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTgyMTI1OTE3ODg2MjI3Nzg0/sipa_32594744.jpg");
+        Player mkhitaryan = new Player("Henrikh Mkhitaryan", Nationality.ARMENIAN, Position.MIDFIELDER, 129, 32, 397, 95, 45, 1, asRoma,"https://i2-prod.mirror.co.uk/incoming/article20076224.ece/ALTERNATES/s1200c/0_Italy-AS-Roma-US-Sassuolo.jpg");
+        Player abraham = new Player("Tammy Abraham", Nationality.ENGLISH, Position.FORWARD, 43, 3, 126, 112, 11, 0, asRoma,"https://i2-prod.dailystar.co.uk/incoming/article25136188.ece/ALTERNATES/s1200c/0_Tammy-Abraham-Roma-Empoli.jpg");
+        Player oliveira = new Player("Sérgio Oliveira", Nationality.PORTUGUESE, Position.MIDFIELDER, 35, 0, 199, 19, 45, 1, asRoma,"https://pbs.twimg.com/media/FThwOa5XsAEJRKD.jpg");
 
 
 
