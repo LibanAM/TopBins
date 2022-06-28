@@ -5,14 +5,11 @@ import com.bnta.TopBinsGame.repositories.LeagueRepository;
 import com.bnta.TopBinsGame.repositories.PlayerRepository;
 import com.bnta.TopBinsGame.repositories.TeamRepository;
 import com.bnta.TopBinsGame.repositories.UserRepository;
-import jdk.jfr.Frequency;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import javax.tools.ForwardingFileObject;
-import java.security.cert.PolicyNode;
 import java.util.Arrays;
 
 @Component
@@ -31,7 +28,7 @@ public class DataLoader implements ApplicationRunner {
     LeagueRepository leagueRepository;
 
     @Override
-    public void run(ApplicationArguments args) throws Exception{
+    public void run(ApplicationArguments args) throws gException{
 
         League premierLeague = new League("Premier League", "England", 14, 9, 0);
         League ligue1 = new League("UberEats Ligue 1", "France",1,0,0);
@@ -56,7 +53,7 @@ public class DataLoader implements ApplicationRunner {
         Team realMadrid = new Team("Real Madrid", 68, 20, 277, 108, 79, 1021 , laLiga);
         Team atleticoMadrid = new Team("Club Atlético de Madrid", 25, 8, 75, 39, 40, 221, laLiga);
         Team sevilla = new Team("Sevilla",7,7, 29,20,17, 104, laLiga);
-        Team realBetis = new Team("Real Betis");
+        Team realBetis = new Team("Real Betis", 4, 0, 3, 3, 2, 6, laLiga);
 
         Team juventus = new Team("Juventus", 59, 8, 152, 73, 70, 470, serieA);
         Team acMilan = new Team("AC Milan", 31, 15, 126, 64, 65, 422, serieA);
@@ -71,7 +68,7 @@ public class DataLoader implements ApplicationRunner {
                 juventus, acMilan, interMilan, napoli, asRoma));
 
         // Premier League Players
-        //    Player(name, nationality, position, league goals, international goals, apps, assists, yellowCards, redCards, team, img)
+        // Player(name, nationality, position, league goals, international goals, apps, assists, yellowCards, redCards, team, img)
 
         Player cristanoRonaldo = new Player("Cristiano Ronaldo", Nationality.PORTUGUESE, Position.FORWARD, 497, 117, 935, 230, 115, 11, manUnited, "https://www.planetsport.com/image-library/square/500/m/manchester-united-cristiano-ronaldo-16-october-2021.jpg");
         Player jadonSancho = new Player("Jadon Sancho", Nationality.ENGLISH, Position.FORWARD, 41, 3, 175,  48, 4, 0, manUnited,"https://manutdnews.com/wp-content/uploads/2021/11/manchester-united-v-atalanta-group-f-uefa-champions-league-1-1536x1024.jpg");
@@ -120,14 +117,14 @@ public class DataLoader implements ApplicationRunner {
 
         Player mandanda = new Player("Steve Mandanda", Nationality.CONGOLESE, Position.GOALKEEPER, 0, 0, 478, 0, 17, 3, marseille, "https://cdn.mos.cms.futurecdn.net/YZQVhQgqwXuFPEcVWLVyBD-1200-80.jpg");
         Player caletaCar = new Player("Duje Caleta-Car", Nationality.CROATIAN, Position.DEFENDER,9, 1, 186, 7, 37, 4, marseille, "https://i2-prod.mirror.co.uk/incoming/article23512354.ece/ALTERNATES/s1200c/0_Duje-Caleta-Car-Ben-Davies.jpg");
-        Player payet = new Player("Dimitri Payet", Nationality.FRENCH, Position.MIDFIELDER, 93, 5, 147, 146, 58,4, marseille, "https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTg4NjI0NTMzNTgwNjg3MDky/dimitri-payet-goal-marseille.jpg" )
+        Player payet = new Player("Dimitri Payet", Nationality.FRENCH, Position.MIDFIELDER, 93, 5, 147, 146, 58,4, marseille, "https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTg4NjI0NTMzNTgwNjg3MDky/dimitri-payet-goal-marseille.jpg");
         Player milik = new Player("Arkadiusz Milik", Nationality.POLISH, Position.FORWARD, 99, 6, 245, 21, 25, 1, marseille, "https://i2-prod.mirror.co.uk/incoming/article22750940.ece/ALTERNATES/s1200c/1_US-Sassuolo-v-SSC-Napoli-Serie-A.jpg");
-        Player guendouzi = new Player("Matteo Guendouzi", Nationality.FRENCH, Position.MIDFIELDER, 6, 1, 127, 13, 28, 0, marseille, "https://pbs.twimg.com/media/FAZTRddUYAA9TR-.jpg" )
+        Player guendouzi = new Player("Matteo Guendouzi", Nationality.FRENCH, Position.MIDFIELDER, 6, 1, 127, 13, 28, 0, marseille, "https://pbs.twimg.com/media/FAZTRddUYAA9TR-.jpg");
 
         Player gomis = new Player("Alfred Gomis", Nationality.SENEGALESE, Position.GOALKEEPER, 0, 0, 117, 0, 3, 0, rennes, "https://i2-prod.leicestermercury.co.uk/incoming/article6814359.ece/ALTERNATES/s1200c/0_JS260207776.jpg");
         Player traore = new Player("Hamari Traore", Nationality.MALIAN, Position.DEFENDER, 7, 1, 232, 25, 45, 2, rennes, "https://medias.lequipe.fr/img-photo-jpg/hamari-traore-defenseur-de-rennes-v-michel-l-equipe/1500000001335387/451:29,1744:1322-1200-1200-75/508a3.jpg");
         Player bourigeaud = new Player("Benjamin Bourigeaud", Nationality.FRENCH, Position.MIDFIELDER, 37, 0, 191, 33, 26, 0, rennes, "https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTY4MDA3ODYzMjQ2MDA1NjMy/fbl-fra-cup-rennes-orleans-5d107b3196ebdcd766000017jpg.jpg");
-        Player laborde = new Player("Gaëtan Laborde", Nationality.FRENCH, Position.FORWARD, 57, 0, 198, 31, 11, 1, rennes, "");
+        Player laborde = new Player("Gaëtan Laborde", Nationality.FRENCH, Position.FORWARD, 57, 0, 198, 31, 11, 1, rennes, "https://i.guim.co.uk/img/media/3cf81037d9bb93d7a9595ba797f50b7e3a4f4dc4/1213_0_3195_1917/master/3195.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=6d6cd61d3b45312a1b0c5e9be3d93898");
         Player terrier = new Player("Martin Terrier", Nationality.FRENCH, Position.MIDFIELDER, 44, 0, 162, 17, 9, 1, rennes, "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/20191002_Fu%C3%9Fball%2C_M%C3%A4nner%2C_UEFA_Champions_League%2C_RB_Leipzig_-_Olympique_Lyonnais_by_Stepro_StP_0291.jpg/1200px-20191002_Fu%C3%9Fball%2C_M%C3%A4nner%2C_UEFA_Champions_League%2C_RB_Leipzig_-_Olympique_Lyonnais_by_Stepro_StP_0291.jpg");
 
         Player lopes = new Player("Anthony Lopes", Nationality.PORTUGUESE, Position.GOALKEEPER, 0,0,315,0,10,1,lyon,"https://medias.lequipe.fr/img-photo-jpg/anthony-lopes-fait-debat-sur-ses-gestes-consideres-parfois-comme-dangereux-a-martin-l-equipe/1500000001418295/446:38,1740:1331-1200-1200-75/32bca.jpg");
