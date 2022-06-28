@@ -33,7 +33,6 @@ public class DataLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception{
 
-
         League premierLeague = new League("Premier League", "England", 14, 9, 0);
         League ligue1 = new League("UberEats Ligue 1", "France",1,0,0);
         League laLiga = new League("La Liga", "Spain",19,11,0);
@@ -57,7 +56,7 @@ public class DataLoader implements ApplicationRunner {
         Team realMadrid = new Team("Real Madrid", 68, 20, 277, 108, 79, 1021 , laLiga);
         Team atleticoMadrid = new Team("Club Atlético de Madrid", 25, 8, 75, 39, 40, 221, laLiga);
         Team sevilla = new Team("Sevilla",7,7, 29,20,17, 104, laLiga);
-        Team athleticBilbao = new Team("Athletic Bilbao", 36, 0, 10, 10, 8, 16, laLiga);
+        Team realBetis = new Team("Real Betis");
 
         Team juventus = new Team("Juventus", 59, 8, 152, 73, 70, 470, serieA);
         Team acMilan = new Team("AC Milan", 31, 15, 126, 64, 65, 422, serieA);
@@ -68,11 +67,12 @@ public class DataLoader implements ApplicationRunner {
         teamRepository.saveAll(Arrays.asList(
                 manCity, liverpoolFC, manUnited, chelsea, tottenham,
                 psg, asMonaco, marseille, rennes, lyon,
-                barcelona, realMadrid, atleticoMadrid, sevilla, athleticBilbao,
+                barcelona, realMadrid, atleticoMadrid, sevilla, realBetis,
                 juventus, acMilan, interMilan, napoli, asRoma));
 
         // Premier League Players
         //    Player(name, nationality, position, league goals, international goals, apps, assists, yellowCards, redCards, team, img)
+
         Player cristanoRonaldo = new Player("Cristiano Ronaldo", Nationality.PORTUGUESE, Position.FORWARD, 497, 117, 935, 230, 115, 11, manUnited, "https://www.planetsport.com/image-library/square/500/m/manchester-united-cristiano-ronaldo-16-october-2021.jpg");
         Player jadonSancho = new Player("Jadon Sancho", Nationality.ENGLISH, Position.FORWARD, 41, 3, 175,  48, 4, 0, manUnited,"https://manutdnews.com/wp-content/uploads/2021/11/manchester-united-v-atalanta-group-f-uefa-champions-league-1-1536x1024.jpg");
         Player deGea = new Player("David De Gea", Nationality.SPANISH, Position.GOALKEEPER, 0, 0, 571, 0, 8,0, manUnited, "https://e2.365dm.com/18/04/800x600/skysports-de-gea-david-de-gea_4277878.jpg?20180408202315");
@@ -105,6 +105,7 @@ public class DataLoader implements ApplicationRunner {
 
         // Ligue 1
         // Player(name, nationality, position, league goals, international goals, apps, assists, yellowCards, redCards, team, img)
+
         Player messi = new Player("Lionel Messi", Nationality.ARGENTINE, Position.MIDFIELDER, 480, 86, 546, 231, 50, 0, psg, "https://i2-prod.mirror.co.uk/incoming/article25417932.ece/ALTERNATES/s1200c/23_Olympique-Marseille-vs-Paris-Saint-Germain-France-24-Oct-2021.jpg");
         Player neymar = new Player("Neymar da Silva Santos Júnior", Nationality.BRAZILIAN, Position.FORWARD, 191, 74, 318, 116, 79, 7, psg, "https://i2-prod.mirror.co.uk/incoming/article27064871.ece/ALTERNATES/s1200c/0_Neymar.jpg" );
         Player mbappe = new Player("Kylian Mbappé", Nationality.FRENCH, Position.FORWARD, 135, 27, 183, 61, 26, 1, psg, "https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTc5MjAzODIwNzg0NTI3MDk2/topshot-fbl-fra-ligue1-paris-dijon.jpg" );
@@ -135,7 +136,6 @@ public class DataLoader implements ApplicationRunner {
         Player lacazette = new Player("Alexandre Lacazette", Nationality.FRENCH, Position.FORWARD, 154, 3, 361, 62, 39, 2, lyon, "https://imgresizer.eurosport.com/unsafe/1200x1200/smart/filters:format(jpeg)/origin-imgresizer.eurosport.com/2021/01/07/2966939-60894708-2560-1440.jpg");
         Player paqueta = new Player("Lucas Paquetá", Nationality.BRAZILIAN, Position.MIDFIELDER, 30, 7, 151, 16, 28, 3, lyon, "https://i2-prod.chroniclelive.co.uk/sport/football/football-news/article23355050.ece/ALTERNATES/s1200c/0_GettyImages-1373397761.jpg");
 
-
         // La Liga
         // Player(name, nationality, position, league goals, international goals, apps, assists, yellowCards, redCards, team, img)
 
@@ -149,26 +149,25 @@ public class DataLoader implements ApplicationRunner {
         Player pique = new Player("Gerard Piqué", Nationality.SPANISH, Position.DEFENDER, 32, 6, 425, 9, 107, 8, barcelona, "https://img.bleacherreport.net/img/images/photos/003/331/627/hi-res-fda27e82ef0d644f3bf271472bad76b9_crop_exact.jpg?w=1200&h=1200&q=75");
         Player busquets = new Player("Sergio Busquets", Nationality.SPANISH, Position.MIDFIELDER, 11, 6, 451, 31, 121, 1, barcelona, "https://imgresizer.eurosport.com/unsafe/1200x1200/smart/filters:format(jpeg)/origin-imgresizer.eurosport.com/2015/11/27/1740487-36807946-2560-1440.jpg");
         Player dembele = new Player("Ousmane Dembele", Nationality.FRENCH, Position.FORWARD, 37, 3, 160, 45, 17, 1, barcelona, "https://i.guim.co.uk/img/media/e767a2e1d31fbec9ba11b74fb9460111f6f57e9e/338_102_3739_2245/master/3739.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=87e901130d34558303091b70e1ad114a");
-        Player aubameyang = new Player("Pierre-Emerick Aubameyang", Nationality.GABONESE, );
+        Player aubameyang = new Player("Pierre-Emerick Aubameyang", Nationality.GABONESE, Position.FORWARD, 218, 30, 409, 65, 25, 2, barcelona, "https://i2-prod.dailystar.co.uk/incoming/article26157811.ece/ALTERNATES/s1200c/0_JS256927446.jpg");
 
-        Player oblak = new Player("Jan Oblak", Nationality.SLOVENIAN, Position.GOALKEEPER, 0 );
-        Player giminez = new Player("José María Giménez", Nationality.URUGUAYAN, Position.DEFENDER, );
-        Player koke = new Player("Koke", Nationality.SPANISH, Position.MIDFIELDER,);
-        Player griezmann = new Player("Antoine Griezmann", Nationality.FRENCH, Position.FORWARD, );
-        Player felix = new Player("João Félix", Nationality.PORTUGUESE, Position.FORWARD);
+        Player oblak = new Player("Jan Oblak", Nationality.SLOVENIAN, Position.GOALKEEPER, 0, 0, 360, 0, 12, 1, atleticoMadrid, "https://i2-prod.manchestereveningnews.co.uk/incoming/article20713448.ece/ALTERNATES/s1200c/0_GettyImages-1254221919.jpg");
+        Player giminez = new Player("José María Giménez", Nationality.URUGUAYAN, Position.DEFENDER, 4, 8, 191, 6, 47, 0, atleticoMadrid, "https://imgresizer.eurosport.com/unsafe/1200x1200/smart/filters:format(jpeg)/origin-imgresizer.eurosport.com/2020/09/14/2886921-59446428-2560-1440.jpg" );
+        Player koke = new Player("Koke", Nationality.SPANISH, Position.MIDFIELDER, 37, 0, 385, 84, 66, 2, atleticoMadrid, "https://img.bleacherreport.net/img/images/photos/003/538/584/hi-res-7a442f630148cd7ff7e2c64bc61927c7_crop_exact.jpg?w=1200&h=1200&q=75");
+        Player griezmann = new Player("Antoine Griezmann", Nationality.FRENCH, Position.FORWARD, 159, 42, 421, 67, 60, 1, atleticoMadrid, "https://i2-prod.liverpoolecho.co.uk/incoming/article21912739.ece/ALTERNATES/s1200c/0_GettyImages-1347634536.jpg");
+        Player felix = new Player("João Félix", Nationality.PORTUGUESE, Position.FORWARD, 36, 3, 108, 20, 15, 1, atleticoMadrid, "https://i2-prod.football.london/incoming/article24303906.ece/ALTERNATES/s1200c/0_GettyImages-1389894253.jpg");
 
-        Player bounou = new Player("Yassine Bounou", Nationality.MOROCCAN, Position.GOALKEEPER, );
-        Player kounde = new Player("Jules Kounde", Nationality.FRENCH, Position.DEFENDER, );
-        Player rakitic = new Player("Ivan Rakitic", Nationality.CROATIAN, Position.MIDFIELDER, );
-        Player ocampos = new Player("Lucas Ocampos", Nationality.ARGENTINE, Position.FORWARD);
-        Player enNesyri = new Player("Youssef En-Nesyri", Nationality.MOROCCAN, Position.FORWARD);
+        Player bounou = new Player("Yassine Bounou", Nationality.MOROCCAN, Position.GOALKEEPER, 1, 0, 186, 2, 10, 0, sevilla, "https://pbs.twimg.com/media/EfkaNugWsAAk6qv.jpg");
+        Player kounde = new Player("Jules Kounde", Nationality.FRENCH, Position.DEFENDER, 7, 0, 150, 4, 16, 2, sevilla, "https://i2-prod.manchestereveningnews.co.uk/incoming/article23795754.ece/ALTERNATES/s1200c/0_Jules-Kounde-Chelsea-FC-target.jpg");
+        Player rakitic = new Player("Ivan Rakitic", Nationality.CROATIAN, Position.MIDFIELDER, 80, 15, 520, 91, 59, 4, sevilla, "https://img.bleacherreport.net/img/images/photos/002/695/545/hi-res-177655502-ivan-rakitic-of-sevilla-in-action-during-the-la-liga_crop_exact.jpg?w=1200&h=1200&q=75");
+        Player ocampos = new Player("Lucas Ocampos", Nationality.ARGENTINE, Position.FORWARD, 50, 2, 271, 30, 46, 2, sevilla, "https://wallpapercave.com/wp/wp7698338.jpg");
+        Player enNesyri = new Player("Youssef En-Nesyri", Nationality.MOROCCAN, Position.FORWARD, 45, 14, 166, 7, 16, 1, sevilla, "https://i2-prod.dailystar.co.uk/incoming/article23345732.ece/ALTERNATES/s1200c/0_GettyImages-1293666766.jpg");
 
-        Player ruiSilva = new Player("Rui Silva", Nationality.PORTUGUESE, Position.GOALKEEPER, );
-        Player bellerin = new Player("Hector Bellerin", Nationality.SPANISH, Position.DEFENDER, );
-        Player guardado = new Player("Andrés Guardado", Nationality.MEXICAN, Position.MIDFIELDER, );
-        Player fekir = new Player("Nabil Fekir", Nationality.FRENCH, Position.FORWARD, );
-        Player carvalho = new Player("William Carvalho", Nationality.PORTUGUESE, Position.MIDFIELDER, );
-
+        Player ruiSilva = new Player("Rui Silva", Nationality.PORTUGUESE, Position.GOALKEEPER, 0, 0, 139, 0, 11, 0, realBetis, "https://i2-prod.liverpoolecho.co.uk/incoming/article19552665.ece/ALTERNATES/s1200c/0_GettyImages-1229222021.jpg");
+        Player bellerin = new Player("Héctor Bellerín", Nationality.SPANISH, Position.DEFENDER, 8, 0, 206, 23, 32, 1, realBetis, "https://imgresizer.eurosport.com/unsafe/1200x1200/smart/filters:format(jpeg)/origin-imgresizer.eurosport.com/2021/10/12/3235717-66231608-2560-1440.jpg");
+        Player guardado = new Player("Andrés Guardado", Nationality.MEXICAN, Position.MIDFIELDER, 24, 28, 431, 62, 69, 1, realBetis,"https://img.bleacherreport.net/img/images/photos/003/745/390/hi-res-4c2a241d326de30ce537d2107ed40400_crop_exact.jpg?w=1200&h=1200&q=75");
+        Player fekir = new Player("Nabil Fekir", Nationality.FRENCH, Position.FORWARD, 72, 2, 244, 55, 46, 5, realBetis, "https://img.bleacherreport.net/img/images/photos/003/827/355/hi-res-136670f54d640f619b07b1f21cb67cd3_crop_exact.jpg?w=1200&h=1200&q=75");
+        Player carvalho = new Player("William Carvalho", Nationality.PORTUGUESE, Position.MIDFIELDER, 14, 5, 275, 19, 58, 3, realBetis,"https://i2-prod.leicestermercury.co.uk//article4012289.ece/ALTERNATES/s1200c/0_Carvalho.jpg");
 
         // Serie A
         // Player(name, nationality, position, league goals, international goals, apps, assists, yellowCards, redCards, team, img)
@@ -202,9 +201,6 @@ public class DataLoader implements ApplicationRunner {
         Player mkhitaryan = new Player("Henrikh Mkhitaryan", Nationality.ARMENIAN, Position.MIDFIELDER, 129, 32, 397, 95, 45, 1, asRoma,"https://i2-prod.mirror.co.uk/incoming/article20076224.ece/ALTERNATES/s1200c/0_Italy-AS-Roma-US-Sassuolo.jpg");
         Player abraham = new Player("Tammy Abraham", Nationality.ENGLISH, Position.FORWARD, 43, 3, 126, 112, 11, 0, asRoma,"https://i2-prod.dailystar.co.uk/incoming/article25136188.ece/ALTERNATES/s1200c/0_Tammy-Abraham-Roma-Empoli.jpg");
         Player oliveira = new Player("Sérgio Oliveira", Nationality.PORTUGUESE, Position.MIDFIELDER, 35, 0, 199, 19, 45, 1, asRoma,"https://pbs.twimg.com/media/FThwOa5XsAEJRKD.jpg");
-
-
-
 
         playerRepository.saveAll(Arrays.asList(
                 cristanoRonaldo, jadonSancho, deGea, harryMaguire, fred,
