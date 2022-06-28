@@ -185,7 +185,7 @@ public class DataLoader implements ApplicationRunner {
         Player ibrahimovic = new Player("Zlatan Ibrahimovic", Nationality.SWEDISH, Position.FORWARD, );
         Player giroud = new Player("Olivier Giroud", Nationality.FRENCH, Position.FORWARD, );
 
-        Player handanovic = new Player("Samir Handanovic", Nationality.SLOVENIAN, Position.GOALKEEPER, );
+        Player handanovic = new Player("Samir Handanovic", Nationality.SLOVENIAN, Position.GOALKEEPER, 0, );
         Player skriniar = new Player("Milan Skriniar", Nationality.SLOVAK, Position.DEFENDER, );
         Player vidal = new Player("Arturo Vidal", Nationality.CHILEAN, Position.MIDFIELDER, );
         Player dzeko = new Player("Edin Dzeko", Nationality.BOSNIAN, Position.FORWARD, );
