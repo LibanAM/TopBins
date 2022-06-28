@@ -28,7 +28,7 @@ public class DataLoader implements ApplicationRunner {
     LeagueRepository leagueRepository;
 
     @Override
-    public void run(ApplicationArguments args) throws gException{
+    public void run(ApplicationArguments args) throws Exception{
 
         League premierLeague = new League("Premier League", "England", 14, 9, 0);
         League ligue1 = new League("UberEats Ligue 1", "France",1,0,0);
