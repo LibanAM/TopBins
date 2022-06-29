@@ -49,7 +49,7 @@ const Register = () => {
   const handleExistingEmail = () => {
     const allEmails = users.map(user => { return user.email });
 
-    let emailChecker = [false, signupAllowed[1], signupAllowed[2]];
+    let emailChecker = [signupAllowed[0], false, signupAllowed[2]];
 
     if (allEmails.includes(inputNewEmail.current.value)) {
       document.querySelector('.new-user-email-input').innerHTML = "This email already exists";
@@ -58,7 +58,7 @@ const Register = () => {
     else {
       document.querySelector('.new-user-email-input').innerHTML = "";
 
-      emailChecker = [true, signupAllowed[1], signupAllowed[2]];
+      emailChecker = [signupAllowed[0], true, signupAllowed[2]];
       setSignupAllowed(emailChecker);
     }
   }
@@ -67,7 +67,7 @@ const Register = () => {
   const handleCorrectEmail = () => {
     let emailFormatChecker = [signupAllowed[0], false, signupAllowed[2]];
 
-    if (!inputNewEmail.current.value.includes("@")){
+    if (!inputNewEmail.current.value.includes("@")) {
       document.querySelector('new-user-email-input').innerHTML = "Please enter a valid email";
       setSignupAllowed(emailFormatChecker);
     }
@@ -75,6 +75,37 @@ const Register = () => {
       document.querySelector('new-user-email-input').innerHTML = "";
       emailFormatChecker = [signupAllowed[0], true, signupAllowed[2]];
       setSignupAllowed(emailFormatChecker);
+      handleExistingEmail();
+    }
+  }
+
+  //Check password strength
+  const handlePassword = () => {
+    let passwordChecker = [signupAllowed[0], signupAllowed[1], false]
+
+    const specialSymbol = ['!', '?', '@', '.', '_', '/', '#', '$', '(', ')', '^', '%',
+      '*', ':', ';', '+'];
+
+    if (inputNewPassword.current.value == '1234' || inputNewPassword.current.value == 'abc'
+      || inputNewPassword.current.value.length < 8) {
+      document.querySelector('.new-user-password-input').innerHTML = "Password strength is weak";
+
+      // didn't pass the password checker
+      setSignupAllowed(passwordChecker);
+    }
+    else if (specialSymbol.filter(s => inputNewPassword.current.value.includes(s)).length == 0) {
+      document.querySelector('.new-user-password-input').innerHTML = "Password strength is medium";
+
+      // didn't pass the password checker
+      setSignupAllowed(passwordChecker);
+    }
+    else {
+      document.querySelector('.new-user-password-input').innerHTML = "Password strength is strong";
+
+      // pass password checker 
+      userPasswordChecker = [signupAllowed[0], signupAllowed[1], true];
+      setSignupAllowed(passwordChecker);
+
     }
   }
 
