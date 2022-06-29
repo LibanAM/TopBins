@@ -28,7 +28,7 @@ const SignIn = ({setCurrentAcc, setLoggedIn, loggedIn, currentAcc}) => {
 
     setCurrentAcc(currentUser[0]);
     setLoggedIn(!loggedIn);
-    navigate('/playnow');
+    // navigate('/playnow');
 
   }
 
@@ -55,8 +55,7 @@ const SignIn = ({setCurrentAcc, setLoggedIn, loggedIn, currentAcc}) => {
             name="password"
             ref={inputPassword}
           />
-          <label> <input type="checkbox" name="termsCheckbox" /> I agree to the Terms and Conditions</label>
-          <button class="form-field" type="submit"> Sign In</button>
+          <button class="signin-btn" type="submit"> Sign In</button>
         </form>
       </div>
     </div>

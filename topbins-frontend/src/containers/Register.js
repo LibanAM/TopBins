@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Form.css';
+import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 
-const Register = () => {
+const Register = ({ isLogin, setIsLogin, setCurrentAccount }) => {
 
   const inputNewName = useRef();
   const inputNewEmail = useRef();
@@ -11,13 +12,13 @@ const Register = () => {
   const [passwordShown, setPasswordShown] = useState(false);
   const [signupAllowed, setSignupAllowed] = useState([false, false, false]);
 
-  console.log(allowedSignup);
+  console.log(signupAllowed);
 
   //Get all the users
   useEffect(() => {
     fetch("http://localhost:8080/users")
       .then(response => response.json())
-      .then(data => setAllUsers(data))
+      .then(data => setUsers(data))
   }, [])
 
   //Create a new user
@@ -103,11 +104,16 @@ const Register = () => {
       document.querySelector('.new-user-password-input').innerHTML = "Password strength is strong";
 
       // pass password checker 
-      userPasswordChecker = [signupAllowed[0], signupAllowed[1], true];
+      passwordChecker = [signupAllowed[0], signupAllowed[1], true];
       setSignupAllowed(passwordChecker);
 
     }
   }
+
+  const handlePasswordShown = (event) => {
+    event.preventDefault();
+    setPasswordShown(!passwordShown);
+}
 
   return (
     <div>
@@ -123,7 +129,7 @@ const Register = () => {
             name="Name"
             ref={inputNewName}
           />
-          <p className="new-user-name-input">Name</p>
+          <p className="new-user-name-input"></p>
 
           <p className="register-input-title">Email</p>
           <input
@@ -132,21 +138,32 @@ const Register = () => {
             placeholder="Email"
             name="email"
             ref={inputNewEmail}
+            onChange={handleCorrectEmail}
           />
-          <p className="new-user-email-input">Name</p>
+          <p className="new-user-email-input"></p>
 
           <p className="register-input-title">Password</p>
           <input
             className="form-field"
-            type="password"
+            type={passwordShown ? "text" : "password"}
             placeholder="Password"
             name="password"
             ref={inputNewPassword}
+            onChange={handlePassword}
           />
-          <p className="new-user-passwor-input">Name</p>
+          <button
+            onClick={handlePasswordShown}
+            className="password-shown-button">
+            {passwordShown ? <AiOutlineEye className="password-eye" /> : <AiOutlineEyeInvisible className="password-eye" />}
+          </button>
+          <p className="new-user-passwor-input"></p>
 
           <label> <input type="checkbox" name="termsCheckbox" /> I agree to the Terms and Conditions</label>
-          <button class="form-field" type="submit"> Register </button>
+
+          <button class="register-btn" type="submit" onClick={handleRegister}> Register </button>
+
+          <p>Already have an account? <a href="/SignIn">Sign In</a></p>
+
         </form>
       </div>
     </div>
