@@ -49,7 +49,18 @@ const Register = () => {
   const handleExistingEmail = () => {
     const allEmails = users.map(user => {return user.email});
 
-    let emailChecker = [false, signupAllowed[1]]
+    let emailChecker = [false, signupAllowed[1], signupAllowed[2]]
+
+    if (allEmails.includes(inputNewEmail.current.value)) {
+      document.querySelector('.new-user-email-input').innerHTML = "This email already exists"
+      setSignupAllowed(emailChecker);
+    }
+    else {
+      document.querySelector('.new-user-email-input').innerHTML = "";
+
+      emailChecker = [true, signupAllowed[1], signupAllowed[2]];
+      setSignupAllowed(emailChecker);
+    }
   }
 
   return (
