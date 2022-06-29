@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './Form.css';
+import './Register.css';
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 
-const Register = ({ isLogin, setIsLogin, setCurrentAccount }) => {
+const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
 
   const inputNewName = useRef();
   const inputNewEmail = useRef();
@@ -42,8 +42,8 @@ const Register = ({ isLogin, setIsLogin, setCurrentAccount }) => {
         body: JSON.stringify(newUser)
       })
       .then(response => response.json())
-      .then(savedUser => setCurrentAccount(savedUser))
-    setIsLogin(!isLogin);
+      .then(savedUser => setCurrentAcc(savedUser))
+    setLoggedIn(!loggedIn);
   }
 
   //Check if email already exists
@@ -151,16 +151,14 @@ const Register = ({ isLogin, setIsLogin, setCurrentAccount }) => {
             ref={inputNewPassword}
             onChange={handlePassword}
           />
-          <button
-            onClick={handlePasswordShown}
-            className="password-shown-button">
+          <button onClick={handlePasswordShown} className="password-shown-btn">
             {passwordShown ? <AiOutlineEye className="password-eye" /> : <AiOutlineEyeInvisible className="password-eye" />}
           </button>
           <p className="new-user-passwor-input"></p>
 
           <label> <input type="checkbox" name="termsCheckbox" /> I agree to the Terms and Conditions</label>
 
-          <button class="register-btn" type="submit" onClick={handleRegister}> Register </button>
+          <button className="register-btn" type="submit" onClick={handleRegister}> Register </button>
 
           <p>Already have an account? <a href="/SignIn">Sign In</a></p>
 

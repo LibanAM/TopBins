@@ -7,14 +7,14 @@ body {
 h1{
 	text-align: center;
 }
-.register-container {
+.signin-container {
     width: 360px;
     background-color: white;
     margin: auto;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     padding: 30px;
   }
-  .form {
+  .signin-form {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -31,7 +31,7 @@ h1{
   .form-field {
     background: #f2f2f2;
   }
-  .register-btn{
+  .signin-btn{
 	margin: 20px 0 20px 0;
     padding: 15px;
     font-size: 16px;
@@ -41,10 +41,9 @@ h1{
     color: white;
     cursor: pointer;
   }
-  .password-shown-button{
+  .btn{
     border-style: none;
     background-color:transparent;
     position: relative;
-    left:90%;
-    bottom: 50%;
+    left: 46%;
  }
