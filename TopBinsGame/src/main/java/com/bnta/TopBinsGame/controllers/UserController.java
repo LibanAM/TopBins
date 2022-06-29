@@ -7,12 +7,19 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("users")
 public class UserController {
 
     @Autowired
     UserRepository userRepository;
+
+    @GetMapping()
+    public ResponseEntity<List<User>> getUser() {
+        return new ResponseEntity(userRepository.findAll(), HttpStatus.OK);
+    }
 
     // SHOW
     @GetMapping(value = "/{id}")
