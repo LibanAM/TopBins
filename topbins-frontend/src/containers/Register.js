@@ -6,6 +6,7 @@ const Register = () => {
   const inputNewName = useRef();
   const inputNewEmail = useRef();
   const inputNewPassword = useRef();
+
   const [users, setUsers] = useState();
   const [passwordShown, setPasswordShown] = useState(false);
   const [signupAllowed, setSignupAllowed] = useState([false, false, false]);
@@ -42,6 +43,13 @@ const Register = () => {
       .then(response => response.json())
       .then(savedUser => setCurrentAccount(savedUser))
     setIsLogin(!isLogin);
+  }
+
+  //Check if email already exists
+  const handleExistingEmail = () => {
+    const allEmails = users.map(user => {return user.email});
+
+    let emailChecker = [false, signupAllowed[1]]
   }
 
   return (
