@@ -1,7 +1,33 @@
 import React from 'react';
+import { useEffect, useRef, useState } from "react";
 import './Form.css';
 
 const SignIn = () => {
+
+  const inputEmail = useRef();
+  const inputPassword = useRef();
+
+  const [allUsers, setAllUsers] = useState([])
+
+  useEffect(() => {
+    fetch("http://localhost:8080/users")
+    .then((response) => response.json())
+    .then((data) => setAllUsers(data))
+  }, [])
+
+  const handleLogin = (event) => {
+
+    const currentUser = allUsers.filter(user => user.emailAddress == inputEmail.current.value && 
+      user.password == inputPassword.current.value)
+
+    if (currentUser.length == 0) {
+      alert("Invalid email or password! Please enter a correct email/password")
+      return
+    }
+  }
+
+
+
 
   return (
     <div>
@@ -12,20 +38,16 @@ const SignIn = () => {
           <input
             className="form-field"
             type="text"
-            placeholder="Name"
-            name="Name"
-          />
-          <input
-            className="form-field"
-            type="text"
             placeholder="Email"
             name="email"
+            ref={inputEmail}
           />
           <input
             className="form-field"
             type="password"
             placeholder="Password"
             name="password"
+            ref={inputPassword}
           />
           <label> <input type="checkbox" name="termsCheckbox" /> I agree to the Terms and Conditions</label>
           <button class="form-field" type="submit"> Sign In</button>
