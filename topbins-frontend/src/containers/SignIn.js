@@ -64,7 +64,7 @@ const SignIn = ({ setCurrentAcc, setLoggedIn, loggedIn, currentAcc }) => {
           <button onClick={handlePasswordShown} className="btn">
             {passwordShown ? <AiOutlineEye className="password-eye" /> : <AiOutlineEyeInvisible className="password-eye" />}
           </button>
-          <button class="signin-btn" type="submit"> Sign In</button>
+          <button className="signin-btn" type="submit"> Sign In</button>
 
           <p>New user? <a href="/Register">Sign Up</a></p>
         </form>
