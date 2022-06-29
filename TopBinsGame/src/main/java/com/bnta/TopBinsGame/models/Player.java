@@ -42,7 +42,7 @@ public class Player {
     @JoinColumn(name = "teams_id")
     private Team team;
 
-    @Column
+    @Lob
     private String imgLink;
 
     public Player() {

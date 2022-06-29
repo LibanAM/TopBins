@@ -1,0 +1,6 @@
+2022-06-29 01:05:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMG_LINK CHARACTER VARYING(255)": "'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/20191002_Fu%C3%9Fball... (304)"; SQL statement:
+insert into players (id, assists, img_link, international_goals, league_appearances, league_goals, name, nationality, position, red_cards, teams_id, yellow_cards) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-212]
+2022-06-29 01:08:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMG_LINK CHARACTER VARYING(255)": "'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/20191002_Fu%C3%9Fball... (304)"; SQL statement:
+insert into players (id, assists, img_link, international_goals, league_appearances, league_goals, name, nationality, position, red_cards, teams_id, yellow_cards) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-212]
