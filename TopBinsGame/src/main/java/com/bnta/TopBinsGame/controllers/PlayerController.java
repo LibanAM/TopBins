@@ -35,7 +35,7 @@ public class PlayerController {
         return new ResponseEntity<>(playerRepository.save(player), HttpStatus.CREATED);
     }
 
-    @PutMapping
+    @PutMapping(value = "/{id}")
     public ResponseEntity<Player> updatePlayer(@PathVariable Long id, @RequestBody Player newPlayer) {
         var foundPlayerByID = playerRepository.findById(id);
         if (foundPlayerByID.isPresent()){
@@ -56,7 +56,7 @@ public class PlayerController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @DeleteMapping
+    @DeleteMapping(value = "/{id}")
     public ResponseEntity<String> deletePlayer (@PathVariable Long id){
         playerRepository.deleteById(id);
         return new ResponseEntity<>("Deleted player ID: " + id, HttpStatus.NOT_FOUND);
