@@ -1,5 +1,7 @@
 package com.bnta.TopBinsGame.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,9 +36,12 @@ public class Team {
 
     @ManyToOne
     @JoinColumn(name = "leagues_id")
+    @JsonIgnoreProperties({"teams", "championsLeagues", "europaLeague", "conferenceLeague"})
     private League league;
 
     @OneToMany(mappedBy = "team")
+    @JsonIgnoreProperties({"team", "nationality", "position", "leagueGoals", "internationalGoals",
+            "leagueAppearances", "assists", "yellowCards", "redCards", "imgLink"})
     private List<Player> players;
 
     public Team(){
