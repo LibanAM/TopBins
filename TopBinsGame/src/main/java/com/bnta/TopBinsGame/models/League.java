@@ -31,6 +31,8 @@ public class League {
     private int conferenceLeague;
 
     @OneToMany(mappedBy = "league")
+    @JsonIgnoreProperties({"players", "domesticTrophies", "intTrophies", "championsLeagueWins", "championsLeagueLosses",
+    "championsLeagueDraws", "totalChampionsLeagueGoals", "league", })
     private List<Team> teams;
 
 
