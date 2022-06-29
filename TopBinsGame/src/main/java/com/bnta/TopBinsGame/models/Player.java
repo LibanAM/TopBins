@@ -1,6 +1,8 @@
 package com.bnta.TopBinsGame.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity
@@ -40,6 +42,8 @@ public class Player {
 
     @ManyToOne
     @JoinColumn(name = "teams_id")
+    @JsonIgnoreProperties({"domesticTrophies", "league", "intTrophies", "championsLeagueWins", "championsLeagueLosses",
+    "championsLeagueDraws", "totalChampionsLeagueGoals", "players"})
     private Team team;
 
     @Lob
