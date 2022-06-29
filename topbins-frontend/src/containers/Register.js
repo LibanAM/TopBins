@@ -47,12 +47,12 @@ const Register = () => {
 
   //Check if email already exists
   const handleExistingEmail = () => {
-    const allEmails = users.map(user => {return user.email});
+    const allEmails = users.map(user => { return user.email });
 
-    let emailChecker = [false, signupAllowed[1], signupAllowed[2]]
+    let emailChecker = [false, signupAllowed[1], signupAllowed[2]];
 
     if (allEmails.includes(inputNewEmail.current.value)) {
-      document.querySelector('.new-user-email-input').innerHTML = "This email already exists"
+      document.querySelector('.new-user-email-input').innerHTML = "This email already exists";
       setSignupAllowed(emailChecker);
     }
     else {
@@ -63,12 +63,28 @@ const Register = () => {
     }
   }
 
+  //Check email format
+  const handleCorrectEmail = () => {
+    let emailFormatChecker = [signupAllowed[0], false, signupAllowed[2]];
+
+    if (!inputNewEmail.current.value.includes("@")){
+      document.querySelector('new-user-email-input').innerHTML = "Please enter a valid email";
+      setSignupAllowed(emailFormatChecker);
+    }
+    else {
+      document.querySelector('new-user-email-input').innerHTML = "";
+      emailFormatChecker = [signupAllowed[0], true, signupAllowed[2]];
+      setSignupAllowed(emailFormatChecker);
+    }
+  }
+
   return (
     <div>
       <h1>Register</h1>
-      <div className="form-container">
+      <div className="register-container">
         <img src="" alt="" ></img>
         <form className="register-form">
+          <p className="register-input-title">Name</p>
           <input
             className="form-field"
             type="text"
@@ -76,6 +92,9 @@ const Register = () => {
             name="Name"
             ref={inputNewName}
           />
+          <p className="new-user-name-input">Name</p>
+
+          <p className="register-input-title">Email</p>
           <input
             className="form-field"
             type="text"
@@ -83,6 +102,9 @@ const Register = () => {
             name="email"
             ref={inputNewEmail}
           />
+          <p className="new-user-email-input">Name</p>
+
+          <p className="register-input-title">Password</p>
           <input
             className="form-field"
             type="password"
@@ -90,6 +112,8 @@ const Register = () => {
             name="password"
             ref={inputNewPassword}
           />
+          <p className="new-user-passwor-input">Name</p>
+
           <label> <input type="checkbox" name="termsCheckbox" /> I agree to the Terms and Conditions</label>
           <button class="form-field" type="submit"> Register </button>
         </form>
