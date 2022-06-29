@@ -11,8 +11,8 @@ import usePersistedState from './usePersistedState';
 
 function App() {
 
-  const [isLogin, setIsLogin] = usePersistedState('isLogin',false);
-  const [currentPodCastAcc, setCurrentPodCastAcc] = usePersistedState('currentPodCastAcc', {});
+  const [loggedIn, setLoggedIn] = usePersistedState('loggedIn',false);
+  const [currentAcc, setCurrentAcc] = usePersistedState('currentAcc', {});
 
   return (
     <>
@@ -21,7 +21,8 @@ function App() {
         <Route path='/playnow' element={<PlayNow />}></Route>
         <Route path='/' element={<CoverPage />} />
         <Route path='/account' element={<Account />} />
-        <Route path='/signIn' element={<SignIn />} />
+        <Route path='/signIn' element={<SignIn loggedIn={loggedIn} setLoggedIn={setLoggedIn} 
+                                                currentAcc={currentAcc} setCurrentAcc={setCurrentAcc}/>} />
         <Route path='/register' element={<Register />} />
         <Route path='/leaderboard' element={<Leaderboard />} />
 

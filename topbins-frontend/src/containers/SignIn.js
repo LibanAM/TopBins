@@ -1,8 +1,9 @@
 import React from 'react';
 import { useEffect, useRef, useState } from "react";
+import { useNavigate} from "react-router-dom";
 import './Form.css';
 
-const SignIn = () => {
+const SignIn = ({setCurrentAcc, setLoggedIn, loggedIn, currentAcc}) => {
 
   const inputEmail = useRef();
   const inputPassword = useRef();
@@ -11,19 +12,24 @@ const SignIn = () => {
 
   useEffect(() => {
     fetch("http://localhost:8080/users")
-    .then((response) => response.json())
-    .then((data) => setAllUsers(data))
+      .then((response) => response.json())
+      .then((data) => setAllUsers(data))
   }, [])
 
   const handleLogin = (event) => {
 
-    const currentUser = allUsers.filter(user => user.emailAddress == inputEmail.current.value && 
+    const currentUser = allUsers.filter(user => user.emailAddress == inputEmail.current.value &&
       user.password == inputPassword.current.value)
 
     if (currentUser.length == 0) {
       alert("Invalid email or password! Please enter a correct email/password")
       return
     }
+
+    setCurrentAcc(currentUser[0]);
+    setLoggedIn(!loggedIn);
+    navigate('/playnow');
+
   }
 
 
