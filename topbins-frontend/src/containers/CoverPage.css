@@ -1,0 +1,37 @@
+#cover-page {
+    background-image: linear-gradient(to top, grey, darkgrey);
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 7px 11px 5px 5px #eae8e8;
+
+}
+
+#cover-page>h1 {
+    text-align: center;
+}
+
+#cover-page-inner {
+    justify-content: space-between;
+    display: flex;
+}
+
+#cover-page-inner>img {
+    width: 500px;
+    margin-right: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons > button:hover{
+    background-color: #ac9eff;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, .1) 100%);
+    background-repeat: no-repeat;
+    background-size: 200% 100%;
+    color: black;
+    transition: background-size 1s, background-color 1s, color 0.5s
+
+}
+
