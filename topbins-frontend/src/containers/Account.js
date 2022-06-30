@@ -1,5 +1,5 @@
 import React from "react";
-import { useState} from "react";
+import { useState, useRef} from "react";
 import './Account.css';
 import { useNavigate } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
@@ -9,6 +9,9 @@ import Modal from "react-modal/lib/components/Modal";
 const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
 
   const navigate = useNavigate();
+
+  const inputNewName = useRef();
+  const inputNewEmail = useRef();
 
   const [users, setUsers] = useState([]);
 
@@ -64,9 +67,28 @@ const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
   }
 
   const handleUpdate = (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
-    
+    const currentUser = users.filter(user => user.emailAddress == inputNewEmail.current.value)
+
+    const updateUser = {
+      name: inputNewName.current.value,
+      emailAddress: inputNewEmail.current.value,
+      password: currentAcc.password,
+      score: currentAcc.score,
+      admin: currentAcc.admin
+    };
+
+    fetch(`http://localhost:8080/users/update/${currentAcc.id}`, 
+    {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updateUser)
+    })
+    .then(response => response.json())
+    .then(savedUser => setCurrentAcc(savedUser))
+    window.location.reload();
+    setCurrentAcc(currentUser[0]);
   }
 
 
@@ -102,6 +124,7 @@ const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
             type="text"
             placeholder="Name"
             name="Name"
+            ref={inputNewName}
           />
 
           <p className="edit-input-title">Email</p>
@@ -110,10 +133,11 @@ const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
             type="text"
             placeholder="Email"
             name="email"
+            ref={inputNewEmail}
           />
           </form>
           <button className="cancel-btn" onClick={closeModal}>Cancel</button>
-          <button className="submit-btn">Submit</button>
+          <button className="submit-btn" onClick={handleUpdate}>Submit</button>
         </Modal>
         <button className="delete-btn" onClick={handleDelete}>Delete</button>
       </div>

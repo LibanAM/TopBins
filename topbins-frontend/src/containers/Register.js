@@ -117,7 +117,7 @@ const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
             name="Name"
             ref={inputNewName}
           />
-          
+
           <p className="register-input-title">Email</p>
           <input
             className="form-field"
@@ -142,8 +142,8 @@ const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
             {passwordShown ? <AiOutlineEye className="password-eye" /> : <AiOutlineEyeInvisible className="password-eye" />}
           </button>
           <p className="new-user-password-input"></p>
-          <br/>
-          <label> <input type="checkbox" name="condition" className="condition"/> I agree to the Terms and Conditions</label>
+          <br />
+          <label> <input type="checkbox" name="condition" className="condition" /> I agree to the Terms and Conditions</label>
 
           <button className="register-button" type="submit" onClick={handleRegister}> Register </button>
 
