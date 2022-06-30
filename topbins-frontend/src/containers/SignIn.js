@@ -2,9 +2,11 @@ import React from 'react';
 import { useEffect, useRef, useState } from "react";
 import './SignIn.css';
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 
 const SignIn = ({ setCurrentAcc, setLoggedIn, loggedIn, currentAcc }) => {
+
+  const navigate = useNavigate();
 
   const inputEmail = useRef();
   const inputPassword = useRef();
@@ -30,7 +32,7 @@ const SignIn = ({ setCurrentAcc, setLoggedIn, loggedIn, currentAcc }) => {
 
     setCurrentAcc(currentUser[0]);
     setLoggedIn(!loggedIn);
-    // navigate('/playnow');
+    navigate('/playnow');
 
   }
 
@@ -64,7 +66,7 @@ const SignIn = ({ setCurrentAcc, setLoggedIn, loggedIn, currentAcc }) => {
           <button onClick={handlePasswordShown} className="btn">
             {passwordShown ? <AiOutlineEye className="password-eye" /> : <AiOutlineEyeInvisible className="password-eye" />}
           </button>
-          <button className="signin-btn" type="submit"> Sign In</button>
+          <button className="signin-btn" type="submit" onClick={handleLogin}> Sign In</button>
 
           <p>New user? <a href="/Register">Sign Up</a></p>
         </form>
