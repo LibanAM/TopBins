@@ -53,4 +53,10 @@ h1 {
   background-color: transparent;
   position: relative;
   left: 92%;
+  
 }
+.new-user-email-input{
+  color: red;
+  font-size: 12px;
+}
+
