@@ -117,8 +117,7 @@ const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
             name="Name"
             ref={inputNewName}
           />
-          <p className="new-user-name-input"></p>
-
+          
           <p className="register-input-title">Email</p>
           <input
             className="form-field"

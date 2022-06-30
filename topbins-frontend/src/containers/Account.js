@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
+import React from "react";
+import { useState} from "react";
 import './Account.css';
 import { useNavigate } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css'
+import Modal from "react-modal/lib/components/Modal";
 
-const Account = ({ currentAcc }) => {
+const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
 
   const navigate = useNavigate();
 
@@ -14,6 +16,7 @@ const Account = ({ currentAcc }) => {
     event.preventDefault();
 
     confirmAlert({
+      title:"Cofirm",
       message:"Are you sure you want to delete your account?",
       buttons:[
         {
@@ -24,8 +27,11 @@ const Account = ({ currentAcc }) => {
               method: "DELETE",
               headers: { "Content-Type": "application/json" }
             })
-            setUsers(users.filter(user => user.id !== currentAcc.id))
+            setUsers(users.filter(user => user.id !== currentAcc.id));
+            setCurrentAcc([]);
+            setLoggedIn(!loggedIn);
             navigate('/signIn')
+
           }
         },
         {
@@ -34,11 +40,35 @@ const Account = ({ currentAcc }) => {
         }
       ]
     })
-
-
-
-
   }
+
+  const[modalIsOpen, setIsOpen] = React.useState(false);
+
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-60%, -50%)',
+    },
+  };
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  const handleUpdate = (event) => {
+    event.preventDefault();
+
+    
+  }
+
 
   return (
     <div>
@@ -62,7 +92,29 @@ const Account = ({ currentAcc }) => {
           </li>
         </ul>
         <br/>
-        <button className="edit-btn">Edit</button>
+        <button className="edit-btn" onClick={openModal}>Edit</button>
+        <Modal isOpen={modalIsOpen} style={customStyles}>
+          <h3>Edit Profile</h3>
+          <form>
+          <p className="edit-input-title">Name</p>
+          <input
+            className="form-field"
+            type="text"
+            placeholder="Name"
+            name="Name"
+          />
+
+          <p className="edit-input-title">Email</p>
+          <input
+            className="form-field"
+            type="text"
+            placeholder="Email"
+            name="email"
+          />
+          </form>
+          <button className="cancel-btn" onClick={closeModal}>Cancel</button>
+          <button className="submit-btn">Submit</button>
+        </Modal>
         <button className="delete-btn" onClick={handleDelete}>Delete</button>
       </div>
     </div>
