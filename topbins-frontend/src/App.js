@@ -18,7 +18,7 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path='/playnow' element={<PlayNow />}></Route>
+          <Route path='/playnow' element={<PlayNow currentAcc={currentAcc}/>}></Route>
           <Route path='/' element={<CoverPage />} />
           <Route path='/account' element={<Account />} />
           <Route path='/signIn' element={<SignIn loggedIn={loggedIn} setLoggedIn={setLoggedIn}

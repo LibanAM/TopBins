@@ -23,6 +23,7 @@ const SignIn = ({ setCurrentAcc, setLoggedIn, loggedIn, currentAcc }) => {
     const currentUser = allUsers.filter(user => user.emailAddress == inputEmail.current.value &&
       user.password == inputPassword.current.value)
 
+      console.log(currentUser);
     if (currentUser.length == 0) {
       alert("Invalid email or password! Please enter a correct email/password")
       return
@@ -30,7 +31,7 @@ const SignIn = ({ setCurrentAcc, setLoggedIn, loggedIn, currentAcc }) => {
 
     setCurrentAcc(currentUser[0]);
     setLoggedIn(!loggedIn);
-    // navigate('/playnow');
+    // useNavigate('/playnow');
 
   }
 
@@ -64,9 +65,9 @@ const SignIn = ({ setCurrentAcc, setLoggedIn, loggedIn, currentAcc }) => {
           <button onClick={handlePasswordShown} className="btn">
             {passwordShown ? <AiOutlineEye className="password-eye" /> : <AiOutlineEyeInvisible className="password-eye" />}
           </button>
-          <button className="signin-btn" type="submit"> Sign In</button>
+          <button className="signin-btn" type="submit" onClick={handleLogin}> Sign In</button>
 
-          <p>New user? <a href="/Register">Sign Up</a></p>
+          <p>New user? <a href="/register">Sign Up</a></p>
         </form>
       </div>
     </div>
