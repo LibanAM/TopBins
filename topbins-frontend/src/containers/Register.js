@@ -158,7 +158,7 @@ const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
 
           <label> <input type="checkbox" name="termsCheckbox" /> I agree to the Terms and Conditions</label>
 
-          <button className="register-btn" type="submit" onClick={handleRegister}> Register </button>
+          <button className="register-button" type="submit" onClick={handleRegister}> Register </button>
 
           <p>Already have an account? <a href="/SignIn">Sign In</a></p>
 
