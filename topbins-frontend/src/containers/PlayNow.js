@@ -33,16 +33,15 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
     let randomPlayerNumber;
     const fetchRandomPlayer = () => {
         randomPlayerNumber = Math.round(Math.random() * 99)
-        let randomPlayer = allPlayers[randomPlayerNumber]
-        setFoundPlayer(randomPlayer)
+        let randomPlayer = allPlayers.filter(player => player.id == randomPlayerNumber)
+        setFoundPlayer(randomPlayer[0])
         console.log(randomPlayer);
         // setPlayerImage(randomPlayer.imgLink)
         // console.log(playerImage);
         // randomAttribute()
     }
 
-    let randomNumber;
-    var randomPropertyName;
+
     var randomPropertyValue;
 
     const randomIntFromInterval = (min, max) => { 
@@ -121,7 +120,7 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
 
             <div>
                 {/* <p>Current score: {score}</p> */}
-                <p>High-Score: {currentAcc.score}</p>
+                {loggedIn && <p>High-Score: {currentAcc.score}</p>}
             </div>
 
         </>
