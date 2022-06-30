@@ -23,7 +23,8 @@ function App() {
           <Route path='/account' element={<Account />} />
           <Route path='/signIn' element={<SignIn loggedIn={loggedIn} setLoggedIn={setLoggedIn}
             currentAcc={currentAcc} setCurrentAcc={setCurrentAcc} />} />
-          <Route path='/register' element={<Register loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} />
+          <Route path='/register' element={<Register loggedIn={loggedIn} setLoggedIn={setLoggedIn} 
+            currentAcc={currentAcc} setCurrentAcc={setCurrentAcc}/>} />
           <Route path='/leaderboard' element={<Leaderboard />} />
 
 

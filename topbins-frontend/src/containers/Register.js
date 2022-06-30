@@ -1,8 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Register.css';
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
+import { useNavigate } from 'react-router-dom';
 
 const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
+
+  const navigate = useNavigate();
 
   const inputNewName = useRef();
   const inputNewEmail = useRef();
@@ -10,7 +13,7 @@ const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
 
   const [users, setUsers] = useState();
   const [passwordShown, setPasswordShown] = useState(false);
-  const [signupAllowed, setSignupAllowed] = useState([false, false, false]);
+  const [signupAllowed, setSignupAllowed] = useState([false, false]);
 
   console.log(signupAllowed);
 
@@ -29,13 +32,13 @@ const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
 
     const newUser = {
       name: inputNewName.current.value,
-      email: inputNewEmail.current.value,
+      emailAddress: inputNewEmail.current.value,
       password: inputNewPassword.current.value,
       score: 0,
-      isAdmin: false,
+      admin: false
     };
 
-    fetch("http://localhost:8080/users",
+    fetch("http://localhost:8080/users/new",
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -44,13 +47,14 @@ const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
       .then(response => response.json())
       .then(savedUser => setCurrentAcc(savedUser))
     setLoggedIn(!loggedIn);
+    navigate('/account');
   }
 
-  //Check if email already exists
+  ///Check if email already exists
   const handleExistingEmail = () => {
-    const allEmails = users.map(user => { return user.email });
+    const allEmails = users.map(user => { return user.emailAddress });
 
-    let emailChecker = [signupAllowed[0], false, signupAllowed[2]];
+    let emailChecker = [false, signupAllowed[1]];
 
     if (allEmails.includes(inputNewEmail.current.value)) {
       document.querySelector('.new-user-email-input').innerHTML = "This email already exists";
@@ -59,52 +63,36 @@ const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
     else {
       document.querySelector('.new-user-email-input').innerHTML = "";
 
-      emailChecker = [signupAllowed[0], true, signupAllowed[2]];
+      emailChecker = [true, signupAllowed[1]];
       setSignupAllowed(emailChecker);
-    }
-  }
-
-  //Check email format
-  const handleCorrectEmail = () => {
-    let emailFormatChecker = [signupAllowed[0], false, signupAllowed[2]];
-
-    if (!inputNewEmail.current.value.includes("@")) {
-      document.querySelector('new-user-email-input').innerHTML = "Please enter a valid email";
-      setSignupAllowed(emailFormatChecker);
-    }
-    else {
-      document.querySelector('new-user-email-input').innerHTML = "";
-      emailFormatChecker = [signupAllowed[0], true, signupAllowed[2]];
-      setSignupAllowed(emailFormatChecker);
-      handleExistingEmail();
     }
   }
 
   //Check password strength
   const handlePassword = () => {
-    let passwordChecker = [signupAllowed[0], signupAllowed[1], false]
+    let passwordChecker = [signupAllowed[0], false]
 
     const specialSymbol = ['!', '?', '@', '.', '_', '/', '#', '$', '(', ')', '^', '%',
       '*', ':', ';', '+'];
 
     if (inputNewPassword.current.value == '1234' || inputNewPassword.current.value == 'abc'
-      || inputNewPassword.current.value.length < 8) {
-      document.querySelector('.new-user-password-input').innerHTML = "Password strength is weak";
+      || inputNewPassword.current.value.length < 6) {
+      document.querySelector('.new-user-password-input').innerHTML = "<p style='color:red; font-size:12px'> Password strength is weak</p>";
 
       // didn't pass the password checker
       setSignupAllowed(passwordChecker);
     }
     else if (specialSymbol.filter(s => inputNewPassword.current.value.includes(s)).length == 0) {
-      document.querySelector('.new-user-password-input').innerHTML = "Password strength is medium";
+      document.querySelector('.new-user-password-input').innerHTML = "<p style='color:#e7bd15; font-size:12px'> Password strength is medium</p>";
 
       // didn't pass the password checker
       setSignupAllowed(passwordChecker);
     }
     else {
-      document.querySelector('.new-user-password-input').innerHTML = "Password strength is strong";
+      document.querySelector('.new-user-password-input').innerHTML = "<p style='color:green; font-size:12px'> Password strength is strong</p>";
 
       // pass password checker 
-      passwordChecker = [signupAllowed[0], signupAllowed[1], true];
+      passwordChecker = [signupAllowed[0], true];
       setSignupAllowed(passwordChecker);
 
     }
@@ -113,7 +101,7 @@ const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
   const handlePasswordShown = (event) => {
     event.preventDefault();
     setPasswordShown(!passwordShown);
-}
+  }
 
   return (
     <div>
@@ -138,7 +126,7 @@ const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
             placeholder="Email"
             name="email"
             ref={inputNewEmail}
-            onChange={handleCorrectEmail}
+            onChange={handleExistingEmail}
           />
           <p className="new-user-email-input"></p>
 
@@ -154,9 +142,9 @@ const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
           <button onClick={handlePasswordShown} className="password-shown-btn">
             {passwordShown ? <AiOutlineEye className="password-eye" /> : <AiOutlineEyeInvisible className="password-eye" />}
           </button>
-          <p className="new-user-passwor-input"></p>
-
-          <label> <input type="checkbox" name="termsCheckbox" /> I agree to the Terms and Conditions</label>
+          <p className="new-user-password-input"></p>
+          <br/>
+          <label> <input type="checkbox" name="condition" className="condition"/> I agree to the Terms and Conditions</label>
 
           <button className="register-button" type="submit" onClick={handleRegister}> Register </button>
 
