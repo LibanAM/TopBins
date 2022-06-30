@@ -20,7 +20,7 @@ function App() {
         <Routes>
           <Route path='/playnow' element={<PlayNow currentAcc={currentAcc}/>}></Route>
           <Route path='/' element={<CoverPage />} />
-          <Route path='/account' element={<Account />} />
+          <Route path='/account' element={<Account currentAcc={currentAcc}/>} />
           <Route path='/signIn' element={<SignIn loggedIn={loggedIn} setLoggedIn={setLoggedIn}
             currentAcc={currentAcc} setCurrentAcc={setCurrentAcc} />} />
           <Route path='/register' element={<Register loggedIn={loggedIn} setLoggedIn={setLoggedIn} 

@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+} 
+.account-container{
+    width: 360px;
+    background-color: white;
+    margin: auto;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    padding: 30px;
+  }
+  li {
+      list-style: none;
+  }
+  .delete-btn{
+      margin-left: 250px;
+  }

@@ -33,9 +33,7 @@ const SignIn = ({ setCurrentAcc, setLoggedIn, loggedIn, currentAcc }) => {
 
     setCurrentAcc(currentUser[0]);
     setLoggedIn(!loggedIn);
-    // useNavigate('/playnow');
-
-
+    navigate('/account');
 
 
   }
