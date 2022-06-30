@@ -1,22 +1,33 @@
-import UserList from "../components/UserList"
 import { useState, useEffect } from "react";
+import './Account.css';
 
-
-const Account = () => {
+const Account = ({ currentAcc }) => {
 
   const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:8080/users")
-      .then((response) => response.json())
-      .then((data) => setUsers(data));
-  }, []);
 
   return (
     <div>
       <h1>My Account</h1>
       <div className="account-container">
-        <UserList users={users}/>
+        <h3>Profile</h3>
+        <ul>
+          <label>Name:</label>
+          <li>
+            {currentAcc.name}
+          </li>
+          <br />
+          <label>Email:</label>
+          <li>
+            {currentAcc.emailAddress}
+          </li>
+          <br />
+          <label>High Score:</label>
+          <li>
+            {currentAcc.score}
+          </li>
+        </ul>
+        <button className="edit-btn">Edit</button>
+        <button className="delete-btn">Delete</button>
       </div>
     </div>
   )
