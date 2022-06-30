@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Register.css';
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
+import { useNavigate } from 'react-router-dom';
 
 const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
 
+  const navigate = useNavigate();
 
   const inputNewName = useRef();
   const inputNewEmail = useRef();
@@ -45,6 +47,7 @@ const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
       .then(response => response.json())
       .then(savedUser => setCurrentAcc(savedUser))
     setLoggedIn(!loggedIn);
+    navigate('/account');
   }
 
   ///Check if email already exists
@@ -60,7 +63,7 @@ const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
     else {
       document.querySelector('.new-user-email-input').innerHTML = "";
 
-      emailChecker = [true, signupAllowed[2]];
+      emailChecker = [true, signupAllowed[1]];
       setSignupAllowed(emailChecker);
     }
   }
@@ -141,7 +144,7 @@ const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
           </button>
           <p className="new-user-password-input"></p>
           <br/>
-          <label> <input type="checkbox" name="termsCheckbox" /> I agree to the Terms and Conditions</label>
+          <label> <input type="checkbox" name="condition" className="condition"/> I agree to the Terms and Conditions</label>
 
           <button className="register-button" type="submit" onClick={handleRegister}> Register </button>
 
