@@ -15,6 +15,17 @@ const Admin = () => {
             .then(data => setPlayers(data))
     }, [query]);
 
+    const postPlayer = (newPlayer) => {
+        fetch("http://localhost:8080/players",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(newPlayer)
+          })
+          .then(response => response.json())
+          .then(savePlayer => setPlayers([...players, savePlayer]))
+      }
+
     const deletePlayer = (id) => {
         fetch(`http://localhost:8080/players/${id}`, {
             method: "DELETE",
@@ -23,12 +34,23 @@ const Admin = () => {
         setPlayers(players.filter(player => player.id !== id))
     }
 
+
+    const [teams, setTeams] = useState([]);
+
+    useEffect(() => {
+      fetch("http://localhost:8080/teams")
+        .then(response => response.json())
+        .then(data => setTeams(data))
+    }, []);
+
     return (
         <>
             <Search getQuery={(q) => setQuery(q)} />
             <PlayerList
                 players={players}
-                deletePlayer={deletePlayer} />
+                deletePlayer={deletePlayer} 
+                teams={teams}
+                postPlayer={postPlayer}/>
         </>
     )
 }

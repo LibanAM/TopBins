@@ -117,7 +117,6 @@ const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
           <form>
           <p className="edit-input-title">Name</p>
           <input
-            className="form-field"
             type="text"
             placeholder="Name"
             name="Name"
@@ -126,7 +125,6 @@ const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
 
           <p className="edit-input-title">Email</p>
           <input
-            className="form-field"
             type="text"
             placeholder="Email"
             name="email"

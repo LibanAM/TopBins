@@ -8,25 +8,27 @@ const Player = ({ player, deletePlayer }) => {
     }
 
     return (
-        <div className="player-container">
+        <div>
+            <div className="player-container">
                 <div className="card-image">
                     <img src="" alt="" />
                 </div>
                 <div className="card-conent">
                     <ul>
                         <li>
-                            <strong> Name:</strong><br/>
+                            <strong> Name:</strong><br />
                             {player.name}
                         </li>
-                        <br/>
+                        <br />
                         <li>
-                            <strong> Team:</strong><br/>
+                            <strong> Team:</strong><br />
                             {player.team.name}
                         </li>
                     </ul>
                     <button className="edit-player-btn">Edit</button>
                     <button className="delete-player-btn" onClick={handleDelete}>Delete</button>
                 </div>
+            </div>
         </div>
     )
 }
