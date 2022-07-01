@@ -33,7 +33,7 @@ const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
             setUsers(users.filter(user => user.id !== currentAcc.id));
             setCurrentAcc([]);
             setLoggedIn(!loggedIn);
-            navigate('/signIn')
+            navigate('/')
 
           }
         },
@@ -69,8 +69,6 @@ const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
   const handleUpdate = (event) => {
     event.preventDefault()
 
-    const currentUser = users.filter(user => user.emailAddress == inputNewEmail.current.value)
-
     const updateUser = {
       name: inputNewName.current.value,
       emailAddress: inputNewEmail.current.value,
@@ -87,8 +85,7 @@ const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
     })
     .then(response => response.json())
     .then(savedUser => setCurrentAcc(savedUser))
-    window.location.reload();
-    setCurrentAcc(currentUser[0]);
+    setIsOpen(false);
   }
 
 
