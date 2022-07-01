@@ -20,6 +20,7 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
     const [propertyName, setPropertyName] = useState("")
     const [variableName, setVariableName] = useState("")
     const [score, setScore] = useState(0);
+    const [guessed, setGuessed] = useState(false);
 
 
 
@@ -45,36 +46,36 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
         // console.log(playerImage);
         // randomAttribute()
     }
-    
+
     const randomAttribute = () => {
         const keys = Object.keys(foundPlayer);
-        const keysFiltered = keys.filter(key => key.search("id") && key.search("imgLink") && key.search("name") 
-                                                && key.search("id") && key.search("team") && key.search("position")
-                                                && key.search("nationality"))
+        const keysFiltered = keys.filter(key => key.search("id") && key.search("imgLink") && key.search("name")
+            && key.search("id") && key.search("team") && key.search("position")
+            && key.search("nationality"))
         const randomNumber = Math.floor(Math.random() * keysFiltered.length);
         const randomKey = keysFiltered[randomNumber];
         console.log(randomKey);
-        if (randomKey == "yellowCards"){
+        if (randomKey == "yellowCards") {
             setVariableName("Yellow Cards")
             setPropertyName("yellowCards")
 
-        } else if(randomKey == "leagueGoals") {
+        } else if (randomKey == "leagueGoals") {
             setVariableName("League Goals")
             setPropertyName("leagueGoals")
 
-        } else if(randomKey == "internationalGoals") {
+        } else if (randomKey == "internationalGoals") {
             setVariableName("International Goals")
             setPropertyName("internationalGoals")
 
-        } else if(randomKey == "assists") {
+        } else if (randomKey == "assists") {
             setVariableName("Assists")
             setPropertyName("assists")
 
-        } else if(randomKey == "redCards") {
+        } else if (randomKey == "redCards") {
             setVariableName("Red Cards")
             setPropertyName("redCards")
 
-        } else if(randomKey == "leagueAppearances") {
+        } else if (randomKey == "leagueAppearances") {
             setVariableName("League Appearances")
             setPropertyName("leagueAppearances")
         }
@@ -87,7 +88,7 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
         randomAttribute()
     }, [foundPlayer], [variableName])
 
-    
+
 
 
     const nextPlayer = () => {
@@ -107,7 +108,7 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
         const keysFiltered = keys.filter(key => key.match(propertyName))
         console.log(keysFiltered)
         const randomNumber = Math.floor(Math.random() * keysFiltered.length);
-        const randomKey = keysFiltered[randomNumber]; 
+        const randomKey = keysFiltered[randomNumber];
         setValueRight(foundNextPlayer[randomKey])
         console.log(valueRight)
     }
@@ -126,17 +127,24 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
         nextPlayer()
         randomAttribute()
         randomAttributeNextPlayer()
-        
+
         // console.log(currentAcc);
     }
 
     const higher = () => {
-        setFoundPlayer(foundNextPlayer)
-        nextPlayer()
-        randomAttribute()
-        randomAttributeNextPlayer() 
+        setGuessed(!guessed)
+        setTimeout(() => {
+            setFoundPlayer(foundNextPlayer)
+            nextPlayer()
+            randomAttribute()
+            randomAttributeNextPlayer()
+            setGuessed(false)
+        }, 1000)
         let i = score;
         if (valueLeft <= valueRight) {
+            i++
+            setScore(i);
+        } else if (valueLeft = valueLeft) {
             i++
             setScore(i);
         }
@@ -144,18 +152,31 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
     }
 
     const lower = () => {
-        setFoundPlayer(foundNextPlayer)
-        nextPlayer()
-        randomAttribute()
-        randomAttributeNextPlayer() 
+        setGuessed(!guessed)
+        setTimeout(() => {
+            setFoundPlayer(foundNextPlayer)
+            nextPlayer()
+            randomAttribute()
+            randomAttributeNextPlayer()
+            setGuessed(false)
+        }, 1000)
         let i = score;
         if (valueLeft >= valueRight) {
             i++
             setScore(i);
+        } else if (valueLeft = valueLeft) {
+            i++
+            setScore(i);
+        } else {
+            endGame()
         }
-
         console.log("Player chose lower.");
+    }
 
+    const endGame = () => {
+        if(loggedIn = true) {
+            
+        }
     }
 
     return (
@@ -173,7 +194,7 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
                 {gameStarted && <img src={foundNextPlayer.imgLink} alt={foundNextPlayer.name} />}
                 {gameStarted && <p>{foundNextPlayer.name}</p>}
                 {gameStarted && <p>{variableName}</p>}
-                {gameStarted && <p>{valueRight}</p>}
+                {guessed && gameStarted && <p>{valueRight}</p>}
                 {gameStarted && <button onClick={higher}>higher</button>}
                 {gameStarted && <button onClick={lower}>lower</button>}
             </div>}
