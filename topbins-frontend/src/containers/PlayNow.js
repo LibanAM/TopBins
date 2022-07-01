@@ -19,6 +19,7 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
     const [valueRight, setValueRight] = useState("")
     const [propertyName, setPropertyName] = useState("")
     const [variableName, setVariableName] = useState("")
+    const [score, setScore] = useState(0);
 
 
 
@@ -125,12 +126,20 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
         nextPlayer()
         randomAttribute()
         randomAttributeNextPlayer()
+        
         // console.log(currentAcc);
     }
 
     const higher = () => {
         setFoundPlayer(foundNextPlayer)
         nextPlayer()
+        randomAttribute()
+        randomAttributeNextPlayer() 
+        let i = score;
+        if (valueLeft <= valueRight) {
+            i++
+            setScore(i);
+        }
         console.log("Player chose higher.");
     }
 
@@ -138,7 +147,12 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
         setFoundPlayer(foundNextPlayer)
         nextPlayer()
         randomAttribute()
-        randomAttributeNextPlayer()        
+        randomAttributeNextPlayer() 
+        let i = score;
+        if (valueLeft >= valueRight) {
+            i++
+            setScore(i);
+        }
 
         console.log("Player chose lower.");
 
@@ -165,7 +179,7 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
             </div>}
 
             <div>
-                {/* <p>Current score: {score}</p> */}
+                {gameStarted && <p>Current score: {score}</p>}
                 {loggedIn && <p>High-Score: {currentAcc.score}</p>}
             </div>
 
