@@ -8,7 +8,7 @@ import usePersistedState from "../usePersistedState";
 
 
 
-const PlayNow = ({ loggedIn, currentAcc }) => {
+const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
 
     // const [allPlayers, setAllPlayers] = usePersistedState('allPlayers', []);
     const [allPlayers, setAllPlayers] = useState([]);
@@ -133,50 +133,67 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
 
     const higher = () => {
         setGuessed(!guessed)
-        setTimeout(() => {
-            setFoundPlayer(foundNextPlayer)
-            nextPlayer()
-            randomAttribute()
-            randomAttributeNextPlayer()
-            setGuessed(false)
-        }, 1000)
         let i = score;
         if (valueLeft <= valueRight) {
             i++
             setScore(i);
-        } else if (valueLeft = valueLeft) {
-            i++
-            setScore(i);
-        }
-        console.log("Player chose higher.");
-    }
-
-    const lower = () => {
-        setGuessed(!guessed)
-        setTimeout(() => {
-            setFoundPlayer(foundNextPlayer)
-            nextPlayer()
-            randomAttribute()
-            randomAttributeNextPlayer()
-            setGuessed(false)
-        }, 1000)
-        let i = score;
-        if (valueLeft >= valueRight) {
-            i++
-            setScore(i);
-        } else if (valueLeft = valueLeft) {
+        } else if (valueLeft == valueRight) {
             i++
             setScore(i);
         } else {
             endGame()
         }
+        setTimeout(() => {
+            setFoundPlayer(foundNextPlayer)
+            nextPlayer()
+            randomAttribute()
+            randomAttributeNextPlayer()
+            setGuessed(false)
+        }, 1000)
+        console.log("Player chose higher.");
+    }
+
+    const lower = () => {
+        setGuessed(!guessed)
+        let i = score;
+        if (valueLeft >= valueRight) {
+            i++
+            setScore(i);
+        } else if (valueLeft == valueRight) {
+            i++
+            setScore(i);
+        } else {
+            endGame()
+        }
+        setTimeout(() => {
+            setFoundPlayer(foundNextPlayer)
+            nextPlayer()
+            randomAttribute()
+            randomAttributeNextPlayer()
+            setGuessed(false)
+        }, 1000)
+        
         console.log("Player chose lower.");
     }
 
     const endGame = () => {
-        if(loggedIn = true) {
-            
+        if (loggedIn = true) {
+            const newHighScore = {
+                name: currentAcc.name,
+                emailAddress: currentAcc.emailAddress,
+                password: currentAcc.password,
+                score: score
+            }
+            fetch(`http://localhost:8080/users/update/${currentAcc.id}`, {
+                method: "PUT",
+                headers: { "Content-type" : "application/json" },
+                body: JSON.stringify(newHighScore)
+            })
+            .then(response => response.json())
+            .then(updatedUser => setCurrentAcc(updatedUser))
         }
+        setFoundPlayer([])
+        setNextFoundPlayer([])
     }
 
     return (
@@ -201,7 +218,7 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
 
             <div>
                 {gameStarted && <p>Current score: {score}</p>}
-                {loggedIn && <p>High-Score: {currentAcc.score}</p>}
+                {currentAcc !== [] && <p>High-Score: {currentAcc.score}</p>}
             </div>
 
         </>
