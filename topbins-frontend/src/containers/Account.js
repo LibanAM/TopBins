@@ -138,6 +138,7 @@ const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
         </Modal>
         <button className="delete-btn" onClick={handleDelete}>Delete</button>
       </div>
+      <br/><br/><br/>
     </div>
   )
 }

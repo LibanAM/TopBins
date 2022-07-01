@@ -19,7 +19,7 @@ public class PlayerController {
     @GetMapping
     public ResponseEntity<List<Player>> getPlayerByNameOrAllPlayers(@RequestParam(required = false, name = "name") String name) {
         if (name != null){
-            return new ResponseEntity<>(playerRepository.findByNameIgnoreCase(name), HttpStatus.OK);
+            return new ResponseEntity<>(playerRepository.findByNameIsContainingIgnoreCase(name), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(playerRepository.findAll(), HttpStatus.OK);
         }
