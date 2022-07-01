@@ -10,11 +10,13 @@ import usePersistedState from "../usePersistedState";
 
 const PlayNow = ({ loggedIn, currentAcc }) => {
 
-    const [allPlayers, setAllPlayers] = usePersistedState('allPlayers', []);
+    // const [allPlayers, setAllPlayers] = usePersistedState('allPlayers', []);
+    const [allPlayers, setAllPlayers] = useState([]);
     let [foundPlayer, setFoundPlayer] = useState([])
     let [foundNextPlayer, setNextFoundPlayer] = useState([])
-    const [attribute, setAttribute] = useState([])
     const [gameStarted, setGameStarted] = useState(false);
+    const [valueLeft, setValueLeft] = useState("")
+    const [valueRight, setValueRight] = useState("")
 
 
 
@@ -24,11 +26,11 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
             .then((data) => setAllPlayers(data));
     }, []);
 
-    useEffect(() => {
-        console.log(allPlayers);
-        // setTimeout(fetchRandomPlayer, 50)
-        // fetchRandomPlayer()
-    }, [allPlayers])
+    // useEffect(() => {
+    //     console.log(allPlayers);
+    //     // setTimeout(fetchRandomPlayer, 50)
+    //     // fetchRandomPlayer()
+    // }, [allPlayers])
 
     let randomPlayerNumber;
     const fetchRandomPlayer = () => {
@@ -39,24 +41,24 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
         // setPlayerImage(randomPlayer.imgLink)
         // console.log(playerImage);
         // randomAttribute()
+
+        
     }
-
-
-    var randomPropertyValue;
-
-    const randomIntFromInterval = (min, max) => { 
-        return Math.floor(Math.random() * (max - min + 1) + min)
-      }
-
+    
     const randomAttribute = () => {
-        var keys = Object.keys(foundPlayer)
-        setAttribute(foundPlayer[keys * randomIntFromInterval(4,9)])
-        console.log(keys);
-        console.log(foundPlayer[keys])
-        console.log(foundPlayer[keys[keys.length * randomIntFromInterval(4,9)]]);
-        console.log(randomPropertyValue);
-
+        const keys = Object.keys(foundPlayer);
+        const keysFiltered = keys.filter(key => key.search("id") && key.search("imgLink") && key.search("name") 
+                                                && key.search("id") && key.search("team") && key.search("position")
+                                                && key.search("nationality"))
+        const randomNumber = Math.floor(Math.random() * keysFiltered.length);
+        const randomKey = keysFiltered[randomNumber];
+        setValueLeft(foundPlayer[randomKey])
+        console.log(valueLeft)
     }
+
+    useEffect(() => {
+        randomAttribute()
+    }, [foundPlayer])
 
     let nextRandomNumber;
     const nextPlayer = () => {
@@ -68,8 +70,22 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
         setNextFoundPlayer(nextRandomPlayer)
         console.log(nextRandomPlayer);
         nextRandomNumber = Math.round(Math.random() * 99);
-        
     }
+
+    const randomAttributeNextPlayer = () => {
+        const keys = Object.keys(foundNextPlayer);
+        const keysFiltered = keys.filter(key => key.search("id") && key.search("imgLink") && key.search("name") 
+                                                && key.search("id") && key.search("team") && key.search("position")
+                                                && key.search("nationality"))
+        const randomNumber = Math.floor(Math.random() * keysFiltered.length);
+        const randomKey = keysFiltered[randomNumber];
+        setValueRight(foundNextPlayer[randomKey])
+        console.log(valueRight)
+    }
+
+    useEffect(() => {
+        randomAttributeNextPlayer()
+    }, [foundNextPlayer])
 
 
     const hasGameStarted = () => {
@@ -93,6 +109,7 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
         setFoundPlayer(foundNextPlayer)
         nextPlayer()
         randomAttribute()
+        randomAttributeNextPlayer()
 
         console.log("Player chose lower.");
 
@@ -106,17 +123,17 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
                 <img src={foundPlayer.imgLink} alt={foundPlayer.name} />
                 <p>{foundPlayer.name}</p>
                 <p>leagueGoals</p>
-                <p>{attribute}</p>
+                <p>{valueLeft}</p>
             </div>}
 
             {gameStarted && <div className="game-pictures">
-            {gameStarted && <img src={foundNextPlayer.imgLink} alt={foundNextPlayer.name} />}
+                {gameStarted && <img src={foundNextPlayer.imgLink} alt={foundNextPlayer.name} />}
                 {gameStarted && <p>{foundNextPlayer.name}</p>}
                 {gameStarted && <p>leagueGoals</p>}
-                {/* <p>{foundNextPlayer.{attributeName}}</p> */}
+                <p>{valueRight}</p>
                 {gameStarted && <button onClick={higher}>higher</button>}
                 {gameStarted && <button onClick={lower}>lower</button>}
-                </div>}
+            </div>}
 
             <div>
                 {/* <p>Current score: {score}</p> */}
