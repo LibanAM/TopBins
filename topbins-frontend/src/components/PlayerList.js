@@ -1,14 +1,15 @@
 import React from 'react'
 import Player from './Player'
 
-const PlayerList = ({players}) => {
+const PlayerList = ({players, deletePlayer}) => {
     return (
 
         <section className="cards">
             {players.map((player) => (
                 <Player
                     key={player.id}
-                    player={player} />
+                    player={player}
+                    deletePlayer={deletePlayer} />
             ))}
 
         </section>

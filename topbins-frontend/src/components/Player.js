@@ -1,7 +1,12 @@
 import React from 'react'
 import './Player.css';
 
-const Player = ({ player }) => {
+const Player = ({ player, deletePlayer }) => {
+
+    const handleDelete = () => {
+        deletePlayer(player.id)
+    }
+
     return (
         <div className="player-container">
                 <div className="card-image">
@@ -19,7 +24,9 @@ const Player = ({ player }) => {
                             {player.team.name}
                         </li>
                     </ul>
-            </div>
+                    <button className="edit-player-btn">Edit</button>
+                    <button className="delete-player-btn" onClick={handleDelete}>Delete</button>
+                </div>
         </div>
     )
 }
