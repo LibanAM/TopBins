@@ -1,11 +1,31 @@
 import React from 'react'
 import './Player.css';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css'
 
 const Player = ({ player, deletePlayer }) => {
 
-    const handleDelete = () => {
-        deletePlayer(player.id)
-    }
+    // const handleDelete = () => {
+    //     deletePlayer(player.id)
+    // }
+    const handleDelete = (event) => {
+        event.preventDefault();
+    
+        confirmAlert({
+          title:"Cofirm",
+          message:"Are you sure you want to delete your account?",
+          buttons:[
+            {
+              label: "Yes",
+              onClick: () => {deletePlayer(player.id)}
+            },
+            {
+              label: "No",
+              onClick: () => {}
+            }
+          ]
+        })
+      }
 
     return (
         <div>
