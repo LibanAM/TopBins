@@ -32,16 +32,6 @@ const PlayerList = ({ players, deletePlayer, postPlayer, teams }) => {
         setStatePlayer(copiedPlayer);
     }
 
-    // const [newNationality, setNewNationality] = useState("");
-
-    // const handleNationality = (event) => {
-    //     let selectedNationality = event.target.value;
-    //     setNewNationality(selectedNationality);
-    //     let copiedPlayer = { ...statePlayer };
-    //     copiedPlayer.nationality = selectedNationality
-    //     setStatePlayer(copiedPlayer);
-    // }
-
     const [newPosition, setNewPosition] = useState("");
 
     const handlePosition = (event) => {
@@ -203,7 +193,8 @@ const PlayerList = ({ players, deletePlayer, postPlayer, teams }) => {
                     <Player
                         key={player.id}
                         player={player}
-                        deletePlayer={deletePlayer} />
+                        deletePlayer={deletePlayer} 
+                        />
                 ))}
 
             </section>
