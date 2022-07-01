@@ -17,6 +17,8 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
     const [gameStarted, setGameStarted] = useState(false);
     const [valueLeft, setValueLeft] = useState("")
     const [valueRight, setValueRight] = useState("")
+    const [propertyName, setPropertyName] = useState("")
+    const [variableName, setVariableName] = useState("")
 
 
 
@@ -41,8 +43,6 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
         // setPlayerImage(randomPlayer.imgLink)
         // console.log(playerImage);
         // randomAttribute()
-
-        
     }
     
     const randomAttribute = () => {
@@ -52,17 +52,45 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
                                                 && key.search("nationality"))
         const randomNumber = Math.floor(Math.random() * keysFiltered.length);
         const randomKey = keysFiltered[randomNumber];
+        console.log(randomKey);
+        if (randomKey == "yellowCards"){
+            setVariableName("Yellow Cards")
+            setPropertyName("yellowCards")
+
+        } else if(randomKey == "leagueGoals") {
+            setVariableName("League Goals")
+            setPropertyName("leagueGoals")
+
+        } else if(randomKey == "internationalGoals") {
+            setVariableName("International Goals")
+            setPropertyName("internationalGoals")
+
+        } else if(randomKey == "assists") {
+            setVariableName("Assists")
+            setPropertyName("assists")
+
+        } else if(randomKey == "redCards") {
+            setVariableName("Red Cards")
+            setPropertyName("redCards")
+
+        } else if(randomKey == "leagueAppearances") {
+            setVariableName("League Appearances")
+            setPropertyName("leagueAppearances")
+        }
+        // console.log(variableName);
         setValueLeft(foundPlayer[randomKey])
-        console.log(valueLeft)
+        // console.log(valueLeft)
     }
 
     useEffect(() => {
         randomAttribute()
-    }, [foundPlayer])
+    }, [foundPlayer], [variableName])
 
-    let nextRandomNumber;
+    
+
+
     const nextPlayer = () => {
-        nextRandomNumber = Math.round(Math.random() * 99);
+        let nextRandomNumber = Math.round(Math.random() * 99);
         while (nextRandomNumber === randomPlayerNumber) {
             nextRandomNumber = Math.round(Math.random() * 99);
         }
@@ -74,18 +102,18 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
 
     const randomAttributeNextPlayer = () => {
         const keys = Object.keys(foundNextPlayer);
-        const keysFiltered = keys.filter(key => key.search("id") && key.search("imgLink") && key.search("name") 
-                                                && key.search("id") && key.search("team") && key.search("position")
-                                                && key.search("nationality"))
+        console.log(variableName);
+        const keysFiltered = keys.filter(key => key.match(propertyName))
+        console.log(keysFiltered)
         const randomNumber = Math.floor(Math.random() * keysFiltered.length);
-        const randomKey = keysFiltered[randomNumber];
+        const randomKey = keysFiltered[randomNumber]; 
         setValueRight(foundNextPlayer[randomKey])
         console.log(valueRight)
     }
 
     useEffect(() => {
         randomAttributeNextPlayer()
-    }, [foundNextPlayer])
+    }, [variableName])
 
 
     const hasGameStarted = () => {
@@ -96,6 +124,7 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
         fetchRandomPlayer()
         nextPlayer()
         randomAttribute()
+        randomAttributeNextPlayer()
         // console.log(currentAcc);
     }
 
@@ -109,7 +138,7 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
         setFoundPlayer(foundNextPlayer)
         nextPlayer()
         randomAttribute()
-        randomAttributeNextPlayer()
+        randomAttributeNextPlayer()        
 
         console.log("Player chose lower.");
 
@@ -122,15 +151,15 @@ const PlayNow = ({ loggedIn, currentAcc }) => {
             {gameStarted && <div className="game-pictures">
                 <img src={foundPlayer.imgLink} alt={foundPlayer.name} />
                 <p>{foundPlayer.name}</p>
-                <p>leagueGoals</p>
+                <p>{variableName}</p>
                 <p>{valueLeft}</p>
             </div>}
 
             {gameStarted && <div className="game-pictures">
                 {gameStarted && <img src={foundNextPlayer.imgLink} alt={foundNextPlayer.name} />}
                 {gameStarted && <p>{foundNextPlayer.name}</p>}
-                {gameStarted && <p>leagueGoals</p>}
-                <p>{valueRight}</p>
+                {gameStarted && <p>{variableName}</p>}
+                {gameStarted && <p>{valueRight}</p>}
                 {gameStarted && <button onClick={higher}>higher</button>}
                 {gameStarted && <button onClick={lower}>lower</button>}
             </div>}
