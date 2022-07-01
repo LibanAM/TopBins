@@ -36,6 +36,7 @@ const SignIn = ({ setCurrentAcc, setLoggedIn, loggedIn, currentAcc }) => {
     navigate('/account');
 
 
+
   }
 
   const handlePasswordShown = (event) => {
