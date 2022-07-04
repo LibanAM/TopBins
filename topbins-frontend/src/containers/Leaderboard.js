@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import './Leaderboard.css';
+import DarkMode from "./DarkMode";
 
 const Leaderboard = () => {
 
@@ -33,6 +34,7 @@ const Leaderboard = () => {
           ))}
         </tbody>
       </table>
+      <DarkMode />
     </div>
   );
 }
