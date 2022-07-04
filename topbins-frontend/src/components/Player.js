@@ -4,7 +4,7 @@ import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css'
 import Modal from "react-modal/lib/components/Modal";
 
-const Player = ({ player, deletePlayer}) => {
+const Player = ({ player, deletePlayer }) => {
 
 
     const handleDelete = (event) => {
@@ -49,18 +49,18 @@ const Player = ({ player, deletePlayer}) => {
 
     const [updatePlayer, setUpdatePlayer] = useState(
         {
-        name: player.name,
-        nationality: player.nationality,
-        position: player.position,
-        leagueGoals: "",
-        internationalGoals: "",
-        leagueAppearances: "",
-        assists: "",
-        yellowCards: "",
-        redCards: "",
-        team: player.team,
-        imgLink: player.imgLink
-      }
+            name: player.name,
+            nationality: player.nationality,
+            position: player.position,
+            leagueGoals: "",
+            internationalGoals: "",
+            leagueAppearances: "",
+            assists: "",
+            yellowCards: "",
+            redCards: "",
+            team: player.team,
+            imgLink: player.imgLink
+        }
     );
 
     const handleChange = (event) => {
@@ -74,16 +74,16 @@ const Player = ({ player, deletePlayer}) => {
     const handleUpdate = (event) => {
         event.preventDefault();
 
-          console.log("this is the body: ", updatePlayer);
+        console.log("this is the body: ", updatePlayer);
 
-        fetch(`http://localhost:8080/players/${player.id}`, 
-        {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(updatePlayer)
-        })
-        .then(response => response.json())
-        .then(data => console.log(data))
+        fetch(`http://localhost:8080/players/${player.id}`,
+            {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(updatePlayer)
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
         setIsOpen(false);
 
     }
@@ -115,8 +115,8 @@ const Player = ({ player, deletePlayer}) => {
                                 type="text"
                                 placeholder={player.leagueGoals}
                                 name="leagueGoals"
-                                onChange={handleChange}
                                 value={updatePlayer.leagueGoals}
+                                onChange={handleChange}
                             />
 
                             <p className="edit-input-title">International Goals</p>
@@ -124,8 +124,8 @@ const Player = ({ player, deletePlayer}) => {
                                 type="text"
                                 placeholder={player.internationalGoals}
                                 name="internationalGoals"
-                                onChange={handleChange}
                                 value={updatePlayer.internationalGoals}
+                                onChange={handleChange}
                             />
 
                             <p className="edit-input-title">League Appearances</p>
@@ -133,8 +133,8 @@ const Player = ({ player, deletePlayer}) => {
                                 type="text"
                                 placeholder={player.leagueAppearances}
                                 name="leagueAppearances"
-                                onChange={handleChange}
                                 value={updatePlayer.leagueAppearances}
+                                onChange={handleChange}
                             />
 
                             <p className="edit-input-title">Assists</p>
@@ -142,8 +142,8 @@ const Player = ({ player, deletePlayer}) => {
                                 type="text"
                                 placeholder={player.assists}
                                 name="assists"
-                                onChange={handleChange}
                                 value={updatePlayer.assists}
+                                onChange={handleChange}
                             />
 
                             <p className="edit-input-title">Yellow Cards</p>
@@ -151,8 +151,8 @@ const Player = ({ player, deletePlayer}) => {
                                 type="text"
                                 placeholder={player.yellowCards}
                                 name="yellowCards"
-                                onChange={handleChange}
                                 value={updatePlayer.yellowCards}
+                                onChange={handleChange}
                             />
 
                             <p className="edit-input-title">Red Cards</p>
@@ -160,11 +160,11 @@ const Player = ({ player, deletePlayer}) => {
                                 type="text"
                                 placeholder={player.redCards}
                                 name="redCards"
-                                onChange={handleChange}
                                 value={updatePlayer.red}
+                                onChange={handleChange}
                             />
                         </form>
-                        <br/>
+                        <br />
                         <button className="cancel-btn" onClick={closeModal}>Cancel</button>
                         <button className="submit-btn" onClick={handleUpdate}>Submit</button>
                     </Modal>
