@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Nav from "./Nav";
 import './PlayNow.css';
 import usePersistedState from "../usePersistedState";
+import { useNavigate } from "react-router";
 
 
 
@@ -21,8 +22,10 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
     const [variableName, setVariableName] = useState("")
     const [score, setScore] = useState(0);
     const [guessed, setGuessed] = useState(false);
+    const [lost, setLost] = useState(false);
+    const [scoreMsg, setScoreMsg] = useState("");
 
-
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch("http://localhost:8080/players")
@@ -41,7 +44,7 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
         randomPlayerNumber = Math.round(Math.random() * 99)
         let randomPlayer = allPlayers.filter(player => player.id == randomPlayerNumber)
         setFoundPlayer(randomPlayer[0])
-        console.log(randomPlayer);
+        console.log(randomPlayer[0]);
         // setPlayerImage(randomPlayer.imgLink)
         // console.log(playerImage);
         // randomAttribute()
@@ -137,19 +140,26 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
         if (valueLeft <= valueRight) {
             i++
             setScore(i);
+            setTimeout(() => {
+                setFoundPlayer(foundNextPlayer)
+                nextPlayer()
+                randomAttribute()
+                randomAttributeNextPlayer()
+                setGuessed(false)
+            }, 1000)
         } else if (valueLeft == valueRight) {
             i++
             setScore(i);
+            setTimeout(() => {
+                setFoundPlayer(foundNextPlayer)
+                nextPlayer()
+                randomAttribute()
+                randomAttributeNextPlayer()
+                setGuessed(false)
+            }, 1000)
         } else {
             endGame()
         }
-        setTimeout(() => {
-            setFoundPlayer(foundNextPlayer)
-            nextPlayer()
-            randomAttribute()
-            randomAttributeNextPlayer()
-            setGuessed(false)
-        }, 1000)
         console.log("Player chose higher.");
     }
 
@@ -159,55 +169,70 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
         if (valueLeft >= valueRight) {
             i++
             setScore(i);
+            setTimeout(() => {
+                setFoundPlayer(foundNextPlayer)
+                nextPlayer()
+                randomAttribute()
+                randomAttributeNextPlayer()
+                setGuessed(false)
+            }, 1000)
         } else if (valueLeft == valueRight) {
             i++
             setScore(i);
+            setTimeout(() => {
+                setFoundPlayer(foundNextPlayer)
+                nextPlayer()
+                randomAttribute()
+                randomAttributeNextPlayer()
+                setGuessed(false)
+            }, 1000)
         } else {
             endGame()
         }
-        setTimeout(() => {
-            setFoundPlayer(foundNextPlayer)
-            nextPlayer()
-            randomAttribute()
-            randomAttributeNextPlayer()
-            setGuessed(false)
-        }, 1000)
-        
         console.log("Player chose lower.");
     }
 
     const endGame = () => {
         if (loggedIn = true) {
-            const newHighScore = {
-                name: currentAcc.name,
-                emailAddress: currentAcc.emailAddress,
-                password: currentAcc.password,
-                score: score
+            if (score > currentAcc.score) {
+                setScoreMsg("You set a new high score!")
+                const newHighScore = {
+                    name: currentAcc.name,
+                    emailAddress: currentAcc.emailAddress,
+                    password: currentAcc.password,
+                    score: score,
+                    admin: currentAcc.admin
+                }
+                fetch(`http://localhost:8080/users/update/${currentAcc.id}`, {
+                    method: "PUT",
+                    headers: { "Content-type": "application/json" },
+                    body: JSON.stringify(newHighScore)
+                })
+                    .then(response => response.json())
+                    .then(updatedUser => setCurrentAcc(updatedUser))
+            } else if (score < currentAcc.score) {
+                setScoreMsg("You haven't set a new high score")
             }
-            fetch(`http://localhost:8080/users/update/${currentAcc.id}`, {
-                method: "PUT",
-                headers: { "Content-type" : "application/json" },
-                body: JSON.stringify(newHighScore)
-            })
-            .then(response => response.json())
-            .then(updatedUser => setCurrentAcc(updatedUser))
         }
-        setFoundPlayer([])
-        setNextFoundPlayer([])
+        // navigate('/playnow/endgame')
+        setTimeout(() => {setLost(!lost)}, 1000)
+    }
+
+    const restartGame = () => {
+        window.location.reload(true)
     }
 
     return (
         <>
-            <Nav />
-            {!gameStarted && <button onClick={start}>START GAME</button>}
-            {gameStarted && <div className="game-pictures">
+            {!lost && !gameStarted && <button onClick={start}>START GAME</button>}
+            {!lost && gameStarted && <div className="game-pictures">
                 <img src={foundPlayer.imgLink} alt={foundPlayer.name} />
                 <p>{foundPlayer.name}</p>
                 <p>{variableName}</p>
                 <p>{valueLeft}</p>
             </div>}
 
-            {gameStarted && <div className="game-pictures">
+            {!lost && gameStarted && <div className="game-pictures">
                 {gameStarted && <img src={foundNextPlayer.imgLink} alt={foundNextPlayer.name} />}
                 {gameStarted && <p>{foundNextPlayer.name}</p>}
                 {gameStarted && <p>{variableName}</p>}
@@ -216,10 +241,18 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
                 {gameStarted && <button onClick={lower}>lower</button>}
             </div>}
 
-            <div>
+            {!lost && <div>
                 {gameStarted && <p>Current score: {score}</p>}
                 {currentAcc !== [] && <p>High-Score: {currentAcc.score}</p>}
-            </div>
+            </div>}
+
+            {lost && <div>
+                <h2>Unlucky, You lost!</h2>
+                <p>You got {score} correct before losing.</p>
+                <p>{scoreMsg}</p>
+                <button onClick={restartGame}>RESTART</button>
+            </div>}
+
 
         </>
     );

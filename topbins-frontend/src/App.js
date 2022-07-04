@@ -8,6 +8,10 @@ import Register from './containers/Register';
 import Leaderboard from './containers/Leaderboard';
 import usePersistedState from './usePersistedState';
 import Admin from './containers/Admin';
+import Nav from './containers/Nav';
+
+
+
 
 
 function App() {
@@ -18,16 +22,24 @@ function App() {
   return (
     <>
       <Router>
+        <Nav loggedIn={loggedIn} currentAcc={currentAcc} setLoggedIn={setLoggedIn} setCurrentAcc={setCurrentAcc}/>
         <Routes>
-          <Route path='/playnow' element={<PlayNow currentAcc={currentAcc} setCurrentAcc={setCurrentAcc}/>}></Route>
-          <Route path='/' element={<CoverPage />} />
-          <Route path='/account' element={<Account currentAcc={currentAcc} setCurrentAcc={setCurrentAcc} 
-            loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>} />
-          <Route path='/signIn' element={<SignIn loggedIn={loggedIn} setLoggedIn={setLoggedIn}
+          <Route path='/playnow' element={<PlayNow currentAcc={currentAcc} setCurrentAcc={setCurrentAcc} />}></Route>
+
+          <Route path='/' element={<CoverPage loggedIn={loggedIn} />} />
+
+          <Route path='/account' element={loggedIn ? <Account currentAcc={currentAcc} setCurrentAcc={setCurrentAcc}
+            loggedIn={loggedIn} setLoggedIn={setLoggedIn} /> : <SignIn loggedIn={loggedIn} setLoggedIn={setLoggedIn}
             currentAcc={currentAcc} setCurrentAcc={setCurrentAcc} />} />
-          <Route path='/register' element={<Register loggedIn={loggedIn} setLoggedIn={setLoggedIn} 
-            currentAcc={currentAcc} setCurrentAcc={setCurrentAcc}/>} />
+
+          {/* <Route path='/signIn' element={<SignIn loggedIn={loggedIn} setLoggedIn={setLoggedIn}
+            currentAcc={currentAcc} setCurrentAcc={setCurrentAcc} />} /> */}
+
+          <Route path='/register' element={<Register loggedIn={loggedIn} setLoggedIn={setLoggedIn}
+            currentAcc={currentAcc} setCurrentAcc={setCurrentAcc} />} />
+
           <Route path='/leaderboard' element={<Leaderboard />} />
+
           <Route path='/admin' element={<Admin />} />
 
 
