@@ -1,9 +1,9 @@
-body {
+/* body {
     display: flex;
     min-height: 100vh;
     justify-content: center;
     align-items: center;
-} 
+}  */
 .account-container{
     width: 360px;
     background-color: white;

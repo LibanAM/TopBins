@@ -1,12 +1,7 @@
-.nav-item{
-    display: inline;
-
-}
-
 
 /* to show that we have an actual nav bar - clearer -- find another colour for nav bar */
 .nav-bar > ul{
-
+    background-color: #816AFE;
     /* position: fixed; */
     /* top: 0;
     left: 0;
@@ -25,7 +20,7 @@
     align-items: center;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 
@@ -38,7 +33,7 @@ nav > ul > li > a{
 }
 
 nav > ul > li > a:hover {
-    /* color: #81e2a8; */
+    color: #81e2a8;
     border: solid; 
     border-radius: 10%;
     padding: 20px;
@@ -48,8 +43,8 @@ nav > ul > li > a:hover {
 /* Drop down menu layout for Account */
 
 .dropbtn {
-    /* background-color: #816AFE; */
-    /* color: white; */
+    background-color: #816AFE;
+    color: white;
     padding: 16px;
     font-size: 16px;
     /* font-family: 'Red Hat Mono', monospace; */

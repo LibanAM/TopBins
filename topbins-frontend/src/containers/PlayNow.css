@@ -1,0 +1,70 @@
+.game-window {
+    display: flex;
+    position: relative;
+    /* width: 40%; */
+    justify-content: space-evenly;
+    margin: 0px;
+    padding: 0px;
+}
+
+.game-pictures {
+    flex: 50%;
+    padding: 5px;
+    position: relative;
+    align-items: center;
+}
+
+.game-pictures>img {
+    padding: 0px;
+    width: 700px;
+    margin: 0px;
+}
+
+.text-content:hover{
+    color: white;
+}
+
+.game-pictures .player-name {
+    /* text-align: center; */
+
+    position: absolute;
+    top: 50%;
+    left: auto;
+    right: auto;
+    /* color: white; */
+    font-weight: 800;
+    font-size: x-large;
+}
+
+.game-pictures .player-variablename {
+    position: absolute;
+    top: 55%;
+    /* color: white; */
+    font-weight: 800;
+    font-size: large;
+}
+
+.game-pictures .player-value {
+    position: absolute;
+    top: 60%;
+    /* color: white; */
+    font-weight: 800;
+    font-size: large;
+}
+
+
+.game-pictures>#btn-higher {
+    position: absolute;
+    top: 75%;
+    /* color: white; */
+    font-weight: 800;
+    font-size: large;
+}
+
+.game-pictures>#btn-lower {
+    position: absolute;
+    top: 70%;
+    /* color: white; */
+    font-weight: 800;
+    font-size: large;
+}
