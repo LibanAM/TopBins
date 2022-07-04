@@ -42,7 +42,7 @@
   }
 
   .home-btn {
-    color: whitesmoke;
+    color: black;
     font-weight: bolder;
     padding: 1em 2em;
     border: 2px solid var(--colorShadeA);
@@ -70,6 +70,7 @@
   .home-btn:hover {
     background: var(--colorShadeA);
     transform: translate(0, 0.375em);
+    color: whitesmoke;
   }
   
   .home-btn:hover::before {
