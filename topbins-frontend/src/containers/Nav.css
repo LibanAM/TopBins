@@ -2,3 +2,87 @@
     display: inline;
 
 }
+
+
+/* to show that we have an actual nav bar - clearer -- find another colour for nav bar */
+.nav-bar > ul{
+
+    /* position: fixed; */
+    /* top: 0;
+    left: 0;
+    right: 0; */
+    height: 80px;
+    display: flex;
+    align-items: center;
+    /* box-shadow:0 8px 6px -6px rgb(126, 126, 126); */
+}
+/* add logo to the nav bar */
+
+.nar-ul {
+    list-style: none;
+    display: inline;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+nav > ul > li > a{
+    color: white;
+    text-decoration: none;
+    /* font-family: 'Red Hat Mono', monospace; */
+    font-weight: 600;
+    font-size: medium;
+}
+
+nav > ul > li > a:hover {
+    /* color: #81e2a8; */
+    border: solid; 
+    border-radius: 10%;
+    padding: 20px;
+    font-size: medium;
+
+}
+/* Drop down menu layout for Account */
+
+.dropbtn {
+    /* background-color: #816AFE; */
+    /* color: white; */
+    padding: 16px;
+    font-size: 16px;
+    /* font-family: 'Red Hat Mono', monospace; */
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #81e2a8;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    /* font-family: 'Red Hat Mono', monospace; */
+    font-weight: 600;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1; color: #816AFE;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {color: #81e2a8; border: solid; border-radius: 10%; padding: 20px;}

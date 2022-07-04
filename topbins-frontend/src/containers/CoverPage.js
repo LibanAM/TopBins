@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 
-const CoverPage = () => {
+const CoverPage = ({loggedIn}) => {
 
 
     return (
@@ -28,7 +28,7 @@ const CoverPage = () => {
              <div className="buttons" id='app'>
                  <Link to='/playnow/'><button className='play-btn'>PLAY NOW!</button></Link>
                  <Link to='/register'><button className='register-btn'>REGISTER</button></Link>
-                 <Link to='/signIn'><button className='signIn-btn'>SIGN IN</button></Link >
+                 <Link to='/account'><button className='signIn-btn'>{loggedIn ? 'ACCOUNT' : 'SIGN IN'}</button></Link >
                 <Link to='/leaderboard'><button className='leader-btn'>LEADERBOARD</button></Link >
              </div >
 
