@@ -24,12 +24,12 @@ const CoverPage = ({loggedIn}) => {
                  <img src={messiPsg} alt="Messi in a PSG shirt" />
 
              </div>
-
-             <div className="buttons" id='app'>
-                 <Link to='/playnow/'><button className='play-btn'>PLAY NOW!</button></Link>
-                 <Link to='/register'><button className='register-btn'>REGISTER</button></Link>
-                 <Link to='/account'><button className='signIn-btn'>{loggedIn ? 'ACCOUNT' : 'SIGN IN'}</button></Link >
-                <Link to='/leaderboard'><button className='leader-btn'>LEADERBOARD</button></Link >
+             <br/>
+             <div className="buttons">
+                 <Link to='/playnow/'><button className='home-btn'>PLAY NOW!</button></Link>
+                 <Link to='/register'><button className='home-btn'>REGISTER</button></Link>
+                 <Link to='/account'><button className='home-btn'>{loggedIn ? 'ACCOUNT' : 'SIGN IN'}</button></Link >
+                <Link to='/leaderboard'><button className='home-btn'>LEADERBOARD</button></Link >
              </div >
 
             </div >
