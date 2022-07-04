@@ -104,7 +104,7 @@ public class DataLoader implements ApplicationRunner {
         // Player(name, nationality, position, league goals, international goals, apps, assists, yellowCards, redCards, team, img)
 
         Player messi = new Player("Lionel Messi", Nationality.ARGENTINE, Position.MIDFIELDER, 480, 86, 546, 231, 50, 0, psg, "https://i2-prod.mirror.co.uk/incoming/article25417932.ece/ALTERNATES/s1200c/23_Olympique-Marseille-vs-Paris-Saint-Germain-France-24-Oct-2021.jpg");
-        Player neymar = new Player("Neymar da Silva Santos Júnior", Nationality.BRAZILIAN, Position.FORWARD, 191, 74, 318, 116, 79, 7, psg, "https://i2-prod.mirror.co.uk/incoming/article27064871.ece/ALTERNATES/s1200c/0_Neymar.jpg" );
+        Player neymar = new Player("Neymar Júnior", Nationality.BRAZILIAN, Position.FORWARD, 191, 74, 318, 116, 79, 7, psg, "https://i2-prod.mirror.co.uk/incoming/article27064871.ece/ALTERNATES/s1200c/0_Neymar.jpg" );
         Player mbappe = new Player("Kylian Mbappé", Nationality.FRENCH, Position.FORWARD, 135, 27, 183, 61, 26, 1, psg, "https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTc5MjAzODIwNzg0NTI3MDk2/topshot-fbl-fra-ligue1-paris-dijon.jpg" );
         Player ramos = new Player("Sergio Ramos", Nationality.SPANISH, Position.DEFENDER, 76, 23, 520, 31, 161, 21, psg, "https://i2-prod.mirror.co.uk/incoming/article26822072.ece/ALTERNATES/s1200c/0_GettyImages-1240114889.jpg");
         Player donnarumma = new Player("Gianluigi Donnarumma", Nationality.ITALIAN, Position.GOALKEEPER, 0, 0, 232, 0, 18, 0, psg, "https://i2-prod.belfastlive.co.uk/incoming/article21043530.ece/ALTERNATES/s1200c/0_GettyImages-1328326369.jpg");
@@ -140,7 +140,7 @@ public class DataLoader implements ApplicationRunner {
         Player alaba = new Player("David Alaba", Nationality.AUSTRIAN, Position.DEFENDER, 26, 14, 328, 32, 18, 0, realMadrid, "https://i.guim.co.uk/img/media/b880b98cc9c8b01f10a2adb441bf4e68f229d989/0_120_1732_1040/master/1732.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=e3723eb3e0ee03576ac94055e0909991");
         Player modric = new Player("Luka Modric", Nationality.CROATIAN, Position.MIDFIELDER, 54, 22, 476, 93, 66, 1,realMadrid,"https://cdn.givemesport.com/wp-content/uploads/2022/01/22_01_17_992eebfa7bb3b7de83484a39a3f0609d_960-1-1200x1200-c-default.jpg");
         Player benzema = new Player("Karim Benzema", Nationality.FRENCH, Position.FORWARD, 262, 37, 527, 139, 11, 0, realMadrid, "https://i.guim.co.uk/img/media/c5981d6cb04d5390757c846e68df6f37524bd23f/0_270_6900_4140/master/6900.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=e395c53f419cc37a29aa0910243547e2");
-        Player viniciusJr = new Player("Vinícius José Paixão de Oliveira Júnior", Nationality.BRAZILIAN, Position.FORWARD, 31, 1, 154, 26, 19, 0, realMadrid, "https://imgresizer.eurosport.com/unsafe/1200x1200/smart/filters:format(jpeg)/origin-imgresizer.eurosport.com/2021/11/28/3262709-66771448-2560-1440.jpg");
+        Player viniciusJr = new Player("Vinícius Júnior", Nationality.BRAZILIAN, Position.FORWARD, 31, 1, 154, 26, 19, 0, realMadrid, "https://imgresizer.eurosport.com/unsafe/1200x1200/smart/filters:format(jpeg)/origin-imgresizer.eurosport.com/2021/11/28/3262709-66771448-2560-1440.jpg");
         
         Player terStegen = new Player("Marc-André ter Stegen", Nationality.GERMAN, Position.GOALKEEPER, 0, 0, 325, 2, 9, 0, barcelona, "https://cdn.givemesport.com/wp-content/uploads/2022/03/GettyImages-1347865563-1200x1200-c-default.jpg");
         Player pique = new Player("Gerard Piqué", Nationality.SPANISH, Position.DEFENDER, 32, 6, 425, 9, 107, 8, barcelona, "https://img.bleacherreport.net/img/images/photos/003/331/627/hi-res-fda27e82ef0d644f3bf271472bad76b9_crop_exact.jpg?w=1200&h=1200&q=75");
@@ -196,7 +196,7 @@ public class DataLoader implements ApplicationRunner {
         Player patricio = new Player("Rui Patricio", Nationality.PORTUGUESE, Position.GOALKEEPER, 0, 0, 476, 0, 28, 1, asRoma,"https://sportstar.thehindu.com/incoming/article35315665.ece/ALTERNATES/LANDSCAPE_1200/SpainBelgiumPortugalEuro2020Soccer76547jpg-9fe1djpg");
         Player spinazzola = new Player("Leonardo Spinazzola", Nationality.ITALIAN, Position.DEFENDER, 3, 0, 114, 15, 7, 0, asRoma,"https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTgyMTI1OTE3ODg2MjI3Nzg0/sipa_32594744.jpg");
         Player mkhitaryan = new Player("Henrikh Mkhitaryan", Nationality.ARMENIAN, Position.MIDFIELDER, 129, 32, 397, 95, 45, 1, asRoma,"https://i2-prod.mirror.co.uk/incoming/article20076224.ece/ALTERNATES/s1200c/0_Italy-AS-Roma-US-Sassuolo.jpg");
-        Player abraham = new Player("Tammy Abraham", Nationality.ENGLISH, Position.FORWARD, 43, 3, 126, 112, 11, 0, asRoma,"https://i2-prod.dailystar.co.uk/incoming/article25136188.ece/ALTERNATES/s1200c/0_Tammy-Abraham-Roma-Empoli.jpg");
+        Player abraham = new Player("Tammy Abraham", Nationality.ENGLISH, Position.FORWARD, 43, 3, 126, 12, 11, 0, asRoma,"https://i2-prod.dailystar.co.uk/incoming/article25136188.ece/ALTERNATES/s1200c/0_Tammy-Abraham-Roma-Empoli.jpg");
         Player oliveira = new Player("Sérgio Oliveira", Nationality.PORTUGUESE, Position.MIDFIELDER, 35, 0, 199, 19, 45, 1, asRoma,"https://pbs.twimg.com/media/FThwOa5XsAEJRKD.jpg");
 
         playerRepository.saveAll(Arrays.asList(
