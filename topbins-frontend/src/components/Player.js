@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Player.css';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css'
@@ -47,9 +47,44 @@ const Player = ({ player, deletePlayer}) => {
         setIsOpen(false);
     }
 
+    const [updatePlayer, setUpdatePlayer] = useState(
+        {
+        name: player.name,
+        nationality: player.nationality,
+        position: player.position,
+        leagueGoals: "",
+        internationalGoals: "",
+        leagueAppearances: "",
+        assists: "",
+        yellowCards: "",
+        redCards: "",
+        team: player.team,
+        imgLink: player.imgLink
+      }
+    );
+
+    const handleChange = (event) => {
+        console.log(event);
+        let propertyName = event.target.name;
+        let copiedPlayer = { ...updatePlayer };
+        copiedPlayer[propertyName] = event.target.value;
+        setUpdatePlayer(copiedPlayer);
+    }
+
     const handleUpdate = (event) => {
         event.preventDefault();
 
+          console.log("this is the body: ", updatePlayer);
+
+        fetch(`http://localhost:8080/players/${player.id}`, 
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(updatePlayer)
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        setIsOpen(false);
 
     }
 
@@ -78,43 +113,55 @@ const Player = ({ player, deletePlayer}) => {
                             <p className="edit-input-title">League Goals</p>
                             <input
                                 type="text"
-                                placeholder="League Goals"
+                                placeholder={player.leagueGoals}
                                 name="leagueGoals"
+                                onChange={handleChange}
+                                value={updatePlayer.leagueGoals}
                             />
 
                             <p className="edit-input-title">International Goals</p>
                             <input
                                 type="text"
-                                placeholder="International Goals"
+                                placeholder={player.internationalGoals}
                                 name="internationalGoals"
+                                onChange={handleChange}
+                                value={updatePlayer.internationalGoals}
                             />
 
                             <p className="edit-input-title">League Appearances</p>
                             <input
                                 type="text"
-                                placeholder="League Appearances"
+                                placeholder={player.leagueAppearances}
                                 name="leagueAppearances"
+                                onChange={handleChange}
+                                value={updatePlayer.leagueAppearances}
                             />
 
                             <p className="edit-input-title">Assists</p>
                             <input
                                 type="text"
-                                placeholder="Assists"
+                                placeholder={player.assists}
                                 name="assists"
+                                onChange={handleChange}
+                                value={updatePlayer.assists}
                             />
 
                             <p className="edit-input-title">Yellow Cards</p>
                             <input
                                 type="text"
-                                placeholder="Yellow Cards"
+                                placeholder={player.yellowCards}
                                 name="yellowCards"
+                                onChange={handleChange}
+                                value={updatePlayer.yellowCards}
                             />
 
                             <p className="edit-input-title">Red Cards</p>
                             <input
                                 type="text"
-                                placeholder="Red Cards"
+                                placeholder={player.redCards}
                                 name="redCards"
+                                onChange={handleChange}
+                                value={updatePlayer.red}
                             />
                         </form>
                         <br/>
