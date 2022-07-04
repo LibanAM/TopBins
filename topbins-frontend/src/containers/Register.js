@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import './Register.css';
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
+import DarkMode from "./DarkMode";
 
 const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
 
@@ -171,6 +172,7 @@ const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
 
         </form>
       </div>
+      <DarkMode />
     </div>
     
   );

@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from "react";
 import './SignIn.css';
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 import { useNavigate} from "react-router-dom";
+import DarkMode from "./DarkMode";
+
 
 const SignIn = ({ setCurrentAcc, setLoggedIn, loggedIn, currentAcc }) => {
 
@@ -74,6 +76,7 @@ const SignIn = ({ setCurrentAcc, setLoggedIn, loggedIn, currentAcc }) => {
           <p>New user? <a href="/register">Sign Up</a></p>
         </form>
       </div>
+      <DarkMode />
     </div>
   );
 }
