@@ -1,7 +1,7 @@
 
 /* to show that we have an actual nav bar - clearer -- find another colour for nav bar */
 .nav-bar > ul{
-    background-color: #816AFE;
+    background-color: #35393C;
     /* position: fixed; */
     /* top: 0;
     left: 0;
@@ -13,7 +13,7 @@
 }
 /* add logo to the nav bar */
 
-.nar-ul {
+.nav-ul {
     list-style: none;
     display: inline;
     justify-content: space-evenly;
@@ -25,10 +25,10 @@
 
 
 nav > ul > li > a{
-    color: white;
+    color: #63CCCA;
     text-decoration: none;
     /* font-family: 'Red Hat Mono', monospace; */
-    font-weight: 600;
+    font-weight:bolder;
     font-size: medium;
 }
 
@@ -43,12 +43,12 @@ nav > ul > li > a:hover {
 /* Drop down menu layout for Account */
 
 .dropbtn {
-    background-color: #816AFE;
-    color: white;
+    background-color: #35393C;
+    color: #63CCCA;
     padding: 16px;
     font-size: 16px;
     /* font-family: 'Red Hat Mono', monospace; */
-    font-weight: 600;
+    font-weight: bolder;
     border: none;
     cursor: pointer;
 }
@@ -63,7 +63,7 @@ nav > ul > li > a:hover {
     display: none;
     position: absolute;
     right: 0;
-    background-color: #81e2a8;
+    background-color: #63CCCA;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -78,6 +78,6 @@ nav > ul > li > a:hover {
     font-weight: 600;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1; color: #816AFE;}
+.dropdown-content a:hover {background-color: #397367; color: whitesmoke;}
 .dropdown:hover .dropdown-content {display: block;}
-.dropdown:hover .dropbtn {color: #81e2a8; border: solid; border-radius: 10%; padding: 20px;}
+.dropdown:hover .dropbtn {color: #63CCCA; border: solid; border-radius: 10%; padding: 20px;}

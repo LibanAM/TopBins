@@ -1,18 +1,26 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+
 #cover-page {
-    background-image: linear-gradient(to top, grey, darkgrey);
-    margin: 10px;
+    background-image: linear-gradient(to top, #42858C , #5DA399);
+    margin:10px;
     border-radius: 15px;
-    box-shadow: 7px 11px 5px 5px #eae8e8;
+    border-style: ridge;
+    border-color: #35393C;
+    padding-bottom: 30px;
+
+    /* box-shadow: 7px 11px 5px 5px #eae8e8; */
 
 }
 
 #cover-page>h1 {
     text-align: center;
+    color: whitesmoke;
 }
 
 #cover-page-inner {
     justify-content: space-between;
     display: flex;
+    color: whitesmoke;
 }
 
 #cover-page-inner>img {
@@ -25,13 +33,55 @@
     justify-content: space-around;
 }
 
-.buttons > button:hover{
-    background-color: #ac9eff;
-    background-image: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, .1) 100%);
-    background-repeat: no-repeat;
-    background-size: 200% 100%;
-    color: black;
-    transition: background-size 1s, background-color 1s, color 0.5s
+:root {
+    --colorShadeA: #353535;
+    --colorShadeB: #5DA399;
+    --colorShadeC: #397367;
+    --colorShadeD: #42858C;
+    --colorShadeE: #63CCCA;
+  }
 
-}
-
+  .home-btn {
+    color: whitesmoke;
+    font-weight: bolder;
+    padding: 1em 2em;
+    border: 2px solid var(--colorShadeA);
+    border-radius: 1em;
+    background: var(--colorShadeE);
+    transform-style: preserve-3d;
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+  }
+  .home-btn::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--colorShadeC);
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.75em 0 0 var(--colorShadeA);
+    transform: translate3d(0, 0.75em, -1em);
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+  }
+  
+  .home-btn:hover {
+    background: var(--colorShadeA);
+    transform: translate(0, 0.375em);
+  }
+  
+  .home-btn:hover::before {
+    transform: translate3d(0, 0.75em, -1em);
+  }
+  
+  .home-btn:active {
+    transform: translate(0em, 0.75em);
+  }
+  
+  .home-btn:active::before {
+    transform: translate3d(0, 0, -1em);
+  
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
+  }
