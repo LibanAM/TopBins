@@ -104,7 +104,27 @@ const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
   }
 
   return (
+    // html for background 'flying dots' animation BELOW
+
     <div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+
+{/* // html for background 'flying dots' animation ABOVE */}
+      
       <h1>Register</h1>
       <div className="register-container">
         <img src="" alt="" ></img>
@@ -152,6 +172,7 @@ const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
         </form>
       </div>
     </div>
+    
   );
 }
 
