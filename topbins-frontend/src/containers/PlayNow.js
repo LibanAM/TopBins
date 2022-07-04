@@ -171,7 +171,7 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
                 randomAttribute()
                 randomAttributeNextPlayer()
                 setGuessed(false)
-            }, 1000)
+            }, 1500)
         } else if (valueLeft == valueRight) {
             i++
             setScore(i);
@@ -181,7 +181,7 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
                 randomAttribute()
                 randomAttributeNextPlayer()
                 setGuessed(false)
-            }, 1000)
+            }, 1500)
         } else {
             endGame()
         }
