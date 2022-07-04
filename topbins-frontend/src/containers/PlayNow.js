@@ -239,7 +239,7 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
                 </div>}
             </div>}
 
-            {!lost && <div>
+            {!lost && <div className="scoreboard">
                 {gameStarted && <p>Current score: {score}</p>}
                 {(currentAcc.length != {}) && gameStarted && <p>High-Score: {currentAcc.score}</p>}
             </div>}
