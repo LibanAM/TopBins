@@ -211,7 +211,7 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
             }
         }
         // navigate('/playnow/endgame')
-        setTimeout(() => {setLost(!lost)}, 1000)
+        setTimeout(() => { setLost(!lost) }, 1000)
     }
 
     const restartGame = () => {
@@ -222,30 +222,29 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
         <>
             {!lost && !gameStarted && <button onClick={start}>START GAME</button>}
             {!lost && gameStarted && <div className="game-window">
-            {!lost && gameStarted && <div className="game-pictures">
-                <img src={foundPlayer.imgLink} alt={foundPlayer.name} />
-                <p className="text-content player-name">{foundPlayer.name}</p>
-                <p className="text-content player-variablename">{variableName}</p>
-                <p className="text-content player-value">{valueLeft}</p>
-            </div>}
+                {!lost && gameStarted && <div className="game-pictures">
+                    <img src={foundPlayer.imgLink} alt={foundPlayer.name} />
+                    <p className="text-content player-name">{foundPlayer.name}</p>
+                    <p className="text-content player-variablename">{variableName}</p>
+                    <p className="text-content player-value">{valueLeft}</p>
+                </div>}
 
-            {!lost && gameStarted && <div className="game-pictures">
-                {gameStarted && <img src={foundNextPlayer.imgLink} alt={foundNextPlayer.name} />}
-                {gameStarted && <p className="text-content player-name">{foundNextPlayer.name}</p>}
-                {gameStarted && <p className="text-content player-variablename">{variableName}</p>}
-                {guessed && gameStarted && <p  className="text-content player-value">{valueRight}</p>}
-                {gameStarted && <button id="btn-higher" onClick={higher}>Higher</button>}
-                {gameStarted && <button id="btn-lower" onClick={lower}>Lower</button>}
-            </div>}
-
+                {!lost && gameStarted && <div className="game-pictures">
+                    {gameStarted && <img src={foundNextPlayer.imgLink} alt={foundNextPlayer.name} />}
+                    {gameStarted && <p className="text-content player-name">{foundNextPlayer.name}</p>}
+                    {gameStarted && <p className="text-content player-variablename">{variableName}</p>}
+                    {guessed && gameStarted && <p className="text-content player-value">{valueRight}</p>}
+                    {gameStarted && <button id="btn-higher" onClick={higher}>Higher</button>}
+                    {gameStarted && <button id="btn-lower" onClick={lower}>Lower</button>}
+                </div>}
             </div>}
 
             {!lost && <div>
                 {gameStarted && <p>Current score: {score}</p>}
-                {currentAcc !== [] && gameStarted && <p>High-Score: {currentAcc.score}</p>}
+                {currentAcc.length == 0 && gameStarted && <p>High-Score: {currentAcc.score}</p>}
             </div>}
 
-            {lost && <div>
+            {lost && <div className="end-game">
                 <h2>Unlucky, You lost!</h2>
                 <p>You got {score} correct before losing.</p>
                 <p>{scoreMsg}</p>
