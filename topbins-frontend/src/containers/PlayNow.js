@@ -220,7 +220,7 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
 
     return (
         <>
-            {!lost && !gameStarted && <button onClick={start}>START GAME</button>}
+            {!lost && !gameStarted && <button id="start-btn" onClick={start}>START GAME</button>}
             {!lost && gameStarted && <div className="game-window">
                 {!lost && gameStarted && <div className="game-pictures">
                     <img src={foundPlayer.imgLink} alt={foundPlayer.name} />
@@ -245,7 +245,7 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
             </div>}
 
             {lost && <div className="end-game">
-                <h2>Unlucky, You lost!</h2>
+                <h2>Unlucky, you lost!</h2>
                 <p>You got {score} correct before losing.</p>
                 <p>{scoreMsg}</p>
                 <button onClick={restartGame}>RESTART</button>

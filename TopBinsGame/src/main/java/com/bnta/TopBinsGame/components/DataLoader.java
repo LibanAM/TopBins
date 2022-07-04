@@ -109,7 +109,7 @@ public class DataLoader implements ApplicationRunner {
         Player ramos = new Player("Sergio Ramos", Nationality.SPANISH, Position.DEFENDER, 76, 23, 520, 31, 161, 21, psg, "https://i2-prod.mirror.co.uk/incoming/article26822072.ece/ALTERNATES/s1200c/0_GettyImages-1240114889.jpg");
         Player donnarumma = new Player("Gianluigi Donnarumma", Nationality.ITALIAN, Position.GOALKEEPER, 0, 0, 232, 0, 18, 0, psg, "https://i2-prod.belfastlive.co.uk/incoming/article21043530.ece/ALTERNATES/s1200c/0_GettyImages-1328326369.jpg");
 
-        Player nubel = new Player("Alexander Nubel", Nationality.GERMAN, Position.GOALKEEPER, 85, 0, 0, 0, 2 ,2, asMonaco,"https://pbs.twimg.com/media/FMxKqN7WUAU2kbT.jpg");
+        Player nubel = new Player("Alexander Nubel", Nationality.GERMAN, Position.GOALKEEPER, 85, 0, 85, 0, 2 ,2, asMonaco,"https://pbs.twimg.com/media/FMxKqN7WUAU2kbT.jpg");
         Player badiashile = new Player("Benoît Badiashile", Nationality.FRENCH, Position.DEFENDER, 4, 0, 95, 2, 13, 0, asMonaco, "https://i2-prod.manchestereveningnews.co.uk/incoming/article23870899.ece/ALTERNATES/s1200c/0_GettyImages-1344934778.jpg");
         Player golovin = new Player("Aleksandr Golovin", Nationality.RUSSIAN, Position.MIDFIELDER, 23, 5, 184, 29, 28, 3, asMonaco, "https://i.guim.co.uk/img/media/c7e7abc90381541f5d5bd49a0ec9dd69815aa6c7/0_128_3000_1800/master/3000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=b72b4e638206a1b87a43661a9a9f449c");
         Player volland = new Player("Kevin Volland", Nationality.GERMAN, Position.FORWARD, 102, 1, 316, 81, 51, 1, asMonaco, "https://pbs.twimg.com/media/FRW46-xWUAA6R4l.jpg");
