@@ -3,11 +3,7 @@ import Nav from "./Nav";
 import './PlayNow.css';
 import usePersistedState from "../usePersistedState";
 import { useNavigate } from "react-router";
-
-
-
-
-
+import DarkMode from "./DarkMode";
 
 const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
 
@@ -225,25 +221,28 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
     return (
         <>
             {!lost && !gameStarted && <button onClick={start}>START GAME</button>}
+            {!lost && gameStarted && <div className="game-window">
             {!lost && gameStarted && <div className="game-pictures">
                 <img src={foundPlayer.imgLink} alt={foundPlayer.name} />
-                <p>{foundPlayer.name}</p>
-                <p>{variableName}</p>
-                <p>{valueLeft}</p>
+                <p className="text-content player-name">{foundPlayer.name}</p>
+                <p className="text-content player-variablename">{variableName}</p>
+                <p className="text-content player-value">{valueLeft}</p>
             </div>}
 
             {!lost && gameStarted && <div className="game-pictures">
                 {gameStarted && <img src={foundNextPlayer.imgLink} alt={foundNextPlayer.name} />}
-                {gameStarted && <p>{foundNextPlayer.name}</p>}
-                {gameStarted && <p>{variableName}</p>}
-                {guessed && gameStarted && <p>{valueRight}</p>}
-                {gameStarted && <button onClick={higher}>higher</button>}
-                {gameStarted && <button onClick={lower}>lower</button>}
+                {gameStarted && <p className="text-content player-name">{foundNextPlayer.name}</p>}
+                {gameStarted && <p className="text-content player-variablename">{variableName}</p>}
+                {guessed && gameStarted && <p  className="text-content player-value">{valueRight}</p>}
+                {gameStarted && <button id="btn-higher" onClick={higher}>Higher</button>}
+                {gameStarted && <button id="btn-lower" onClick={lower}>Lower</button>}
+            </div>}
+
             </div>}
 
             {!lost && <div>
                 {gameStarted && <p>Current score: {score}</p>}
-                {currentAcc !== [] && <p>High-Score: {currentAcc.score}</p>}
+                {currentAcc !== [] && gameStarted && <p>High-Score: {currentAcc.score}</p>}
             </div>}
 
             {lost && <div>
@@ -252,6 +251,7 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
                 <p>{scoreMsg}</p>
                 <button onClick={restartGame}>RESTART</button>
             </div>}
+            <DarkMode />
 
 
         </>

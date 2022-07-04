@@ -16,16 +16,17 @@ const Nav = ({loggedIn, currentAcc, setCurrentAcc, setLoggedIn}) => {
 }
 
   return (
-    <nav>
-        <ul className="nav-bar">
-            <Link to="/"><li className="nav-item">HOME</li></Link>
-            <Link to="/playnow"><li className="nav-item">PLAY NOW</li></Link>
-            <Link to="/leaderboard"><li className="nav-item">LEADERBOARD</li></Link>
+
+    <nav className="nav-bar">
+        <ul className="nav-ul">
+            <li className='nav-item'><Link to="/">HOME</Link></li>
+            <li className='nav-item'><Link to="/playnow">PLAY NOW</Link></li>
+            <li className='nav-item'><Link to="/leaderboard">LEADERBOARD</Link></li>
             <div className="dropdown">
-                    <button className="dropbtn"> Account</button>
+                    <button className="dropbtn"> ACCOUNT</button>
                     <div className="dropdown-content" styleleft="left:0">
-                        <a><Link to='/account'>{loggedIn ? "Account" : "Sign in"}</Link></a>
-                        <a onClick={handleLogin}><Link to='/register'>{loggedIn ? "Logout" : "Register"}</Link></a>
+                        <a><Link to='/account'>{loggedIn ? "ACCOUNT" : "SIGN IN"}</Link></a>
+                        <a onClick={handleLogin}><Link to='/register'>{loggedIn ? "LOGOUT" : "REGISTER"}</Link></a>
                     </div>
                 </div>
         </ul>
