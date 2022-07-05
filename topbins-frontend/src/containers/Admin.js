@@ -3,6 +3,8 @@ import PlayerList from '../components/PlayerList'
 import { useState, useEffect } from 'react';
 import Search from '../components/Search';
 import Player from '../components/Player';
+import DarkMode from "./DarkMode";
+
 
 const Admin = () => {
 
@@ -46,11 +48,11 @@ const Admin = () => {
     return (
         <>
             <Search getQuery={(q) => setQuery(q)} />
-            <PlayerList
+            {(query != "") && <PlayerList
                 players={players}
                 deletePlayer={deletePlayer} 
                 teams={teams}
-                postPlayer={postPlayer}/>
+                postPlayer={postPlayer}/>}
         </>
     )
 }

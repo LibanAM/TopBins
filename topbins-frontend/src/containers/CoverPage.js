@@ -2,6 +2,7 @@ import './CoverPage.css';
 import messiPsg from '../images/messiPsg.jpeg';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import DarkMode from "./DarkMode";
 
 
 
@@ -31,7 +32,7 @@ const CoverPage = ({loggedIn}) => {
                  <Link to='/account'><button className='home-btn'>{loggedIn ? 'ACCOUNT' : 'SIGN IN'}</button></Link >
                 <Link to='/leaderboard'><button className='home-btn'>LEADERBOARD</button></Link >
              </div >
-
+            <DarkMode />
             </div >
         </>
     );

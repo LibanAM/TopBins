@@ -1,10 +1,14 @@
-import React from "react";
-import { useState, useRef} from "react";
+import React, { useEffect } from "react";
+import { useState, useRef } from "react";
 import './Account.css';
 import { useNavigate } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css'
 import Modal from "react-modal/lib/components/Modal";
+import DarkMode from "./DarkMode";
+import Admin from "./Admin";
+
+
 
 const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
 
@@ -19,19 +23,19 @@ const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
     event.preventDefault();
 
     confirmAlert({
-      title:"Cofirm",
-      message:"Are you sure you want to delete your account?",
-      buttons:[
+      title: "Cofirm",
+      message: "Are you sure you want to delete your account?",
+      buttons: [
         {
           label: "Yes",
           onClick: () => {
-            fetch(`http://localhost:8080/users/remove/${currentAcc.id}`, 
-            {
-              method: "DELETE",
-              headers: { "Content-Type": "application/json" }
-            })
+            fetch(`http://localhost:8080/users/remove/${currentAcc.id}`,
+              {
+                method: "DELETE",
+                headers: { "Content-Type": "application/json" }
+              })
             setUsers(users.filter(user => user.id !== currentAcc.id));
-            setCurrentAcc([]);
+            setCurrentAcc({});
             setLoggedIn(!loggedIn);
             navigate('/')
 
@@ -39,13 +43,13 @@ const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
         },
         {
           label: "No",
-          onClick: () => {}
+          onClick: () => { }
         }
       ]
     })
   }
 
-  const[modalIsOpen, setIsOpen] = React.useState(false);
+  const [modalIsOpen, setIsOpen] = React.useState(false);
 
   const customStyles = {
     content: {
@@ -66,25 +70,30 @@ const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
     setIsOpen(false);
   }
 
+
+
+
+
+
   const handleUpdate = (event) => {
     event.preventDefault()
 
     const updateUser = {
-      name: inputNewName.current.value,
-      emailAddress: inputNewEmail.current.value,
+      name: inputNewName.current.value != "" ? inputNewName.current.value : currentAcc.name,
+      emailAddress: inputNewEmail.current.value != "" ? inputNewEmail.current.value : currentAcc.emailAddress,
       password: currentAcc.password,
       score: currentAcc.score,
       admin: currentAcc.admin
     };
 
-    fetch(`http://localhost:8080/users/update/${currentAcc.id}`, 
-    {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updateUser)
-    })
-    .then(response => response.json())
-    .then(savedUser => setCurrentAcc(savedUser))
+    fetch(`http://localhost:8080/users/update/${currentAcc.id}`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updateUser)
+      })
+      .then(response => response.json())
+      .then(savedUser => setCurrentAcc(savedUser))
     setIsOpen(false);
   }
 
@@ -109,34 +118,45 @@ const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
           <li>
             {currentAcc.score}
           </li>
+          <br />
+          <label>Password:</label>
+          <li>
+            {currentAcc.password}
+          </li>
+          <br />
+          <label>User Status:</label>
+          <li>
+            {currentAcc.admin ? "Admin" : "User"}
+          </li>
         </ul>
-        <br/>
+        <br />
         <button className="edit-btn" onClick={openModal}>Edit</button>
         <Modal isOpen={modalIsOpen} style={customStyles}>
           <h3>Edit Profile</h3>
           <form>
-          <p className="edit-input-title">Name</p>
-          <input
-            type="text"
-            placeholder="Name"
-            name="Name"
-            ref={inputNewName}
-          />
+            <p className="edit-input-title">Name</p>
+            <input
+              type="text"
+              placeholder="Name"
+              name="Name"
+              ref={inputNewName}
+            />
 
-          <p className="edit-input-title">Email</p>
-          <input
-            type="text"
-            placeholder="Email"
-            name="email"
-            ref={inputNewEmail}
-          />
+            <p className="edit-input-title">Email</p>
+            <input
+              type="text"
+              placeholder="Email"
+              name="email"
+              ref={inputNewEmail}
+            />
           </form>
           <button className="cancel-btn" onClick={closeModal}>Cancel</button>
           <button className="submit-btn" onClick={handleUpdate}>Submit</button>
         </Modal>
         <button className="delete-btn" onClick={handleDelete}>Delete</button>
       </div>
-      <br/><br/><br/>
+      <br /><br /><br />
+      {currentAcc.admin && <Admin />}
     </div>
   )
 }
