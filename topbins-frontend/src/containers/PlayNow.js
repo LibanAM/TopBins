@@ -91,14 +91,16 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
 
 
     const nextPlayer = () => {
-        let nextRandomNumber = Math.round(Math.random() * 99);
+        const listOfPlayers = allPlayers.filter(players => players.id != foundPlayer.id)
+        console.log(listOfPlayers.length);
+        let nextRandomNumber = Math.round(Math.random() * 98);
         while (nextRandomNumber === randomPlayerNumber) {
-            nextRandomNumber = Math.round(Math.random() * 99);
+            nextRandomNumber = Math.round(Math.random() * 98);
         }
-        let nextRandomPlayer = allPlayers[nextRandomNumber]
+        let nextRandomPlayer = listOfPlayers[nextRandomNumber]
         setNextFoundPlayer(nextRandomPlayer)
         console.log(nextRandomPlayer);
-        nextRandomNumber = Math.round(Math.random() * 99);
+
     }
 
     const randomAttributeNextPlayer = () => {
@@ -211,7 +213,6 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
                 setScoreMsg("You haven't set a new high score")
             }
         }
-        // navigate('/playnow/endgame')
         setTimeout(() => { setLost(!lost) }, 1000)
     }
 

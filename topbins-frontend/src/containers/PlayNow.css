@@ -42,8 +42,8 @@
 
 .text-content {
     position: absolute;
-    color: var(--text-color);
-    background-color: var(--background-color);
+    color: black;
+    background-color: whitesmoke;
 }
 
 .text-content:hover {
