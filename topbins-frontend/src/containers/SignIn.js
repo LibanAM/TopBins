@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useRef, useState } from "react";
 import './SignIn.css';
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import DarkMode from "./DarkMode";
 
 
@@ -27,7 +27,7 @@ const SignIn = ({ setCurrentAcc, setLoggedIn, loggedIn, currentAcc }) => {
     const currentUser = allUsers.filter(user => user.emailAddress == inputEmail.current.value &&
       user.password == inputPassword.current.value)
 
-      console.log(currentUser);
+    console.log(currentUser);
     if (currentUser.length == 0) {
       alert("Invalid email or password! Please enter a correct email/password")
       return
@@ -48,11 +48,34 @@ const SignIn = ({ setCurrentAcc, setLoggedIn, loggedIn, currentAcc }) => {
 
   return (
     <div>
-      <h1>Sign In</h1>
+      {/* // html for background 'flying dots' animation BELOW */}
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      {/* html for sign-in heading BELOW */}
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <filter id="motion-blur-filter" filterUnits="userSpaceOnUse">
+          <feGaussianBlur stdDeviation="100 0"></feGaussianBlur>
+        </filter>
+      </svg>
+      <span filter-content="S">SIGN-IN</span>
+    {/* html for sign-in FORM BELOW */}
       <div className="signin-container">
         <img src="" alt="" ></img>
         <form className="signin-form">
-          <p>Email</p>
+          <p className="signin-heading">Email</p>
           <input
             className="form-field"
             type="text"
@@ -60,7 +83,7 @@ const SignIn = ({ setCurrentAcc, setLoggedIn, loggedIn, currentAcc }) => {
             name="email"
             ref={inputEmail}
           />
-          <p>Password</p>
+          <p className="signin-heading">Password</p>
           <input
             className="form-field"
             type={passwordShown ? "text" : "password"}
@@ -73,7 +96,7 @@ const SignIn = ({ setCurrentAcc, setLoggedIn, loggedIn, currentAcc }) => {
           </button>
           <button className="signin-btn" type="submit" onClick={handleLogin}> Sign In</button>
 
-          <p>New user? <a href="/register">Sign Up</a></p>
+          <p className="new-user-prompt-text">New user? <a href="/register">Sign Up</a></p>
         </form>
       </div>
       <DarkMode />
