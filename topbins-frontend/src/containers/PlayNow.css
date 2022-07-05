@@ -1,35 +1,25 @@
 #start-btn {
-
-    width: 220px;
+    font-family: 'Poppins';
+    width: 200px;
     height: 50px;
     border: none;
     outline: none;
-    color: #fff;
-    background: #111;
+    color: whitesmoke;
+    background: #ffffff;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 4px;
     cursor: pointer;
     position: relative;
     z-index: 0;
+    transition: 0.5s ease-in-out;
+    margin-top: 40vh;
     border-radius: 10px;
-
-    /* border: 1px black solid;
-    text-align: center;
-    margin: auto;
-    font-size: 40px;
-    border-radius: 10px;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 35vh;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex; 
-    align-items: center; 
-    justify-content: center;    */
 }
 
-#start-btn:hover{
+#start-btn:before {
     content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background: linear-gradient(45deg, #397367, #63CCCA, #5DA399, #42858C, #3FF4EB, #397367, #63CCCA, #5DA399, #42858C);
     position: absolute;
     top: -2px;
     left:-2px;
@@ -44,25 +34,34 @@
     border-radius: 10px;
 }
 
-#start-btn:active{
+#start-btn:active {
     color: #000
 }
 
-#start-btn:active::after{
+#start-btn:active:after {
     background: transparent;
+    border-radius: 10px;
+}
+
+#start-btn:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
 }
 
 #start-btn:hover:before {
     opacity: 1;
+    border-radius: 10px;
 }
 
 #start-btn:after {
     z-index: -1;
     content: '';
+
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #111;
+    background: #35393C;
     left: 0;
     top: 0;
     border-radius: 10px;
@@ -73,6 +72,8 @@
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
+
+
 
 .game-window {
     display: flex;

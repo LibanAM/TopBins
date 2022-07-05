@@ -3,6 +3,7 @@ import './Player.css';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css'
 import Modal from "react-modal/lib/components/Modal";
+import { faPlaneDeparture } from '@fortawesome/free-solid-svg-icons';
 
 const Player = ({ player, deletePlayer }) => {
 
@@ -55,12 +56,12 @@ const Player = ({ player, deletePlayer }) => {
             name: player.name,
             nationality: player.nationality,
             position: player.position,
-            leagueGoals: "",
-            internationalGoals: "",
-            leagueAppearances: "",
-            assists: "",
-            yellowCards: "",
-            redCards: "",
+            leagueGoals: player.leagueGoals,
+            internationalGoals: player.internationalGoals,
+            leagueAppearances: player.leagueAppearances,
+            assists: player.assists,
+            yellowCards: player.yellowCards,
+            redCards: player.redCards,
             team: player.team,
             imgLink: player.imgLink
         }
@@ -86,7 +87,7 @@ const Player = ({ player, deletePlayer }) => {
                 body: JSON.stringify(updatePlayer)
             })
             .then(response => response.json())
-            .then(data => console.log(data))
+            .then(data => setUpdatePlayer(data))
         setIsOpen(false);
 
     }
@@ -160,7 +161,7 @@ const Player = ({ player, deletePlayer }) => {
                                 type="text"
                                 placeholder={player.redCards}
                                 name="redCards"
-                                value={updatePlayer.red}
+                                value={updatePlayer.redCards}
                                 onChange={handleChange}
                             />
                         </form>
