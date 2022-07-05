@@ -197,7 +197,8 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
                     emailAddress: currentAcc.emailAddress,
                     password: currentAcc.password,
                     score: score,
-                    admin: currentAcc.admin
+                    admin: currentAcc.admin,
+                    date: currentAcc.date
                 }
                 fetch(`http://localhost:8080/users/update/${currentAcc.id}`, {
                     method: "PUT",
