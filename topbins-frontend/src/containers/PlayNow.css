@@ -42,8 +42,8 @@
 
 .text-content {
     position: absolute;
-    color: white;
-    background-color: black;
+    color: var(--text-color);
+    background-color: var(--background-color);
 }
 
 .text-content:hover {
@@ -126,3 +126,13 @@
     background-color: white;
     border-radius: 3px;
 }
+
+/* :root {
+    --background-color: black;
+    --text-color: white;
+  }
+
+[data-theme="dark"] {
+    --background-color: white;
+    --text-color: black;
+  } */
