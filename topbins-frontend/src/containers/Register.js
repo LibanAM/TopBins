@@ -176,7 +176,7 @@ const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
 
           <button className="register-button" type="submit" onClick={handleRegister}> Register </button>
 
-          <p>Already have an account? <a href="/SignIn">Sign In</a></p>
+          <p>Already have an account? <a href="/signin">Sign In</a></p>
 
         </form>
       </div>
