@@ -10,7 +10,9 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Date;
 
 @Component
 public class DataLoader implements ApplicationRunner {
@@ -224,14 +226,14 @@ public class DataLoader implements ApplicationRunner {
                 ospina, koulibaly, ruiz, mertens, osimhen,
                 patricio, spinazzola, mkhitaryan, abraham, oliveira));
 
-    User user1 = new User("Lily", "Lily101@gmail.com", "Chelsea1!", 0, false);
-    User user2 = new User("Luke", "Luke13@gmail.com", "Arsenal1!", 0, true);
-    User user3 = new User("Ellie", "Ellie123@gmail.com", "Devil123!", 0, false);
-    User user4 = new User("Elias", "Elias22@gmail.com", "Pool13!", 0, false);
-    User user5 = new User("Paul", "Joel2@gmail.com", "Parisians1!", 0, true);
-    User user6 = new User("Fernando", "Fer12@gmail.com","RealDeal15", 0, true);
-    User user7 = new User("Pedro", "Pedro23@gmail.com","Porto4life", 0, false);
-    User user8 = new User("Guiseppe", "G123@gmail.com","Acmilan123!", 0, true);
+    User user1 = new User("Lily", "Lily101@gmail.com", "Chelsea1!", 0, LocalDate.now() ,false);
+    User user2 = new User("Luke", "Luke13@gmail.com", "Arsenal1!", 0, LocalDate.now(), true);
+    User user3 = new User("Ellie", "Ellie123@gmail.com", "Devil123!", 0, LocalDate.now(), false);
+    User user4 = new User("Elias", "Elias22@gmail.com", "Pool13!", 0, LocalDate.now(), false);
+    User user5 = new User("Paul", "Joel2@gmail.com", "Parisians1!", 0, LocalDate.now(), true);
+    User user6 = new User("Fernando", "Fer12@gmail.com","RealDeal15", 0, LocalDate.now(), true);
+    User user7 = new User("Pedro", "Pedro23@gmail.com","Porto4life", 0, LocalDate.now(), false);
+    User user8 = new User("Guiseppe", "G123@gmail.com","Acmilan123!", 0, LocalDate.now(), true);
 
     userRepository.saveAll(Arrays.asList(user1, user2, user3, user4, user5, user6, user7, user8));
 

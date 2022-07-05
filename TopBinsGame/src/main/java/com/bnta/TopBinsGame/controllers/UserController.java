@@ -53,6 +53,7 @@ public class UserController {
             foundUserGet.setEmailAddress(newUser.getEmailAddress());
             foundUserGet.setPassword(newUser.getPassword());
             foundUserGet.setScore(newUser.getScore());
+            foundUserGet.setDate(newUser.getDate());
             foundUserGet.setAdmin(newUser.getAdmin());
             userRepository.save(foundUserGet);
             return new ResponseEntity(foundUserGet, HttpStatus.OK);

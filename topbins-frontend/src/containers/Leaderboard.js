@@ -29,7 +29,7 @@ const Leaderboard = () => {
             <tr>    
             <td>{leaderboard.name}</td>
             <td>{leaderboard.score}</td>
-            <td></td>
+            <td>{leaderboard.score != 0 ? leaderboard.date : null }</td>
             </tr>       
           ))}
         </tbody>

@@ -1,6 +1,8 @@
 package com.bnta.TopBinsGame.models;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+
 
 @Entity
 @Table(name = "users")
@@ -23,14 +25,18 @@ public class User {
     private int score;
 
     @Column
+    private LocalDate date;
+
+    @Column
     private Boolean isAdmin;
 
 
-    public User(String name, String emailAddress, String password, int score, boolean isAdmin) {
+    public User(String name, String emailAddress, String password, int score, LocalDate date, boolean isAdmin) {
         this.name = name;
         this.emailAddress = emailAddress;
         this.password = password;
         this.score = score;
+        this.date = date;
         this.isAdmin = isAdmin;
     }
 
@@ -76,6 +82,14 @@ public class User {
         this.score = score;
     }
 
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
     public Boolean getAdmin() {
         return isAdmin;
     }
@@ -84,16 +98,6 @@ public class User {
         isAdmin = admin;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", emailAddress='" + emailAddress + '\'' +
-                ", password='" + password + '\'' +
-                ", score=" + score +
-                ", isAdmin=" + isAdmin +
-                '}';
-    }
+
 }
 
