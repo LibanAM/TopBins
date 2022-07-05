@@ -938,7 +938,7 @@ h1 {
   border-style: none;
   background-color: transparent;
   position: relative;
-  left: 92%;
+  /* left: 92%; */
   
 }
 .new-user-email-input{
