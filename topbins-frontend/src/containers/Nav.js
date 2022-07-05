@@ -26,11 +26,7 @@ const Nav = ({loggedIn, currentAcc, setCurrentAcc, setLoggedIn}) => {
                     <button className="dropbtn"> ACCOUNT</button>
                     <div className="dropdown-content" styleleft="left:0">
                         <a><Link to='/account'>{loggedIn ? "ACCOUNT" : "SIGN IN"}</Link></a>
-<<<<<<< HEAD
-                        <a onClick={handleLogin}>{loggedIn ? <Link to='/'>LOGOUT</Link> : <Link to='/register'>REGISTE</Link>}</a>
-=======
                         <a onClick={handleLogin}><Link to='/register'>{loggedIn ? "LOGOUT" : "REGISTER"}</Link></a>
->>>>>>> signin_register
                     </div>
                 </div>
         </ul>

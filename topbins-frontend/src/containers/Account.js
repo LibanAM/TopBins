@@ -120,7 +120,7 @@ const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
       <div class="firefly"></div>
       <div class="firefly"></div>
       <div class="firefly"></div>
-      {/* html for sign-in heading BELOW */}
+      {/* html BELOW */}
       <h1>My Account</h1>
       <div className="account-container">
         <div className="account-inner">

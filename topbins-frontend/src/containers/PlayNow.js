@@ -222,6 +222,23 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
 
     return (
         <>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+
+            {/* // html BELOW */}
             {!lost && !gameStarted && <button id="start-btn" onClick={start}>START GAME</button>}
             {!lost && gameStarted && <div className="game-window">
                 {!lost && gameStarted && <div className="game-pictures">
