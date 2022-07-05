@@ -60,3 +60,43 @@
     color: white;
     cursor: pointer;
 }
+
+.modal-heading {
+    color: #63CCCA;
+    font-weight: bold;
+    font-family: Verdana;
+    font-size: 17px;
+    font-style: italic;
+}
+
+.edit-input-title {
+    position: relative;
+    right: 31%;
+    color: #63CCCA;
+    font-weight: normal;
+    font-family: Verdana;
+    font-size: 15px;
+    font-style: italic;
+}
+
+.modal-cancel-btn {
+    font-size: 15px;
+    border: 2px solid black;
+    border-color: #04AA6D;
+    font-family: "Roboto", sans-serif;
+    background: #35393C;
+    color: white;
+    cursor: pointer;
+    margin-right: 5%;
+
+}
+
+.modal-submit-btn {
+    font-size: 15px;
+    border: 2px solid black;
+    border-color: #04AA6D;
+    font-family: "Roboto", sans-serif;
+    background: #35393C;
+    color: white;
+    cursor: pointer;
+}

@@ -23,7 +23,6 @@ const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
     event.preventDefault();
 
     confirmAlert({
-      title: "Cofirm",
       message: "Are you sure you want to delete your account?",
       buttons: [
         {
@@ -62,6 +61,7 @@ const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-60%, -50%)',
+      backgroundColor: 'rgba(0,0,0,0.7)'
     },
   };
 
@@ -148,7 +148,7 @@ const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
           <br />
           <button className="edit-btn" onClick={openModal}>Edit</button>
           <Modal isOpen={modalIsOpen} style={customStyles}>
-            <h3>Edit Profile</h3>
+            <h3 className="modal-heading">Edit Profile</h3>
             <form className="account-form-container">
               <p className="edit-input-title">Name</p>
               <input
@@ -166,8 +166,9 @@ const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
                 ref={inputNewEmail}
               />
             </form>
-            <button className="cancel-btn" onClick={closeModal}>Cancel</button>
-            <button className="submit-btn" onClick={handleUpdate}>Submit</button>
+            <br/>
+            <button className="modal-cancel-btn" onClick={closeModal}>Cancel</button>
+            <button className="modal-submit-btn" onClick={handleUpdate}>Submit</button>
           </Modal>
           <button className="delete-btn" onClick={handleDelete}>Delete</button>
         </div>
