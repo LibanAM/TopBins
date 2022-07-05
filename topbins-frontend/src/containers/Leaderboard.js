@@ -19,9 +19,9 @@ const Leaderboard = () => {
       <table>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Score</th>
-            <th>Date</th>
+            <th>NAME</th>
+            <th>HIGH-SCORE</th>
+            <th>DATE</th>
           </tr>
         </thead>
         <tbody>
