@@ -13,11 +13,28 @@ const CoverPage = ({ loggedIn }) => {
 
     return (
         <div id="cover-page">
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+
+            {/* // html BELOW */}
             <h1>Higher Or Lower: Football Edition</h1>
             <div id="cover-page-inner">
                 <ul>
                     <h2>HOW TO PLAY</h2>
-                    <li>Sign into your <Link to="/account">Account</Link> or create one <Link to="/register">now!</Link></li>
+                    <li>instruction 1</li>
                     <li>instruction 2</li>
                     <li>instruction 3</li>
                     <li>instruction 4</li>

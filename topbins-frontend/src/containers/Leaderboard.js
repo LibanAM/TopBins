@@ -15,6 +15,23 @@ const Leaderboard = () => {
 
   return (
     <div className="table-container">
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+
+      {/* // html BELOW */}
       <h1>Leaderboard</h1>
       <table>
         <thead>
@@ -25,12 +42,12 @@ const Leaderboard = () => {
           </tr>
         </thead>
         <tbody>
-          {leaderboards.map((leaderboard) => ( 
-            <tr>    
-            <td>{leaderboard.name}</td>
-            <td>{leaderboard.score}</td>
-            <td>{leaderboard.score != 0 ? leaderboard.date : null }</td>
-            </tr>       
+          {leaderboards.map((leaderboard) => (
+            <tr>
+              <td>{leaderboard.name}</td>
+              <td>{leaderboard.score}</td>
+              <td>{leaderboard.score != 0 ? leaderboard.date : null}</td>
+            </tr>
           ))}
         </tbody>
       </table>
