@@ -22,7 +22,7 @@ function App() {
   return (
     <>
       <Router>
-        {/* <Nav loggedIn={loggedIn} currentAcc={currentAcc} setLoggedIn={setLoggedIn} setCurrentAcc={setCurrentAcc}/> */}
+        <Nav loggedIn={loggedIn} currentAcc={currentAcc} setLoggedIn={setLoggedIn} setCurrentAcc={setCurrentAcc}/>
         <Routes>
           <Route path='/playnow' element={<PlayNow currentAcc={currentAcc} setCurrentAcc={setCurrentAcc} />}></Route>
 
