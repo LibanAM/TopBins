@@ -70,10 +70,10 @@ const SignIn = ({ setCurrentAcc, setLoggedIn, loggedIn, currentAcc }) => {
           <feGaussianBlur stdDeviation="100 0"></feGaussianBlur>
         </filter>
       </svg>
+      <br/>
       <span filter-content="S">SIGN-IN</span>
     {/* html for sign-in FORM BELOW */}
       <div className="signin-container">
-        <img src="" alt="" ></img>
         <form className="signin-form">
           <p className="signin-heading">Email</p>
           <input
@@ -91,7 +91,7 @@ const SignIn = ({ setCurrentAcc, setLoggedIn, loggedIn, currentAcc }) => {
             name="password"
             ref={inputPassword}
           />
-          <button onClick={handlePasswordShown} className="btn">
+          <button onClick={handlePasswordShown} className="password-shown-btn">
             {passwordShown ? <AiOutlineEye className="password-eye" /> : <AiOutlineEyeInvisible className="password-eye" />}
           </button>
           <button className="signin-btn" type="submit" onClick={handleLogin}> Sign In</button>

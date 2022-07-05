@@ -901,25 +901,22 @@ h1 {
   padding: 30px;
 }
 
-.form {
+.register-form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   padding: 10px;
+
 }
 
 .form-field {
-  margin: 20px 0 20px 0;
-
+  background: #f2f2f2;
+  margin: 12px 0 20px 0;
   padding: 11px;
   font-size: 16px;
   border: 0;
   width: 90%;
   font-family: "Roboto", sans-serif;
-}
-
-.form-field {
-  background: #f2f2f2;
 }
 
 .register-button {
@@ -936,14 +933,24 @@ h1 {
 
 .password-shown-btn {
   border-style: none;
-  background-color: transparent;
+  background-color: red;
   position: relative;
-  left: 92%;
+  margin-top: -10%;
+  margin-left: 10%;
   
 }
 .new-user-email-input{
   color: red;
   font-size: 12px;
+  margin-top: -5%;
+  margin-right: 57%;
+  padding-bottom: -5%;
+}
+
+.new-user-password-input{
+  font-size: 12px;
+  margin-top: 1%;
+  margin-right: 50%;
 }
 
 .register-input-title{
@@ -952,5 +959,15 @@ h1 {
   font-family: Verdana;
   font-size: 22px;
   font-style: italic;
+  color: #63CCCA;
+  font-weight: bold;
+  font-family: Verdana;
+  font-size: 22px;
+  font-style: italic;
+  margin-left: -60%;
+  margin-bottom: -3%;
 }
 
+.register-form{
+  margin-top: -10%;
+}

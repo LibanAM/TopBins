@@ -86,7 +86,8 @@ const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
       emailAddress: inputNewEmail.current.value != "" ? inputNewEmail.current.value : currentAcc.emailAddress,
       password: currentAcc.password,
       score: currentAcc.score,
-      admin: currentAcc.admin
+      admin: currentAcc.admin,
+      date: currentAcc.date
     };
 
     fetch(`http://localhost:8080/users/update/${currentAcc.id}`,

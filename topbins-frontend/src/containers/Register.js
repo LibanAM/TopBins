@@ -130,6 +130,7 @@ const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
           <feGaussianBlur stdDeviation="100 0"></feGaussianBlur>
         </filter>
       </svg>
+      <br/>
       <span filter-content="S">REGISTER</span>
 
       {/* html for register form below */}
@@ -167,7 +168,7 @@ const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
             onChange={handlePassword}
           />
           <button onClick={handlePasswordShown} className="password-shown-btn">
-            {passwordShown ? <AiOutlineEye className="password-eye" /> : <AiOutlineEyeInvisible className="password-eye" />}
+            {passwordShown ? <AiOutlineEye className="password-eye"/> : <AiOutlineEyeInvisible className="password-eye"/>}
           </button>
           <p className="new-user-password-input"></p>
           <br />
