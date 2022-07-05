@@ -23,7 +23,6 @@ const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
     event.preventDefault();
 
     confirmAlert({
-      title: "Cofirm",
       message: "Are you sure you want to delete your account?",
       buttons: [
         {
@@ -52,6 +51,9 @@ const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   const customStyles = {
+    overlay: {
+      backgroundColor: 'rgba(0,0,0,0.7)',
+    },
     content: {
       top: '50%',
       left: '50%',
@@ -59,6 +61,7 @@ const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-60%, -50%)',
+      backgroundColor: 'rgba(0,0,0,0.7)'
     },
   };
 
@@ -100,60 +103,75 @@ const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
 
   return (
     <div>
+      {/* // html for background 'flying dots' animation BELOW */}
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      {/* html for sign-in heading BELOW */}
       <h1>My Account</h1>
       <div className="account-container">
-        <h3>Profile</h3>
-        <ul>
-          <label>Name:</label>
-          <li>
-            {currentAcc.name}
-          </li>
+        <div className="account-inner">
+          <h2 className="account-heading">{currentAcc.admin ? "ADMIN" : "USER"} PROFILE</h2>
+          <ul>
+            <label className="account-label">Name:</label>
+            <li className="account-list">
+              {currentAcc.name}
+            </li>
+            <br />
+            <label className="account-label">Email:</label>
+            <li className="account-list">
+              {currentAcc.emailAddress}
+            </li>
+            <br />
+            <label className="account-label">High Score:</label>
+            <li className="account-list">
+              {currentAcc.score}
+            </li>
+            {/* <br />
+            <label className="account-label">Password:</label>
+            <li className="account-list">
+              {currentAcc.password}
+            </li> */}
+          </ul>
           <br />
-          <label>Email:</label>
-          <li>
-            {currentAcc.emailAddress}
-          </li>
-          <br />
-          <label>High Score:</label>
-          <li>
-            {currentAcc.score}
-          </li>
-          <br />
-          <label>Password:</label>
-          <li>
-            {currentAcc.password}
-          </li>
-          <br />
-          <label>User Status:</label>
-          <li>
-            {currentAcc.admin ? "Admin" : "User"}
-          </li>
-        </ul>
-        <br />
-        <button className="edit-btn" onClick={openModal}>Edit</button>
-        <Modal isOpen={modalIsOpen} style={customStyles}>
-          <h3>Edit Profile</h3>
-          <form>
-            <p className="edit-input-title">Name</p>
-            <input
-              type="text"
-              placeholder="Name"
-              name="Name"
-              ref={inputNewName}
-            />
+          <button className="edit-btn" onClick={openModal}>Edit</button>
+          <Modal isOpen={modalIsOpen} style={customStyles}>
+            <h3 className="modal-heading">Edit Profile</h3>
+            <form className="account-form-container">
+              <p className="edit-input-title">Name</p>
+              <input
+                type="text"
+                placeholder="Name"
+                name="Name"
+                ref={inputNewName}
+              />
 
-            <p className="edit-input-title">Email</p>
-            <input
-              type="text"
-              placeholder="Email"
-              name="email"
-              ref={inputNewEmail}
-            />
-          </form>
-          <button className="cancel-btn" onClick={closeModal}>Cancel</button>
-          <button className="submit-btn" onClick={handleUpdate}>Submit</button>
-        </Modal>
-        <button className="delete-btn" onClick={handleDelete}>Delete</button>
+              <p className="edit-input-title">Email</p>
+              <input
+                type="text"
+                placeholder="Email"
+                name="email"
+                ref={inputNewEmail}
+              />
+            </form>
+            <br/>
+            <button className="modal-cancel-btn" onClick={closeModal}>Cancel</button>
+            <button className="modal-submit-btn" onClick={handleUpdate}>Submit</button>
+          </Modal>
+          <button className="delete-btn" onClick={handleDelete}>Delete</button>
+        </div>
       </div>
       <br /><br /><br />
       {currentAcc.admin && <Admin />}

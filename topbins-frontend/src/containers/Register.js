@@ -76,14 +76,14 @@ const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
     const specialSymbol = ['!', '?', '@', '.', '_', '/', '#', '$', '(', ')', '^', '%',
       '*', ':', ';', '+'];
 
-    if (inputNewPassword.current.value == '1234' || inputNewPassword.current.value == 'abc'
+    if (inputNewPassword.current.value === '1234' || inputNewPassword.current.value === 'abc'
       || inputNewPassword.current.value.length < 6) {
       document.querySelector('.new-user-password-input').innerHTML = "<p style='color:red; font-size:12px'> Password strength is weak</p>";
 
       // didn't pass the password checker
       setSignupAllowed(passwordChecker);
     }
-    else if (specialSymbol.filter(s => inputNewPassword.current.value.includes(s)).length == 0) {
+    else if (specialSymbol.filter(s => inputNewPassword.current.value.includes(s)).length === 0) {
       document.querySelector('.new-user-password-input').innerHTML = "<p style='color:#e7bd15; font-size:12px'> Password strength is medium</p>";
 
       // didn't pass the password checker

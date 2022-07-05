@@ -11,8 +11,7 @@ const Player = ({ player, deletePlayer }) => {
         event.preventDefault();
 
         confirmAlert({
-            title: "Cofirm",
-            message: "Are you sure you want to delete your account?",
+            message: `Are you sure you want to delete: ${player.name}?`,
             buttons: [
                 {
                     label: "Yes",
@@ -29,13 +28,17 @@ const Player = ({ player, deletePlayer }) => {
     const [modalIsOpen, setIsOpen] = React.useState(false);
 
     const customStyles = {
+        overlay: {
+            backgroundColor: 'rgba(0,0,0,0.7)',
+          },
         content: {
             position: "absolute",
             backgroundColor: "#FFF",
             padding: "15px",
             zIndex: "1000",
             width: "35%",
-            borderRadius: ".5em"
+            borderRadius: ".5em",
+            backgroundColor: 'rgba(0,0,0,0.7)'
         },
     };
 
@@ -91,24 +94,21 @@ const Player = ({ player, deletePlayer }) => {
     return (
         <div>
             <div className="player-container">
-                <div className="card-image">
-                    <img src="" alt="" />
-                </div>
                 <div className="card-conent">
                     <ul>
-                        <li>
-                            <strong> Name:</strong><br />
+                        <li className='player-list'>
+                            <strong className='player-label'> Name:</strong><br />
                             {player.name}
                         </li>
                         <br />
-                        <li>
-                            <strong> Team:</strong><br />
+                        <li className='player-list'>
+                            <strong className='player-label'> Team:</strong><br />
                             {player.team.name}
                         </li>
                     </ul>
                     <button className="edit-player-btn" onClick={openModal}>Edit</button>
                     <Modal isOpen={modalIsOpen} style={customStyles}>
-                        <h3>Edit Player</h3>
+                        <h3 className="modal-heading">Edit Player</h3>
                         <form>
                             <p className="edit-input-title">League Goals</p>
                             <input
@@ -165,8 +165,8 @@ const Player = ({ player, deletePlayer }) => {
                             />
                         </form>
                         <br />
-                        <button className="cancel-btn" onClick={closeModal}>Cancel</button>
-                        <button className="submit-btn" onClick={handleUpdate}>Submit</button>
+                        <button className="modal-cancel-btn" onClick={closeModal}>Cancel</button>
+                        <button className="modal-submit-btn" onClick={handleUpdate}>Submit</button>
                     </Modal>
                     <button className="delete-player-btn" onClick={handleDelete}>Delete</button>
                 </div>

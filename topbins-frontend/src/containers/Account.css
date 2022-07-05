@@ -1,19 +1,102 @@
-/* body {
-    display: flex;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
-}  */
-.account-container{
+.account-container {
     width: 360px;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-style: ridge;
+    border-color: #35393C;
     margin: auto;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     padding: 30px;
-  }
-  li {
-      list-style: none;
-  }
-  .delete-btn{
-      margin-left: 250px;
-  }
+}
+
+.account-heading {
+    margin-top: -5%;
+    position: relative;
+    right: 30%;
+    padding-bottom: 10px;
+    color: #63CCCA;
+    font-weight: bold;
+    font-family: Verdana;
+    font-size: 22px;
+    font-style: italic;
+}
+
+.account-label {
+    position: relative;
+    right: 10%;
+    color: #63CCCA;
+    font-weight: bold;
+    font-family: Verdana;
+    font-size: 17px;
+    font-style: italic;
+}
+
+.account-list {
+    list-style: none;
+    padding: 5px;
+    position: relative;
+    right: 10%;
+    font-size: 15px;
+    color: whitesmoke;
+    font-weight: bolder;
+}
+
+.delete-btn {
+    margin-left: 250px;
+    font-size: 15px;
+    border: 2px solid black;
+    border-color: #04AA6D;
+    font-family: "Roboto", sans-serif;
+    background: #35393C;
+    color: white;
+    cursor: pointer;
+}
+
+.edit-btn {
+    font-size: 15px;
+    border: 2px solid black;
+    border-color: #04AA6D;
+    font-family: "Roboto", sans-serif;
+    background: #35393C;
+    color: white;
+    cursor: pointer;
+}
+
+.modal-heading {
+    color: #63CCCA;
+    font-weight: bold;
+    font-family: Verdana;
+    font-size: 17px;
+    font-style: italic;
+}
+
+.edit-input-title {
+    position: relative;
+    right: 31%;
+    color: #63CCCA;
+    font-weight: normal;
+    font-family: Verdana;
+    font-size: 15px;
+    font-style: italic;
+}
+
+.modal-cancel-btn {
+    font-size: 15px;
+    border: 2px solid black;
+    border-color: #04AA6D;
+    font-family: "Roboto", sans-serif;
+    background: #35393C;
+    color: white;
+    cursor: pointer;
+    margin-right: 5%;
+
+}
+
+.modal-submit-btn {
+    font-size: 15px;
+    border: 2px solid black;
+    border-color: #04AA6D;
+    font-family: "Roboto", sans-serif;
+    background: #35393C;
+    color: white;
+    cursor: pointer;
+}
