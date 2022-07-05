@@ -45,6 +45,17 @@
     margin-right: 5%;
   }
 
+  .add-player-btn{
+    font-size: 15px;
+    border: 2px solid black;
+    border-color: #04AA6D;
+    font-family: "Roboto", sans-serif;
+    background: #35393C;
+    color: white;
+    cursor: pointer;
+    margin-right: 5%;
+  }
+
   .delete-player-btn{
     font-size: 15px;
     border: 2px solid black;

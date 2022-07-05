@@ -144,19 +144,28 @@
 #btn-higher {
     position: absolute;
     top: 70%;
-    /* color: white; */
     font-weight: 800;
     font-size: large;
-    padding: 3px;
+    color: #35393C;
+    border-color: #35393C;
+
 }
+#btn-higher:hover{
+    color:#63CCCA;
+    background-color:#35393C;
+    }
 
 #btn-lower {
     position: absolute;
     top: 75%;
-    /* color: white; */
     font-weight: 800;
     font-size: large;
+ 
 }
+#btn-lower:hover{
+    color:#63CCCA;
+    background-color:#35393C;
+    }
 
 .scoreboard {
     border-radius: 15px;

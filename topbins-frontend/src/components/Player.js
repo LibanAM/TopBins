@@ -109,7 +109,7 @@ const Player = ({ player, deletePlayer }) => {
                     </ul>
                     <button className="edit-player-btn" onClick={openModal}>Edit</button>
                     <Modal isOpen={modalIsOpen} style={customStyles}>
-                        <h3 className="modal-heading">Edit Player</h3>
+                        <h3 className="modal-heading">EDIT PLAYER</h3>
                         <form>
                             <p className="edit-input-title">League Goals</p>
                             <input

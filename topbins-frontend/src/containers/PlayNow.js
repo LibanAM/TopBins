@@ -253,8 +253,8 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
                     {gameStarted && <p className="text-content player-name">{foundNextPlayer.name}</p>}
                     {gameStarted && <p className="text-content player-variablename">{variableName}</p>}
                     {guessed && gameStarted && <p className="text-content player-value">{valueRight}</p>}
-                    {gameStarted && <button id="btn-higher" onClick={higher}>Higher</button>}
-                    {gameStarted && <button id="btn-lower" onClick={lower}>Lower</button>}
+                    {gameStarted && <button id="btn-higher" onClick={higher}>Higher ▲</button>}
+                    {gameStarted && <button id="btn-lower" onClick={lower}>Lower ▼</button>}
                 </div>}
             </div>}
 

@@ -60,13 +60,17 @@ const PlayerList = ({ players, deletePlayer, postPlayer, teams }) => {
     const [modalIsOpen, setIsOpen] = React.useState(false);
 
     const customStyles = {
+        overlay: {
+            backgroundColor: 'rgba(0,0,0,0.7)',
+          },
         content: {
             position: "absolute",
             backgroundColor: "#FFF",
             padding: "15px",
             zIndex: "1000",
             width: "35%",
-            borderRadius: ".5em"
+            borderRadius: ".5em",
+            backgroundColor: 'rgba(0,0,0,0.7)'
         },
     };
 
@@ -81,9 +85,9 @@ const PlayerList = ({ players, deletePlayer, postPlayer, teams }) => {
     return (
 
         <div>
-            <button className="add-player-button" onClick={openModal}>Add Player</button>
+            <button className="add-player-btn" onClick={openModal}>Add Player</button>
             <Modal isOpen={modalIsOpen} style={customStyles}>
-                <h3>Add new player</h3>
+                <h3>ADD A NEW PLAYER</h3>
                 <form>
                     <p className="edit-input-title">Name</p>
                     <input
@@ -184,8 +188,8 @@ const PlayerList = ({ players, deletePlayer, postPlayer, teams }) => {
                     />
                 </form>
                 <br />
-                <button className="cancel-btn" onClick={closeModal}>Cancel</button>
-                <button className="submit-btn" onClick={handleSubmit}>Submit</button>
+                <button className="modal-cancel-btn" onClick={closeModal}>Cancel</button>
+                <button className="modal-submit-btn" onClick={handleSubmit}>Submit</button>
             </Modal>
 
             <section className="cards">
@@ -193,8 +197,8 @@ const PlayerList = ({ players, deletePlayer, postPlayer, teams }) => {
                     <Player
                         key={player.id}
                         player={player}
-                        deletePlayer={deletePlayer} 
-                        />
+                        deletePlayer={deletePlayer}
+                    />
                 ))}
 
             </section>

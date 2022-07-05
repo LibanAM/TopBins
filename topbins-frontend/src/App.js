@@ -7,7 +7,6 @@ import Account from './containers/Account';
 import Register from './containers/Register';
 import Leaderboard from './containers/Leaderboard';
 import usePersistedState from './usePersistedState';
-import Admin from './containers/Admin';
 import Nav from './containers/Nav';
 import Footer from './containers/Footer';
 
@@ -41,7 +40,6 @@ function App() {
 
           <Route path='/leaderboard' element={<Leaderboard />} />
 
-          <Route path='/admin' element={<Admin />} />
 
 
         </Routes>

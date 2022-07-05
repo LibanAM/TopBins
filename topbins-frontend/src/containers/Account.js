@@ -73,11 +73,6 @@ const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
     setIsOpen(false);
   }
 
-
-
-
-
-
   const handleUpdate = (event) => {
     event.preventDefault()
 
