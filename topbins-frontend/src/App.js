@@ -9,6 +9,7 @@ import Leaderboard from './containers/Leaderboard';
 import usePersistedState from './usePersistedState';
 import Admin from './containers/Admin';
 import Nav from './containers/Nav';
+import Footer from './containers/Footer';
 
 
 
@@ -44,6 +45,7 @@ function App() {
 
 
         </Routes>
+        <Footer/>
       </Router>
     </>
   );
