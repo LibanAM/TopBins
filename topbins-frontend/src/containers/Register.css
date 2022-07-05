@@ -5,7 +5,7 @@
   align-items: center;
 } */
 
-
+/* -----------------------------------flying dots----------------------------------------------------------------------------------------------------------------- */
 
 html, body {
   height: 100%; }
@@ -887,11 +887,7 @@ body {
     box-shadow: 0 0 2vw 0.4vw yellow; } }
 
 
-
-
-
-
-/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------register form--------------------------------------------------------------------------------------------------------------------- */
 
 h1 {
   text-align: center;
@@ -899,7 +895,7 @@ h1 {
 
 .register-container {
   width: 360px;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.7);
   margin: auto;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   padding: 30px;
@@ -914,7 +910,7 @@ h1 {
 
 .form-field {
   margin: 20px 0 20px 0;
-  padding: 15px;
+  padding: 11px;
   font-size: 16px;
   border: 0;
   width: 90%;
@@ -929,9 +925,10 @@ h1 {
   margin: 20px 0 20px 0;
   padding: 15px;
   font-size: 16px;
-  border: 0;
+  border: 2px solid black;
+  border-color: #04AA6D;
   font-family: "Roboto", sans-serif;
-  background: #4caf50;
+  background: #35393C;
   color: white;
   cursor: pointer;
 }
@@ -946,5 +943,13 @@ h1 {
 .new-user-email-input{
   color: red;
   font-size: 12px;
+}
+
+.register-input-title{
+  color: #63CCCA;
+  font-weight: bold;
+  font-family: Verdana;
+  font-size: 22px;
+  font-style: italic;
 }
 

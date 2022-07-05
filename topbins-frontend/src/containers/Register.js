@@ -124,9 +124,16 @@ const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
       <div class="firefly"></div>
       <div class="firefly"></div>
 
-{/* // html for background 'flying dots' animation ABOVE */}
-      
-      <h1>Register</h1>
+      {/* // html for register heading BELOW */}
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <filter id="motion-blur-filter" filterUnits="userSpaceOnUse">
+          <feGaussianBlur stdDeviation="100 0"></feGaussianBlur>
+        </filter>
+      </svg>
+      <span filter-content="S">REGISTER</span>
+
+      {/* html for register form below */}
+
       <div className="register-container">
         <img src="" alt="" ></img>
         <form className="register-form">
@@ -174,7 +181,7 @@ const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
       </div>
       <DarkMode />
     </div>
-    
+
   );
 }
 
