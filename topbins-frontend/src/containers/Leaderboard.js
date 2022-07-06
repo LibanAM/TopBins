@@ -42,12 +42,13 @@ const Leaderboard = () => {
           </tr>
         </thead>
         <tbody>
-          {leaderboards.map((leaderboard) => (
-            <tr>
+          {leaderboards
+          .sort((a,b) => a.score > b.score ? -1 : 1 )
+          .map((leaderboard) => (
+            <tr key={leaderboard.id}>
               <td>{leaderboard.name}</td>
               <td>{leaderboard.score}</td>
               <td>{leaderboard.score != 0 ? leaderboard.date : null}</td>
-              {/* <td>{leaderboard.date}</td> */}
             </tr>
           ))}
         </tbody>
