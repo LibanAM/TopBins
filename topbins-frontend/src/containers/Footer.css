@@ -1,13 +1,8 @@
 .footer-container {
+  position: fixed;
   background: #35393C;
-  padding-top: 5px;
-  padding-bottom: 0px;
-  margin-top: 140px;
-}
-footer{
 
 }
-
 
 .rounded-social-buttons .social-button {
 display: inline-block;

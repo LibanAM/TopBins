@@ -5,3 +5,7 @@
     right: 10px;
 
 }
+.fa .fa-toggle-off{
+    border: none;
+    background-color: transparent;
+}
