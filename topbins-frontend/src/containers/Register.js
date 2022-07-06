@@ -36,7 +36,8 @@ const Register = ({ loggedIn, setLoggedIn, setCurrentAcc }) => {
       emailAddress: inputNewEmail.current.value,
       password: inputNewPassword.current.value,
       score: 0,
-      admin: false
+      admin: false,
+      date: Date.UTC()
     };
 
     fetch("http://localhost:8080/users/new",
