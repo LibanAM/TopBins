@@ -1,8 +1,9 @@
 .footer-container {
-  position: absolute;
+  /* position: absolute; */
   background: #35393C;
-  bottom: -220px;
+  bottom: 0;
   width: 100%;
+
 }
 
 .rounded-social-buttons .social-button {

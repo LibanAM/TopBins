@@ -14,6 +14,7 @@
     z-index: 0;
     transition: 0.5s ease-in-out;
     margin-top: 40vh;
+    margin-bottom: 36vh;
     border-radius: 10px;
 }
 
@@ -22,7 +23,7 @@
     background: linear-gradient(45deg, #397367, #63CCCA, #5DA399, #42858C, #3FF4EB, #397367, #63CCCA, #5DA399, #42858C);
     position: absolute;
     top: -2px;
-    left:-2px;
+    left: -2px;
     background-size: 400%;
     z-index: -1;
     filter: blur(5px);
@@ -68,9 +69,17 @@
 }
 
 @keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
 }
 
 
@@ -149,22 +158,24 @@
     color: #35393C;
 
 }
-#btn-higher:hover{
-    color:#63CCCA;
-    background-color:#35393C;
-    }
+
+#btn-higher:hover {
+    color: #63CCCA;
+    background-color: #35393C;
+}
 
 #btn-lower {
     position: absolute;
     top: 75%;
     font-weight: 800;
     font-size: large;
- 
+
 }
-#btn-lower:hover{
-    color:#63CCCA;
-    background-color:#35393C;
-    }
+
+#btn-lower:hover {
+    color: #63CCCA;
+    background-color: #35393C;
+}
 
 .scoreboard {
     border-radius: 15px;
@@ -178,7 +189,7 @@
     width: fit-content;
 }
 
-.scoreboard > span {
+.scoreboard>span {
     font-weight: 600;
 }
 
@@ -205,3 +216,11 @@
     --background-color: white;
     --text-color: black;
   } */
+
+.footer-container-playnow {
+    position: absolute;
+    background: #35393C;
+    /* bottom: 0; */
+    width: 100%;
+    margin: 0;
+}
