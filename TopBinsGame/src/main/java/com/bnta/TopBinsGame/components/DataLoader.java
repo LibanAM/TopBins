@@ -117,7 +117,7 @@ public class DataLoader implements ApplicationRunner {
         Player volland = new Player("Kevin Volland", Nationality.GERMAN, Position.FORWARD, 102, 1, 316, 81, 51, 1, asMonaco, "https://pbs.twimg.com/media/FRW46-xWUAA6R4l.jpg");
         Player benYedder = new Player("Wissam Ben Yedder", Nationality.FRENCH, Position.FORWARD, 164, 3, 347, 57, 18, 1, asMonaco, "https://pbs.twimg.com/media/FHJP_X5X0AUhzBX.jpg");
 
-        Player mandanda = new Player("Steve Mandanda", Nationality.CONGOLESE, Position.GOALKEEPER, 0, 0, 478, 0, 17, 3, marseille, "https://cdn.mos.cms.futurecdn.net/YZQVhQgqwXuFPEcVWLVyBD-1200-80.jpg");
+        Player mandanda = new Player("Steve Mandanda", Nationality.CONGOLESE, Position.GOALKEEPER, 0, 0, 478, 0, 17, 3, marseille, "https://img.bleacherreport.net/img/images/photos/003/605/380/hi-res-6b952e5abc82fdd1db5e6174c08b7065_crop_exact.jpg?w=1200&h=1200&q=75");
         Player caletaCar = new Player("Duje Caleta-Car", Nationality.CROATIAN, Position.DEFENDER,9, 1, 186, 7, 37, 4, marseille, "https://i2-prod.mirror.co.uk/incoming/article23512354.ece/ALTERNATES/s1200c/0_Duje-Caleta-Car-Ben-Davies.jpg");
         Player payet = new Player("Dimitri Payet", Nationality.FRENCH, Position.MIDFIELDER, 93, 5, 147, 146, 58,4, marseille, "https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTg4NjI0NTMzNTgwNjg3MDky/dimitri-payet-goal-marseille.jpg");
         Player milik = new Player("Arkadiusz Milik", Nationality.POLISH, Position.FORWARD, 99, 6, 245, 21, 25, 1, marseille, "https://i2-prod.mirror.co.uk/incoming/article22750940.ece/ALTERNATES/s1200c/1_US-Sassuolo-v-SSC-Napoli-Serie-A.jpg");
@@ -195,7 +195,7 @@ public class DataLoader implements ApplicationRunner {
         Player mertens = new Player("Dries Mertens", Nationality.BELGIAN, Position.FORWARD, 166, 21, 422, 120, 47, 1, napoli,"https://i2-prod.football.london/chelsea-fc/transfer-news/article18215984.ece/ALTERNATES/s1200c/0_GettyImages-1208688146.jpg");
         Player osimhen = new Player("Victor Osimhen", Nationality.NIGERIAN, Position.FORWARD, 49, 15, 117, 16, 15, 1, napoli,"https://i2-prod.manchestereveningnews.co.uk/sport/football/article24223319.ece/ALTERNATES/s1200c/0_GettyImages-1236122637.jpg");
 
-        Player patricio = new Player("Rui Patricio", Nationality.PORTUGUESE, Position.GOALKEEPER, 0, 0, 476, 0, 28, 1, asRoma,"https://sportstar.thehindu.com/incoming/article35315665.ece/ALTERNATES/LANDSCAPE_1200/SpainBelgiumPortugalEuro2020Soccer76547jpg-9fe1djpg");
+        Player patricio = new Player("Rui Patricio", Nationality.PORTUGUESE, Position.GOALKEEPER, 0, 0, 476, 0, 28, 1, asRoma,"https://www.sportsbestnews.com/thumb/1x1/images/article/rui-patricio-roma-remain-in-pole-position-to-sign-wolves-goalkeeper-the-athletic-main.webp");
         Player spinazzola = new Player("Leonardo Spinazzola", Nationality.ITALIAN, Position.DEFENDER, 3, 0, 114, 15, 7, 0, asRoma,"https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTgyMTI1OTE3ODg2MjI3Nzg0/sipa_32594744.jpg");
         Player mkhitaryan = new Player("Henrikh Mkhitaryan", Nationality.ARMENIAN, Position.MIDFIELDER, 129, 32, 397, 95, 45, 1, asRoma,"https://i2-prod.mirror.co.uk/incoming/article20076224.ece/ALTERNATES/s1200c/0_Italy-AS-Roma-US-Sassuolo.jpg");
         Player abraham = new Player("Tammy Abraham", Nationality.ENGLISH, Position.FORWARD, 43, 3, 126, 12, 11, 0, asRoma,"https://i2-prod.dailystar.co.uk/incoming/article25136188.ece/ALTERNATES/s1200c/0_Tammy-Abraham-Roma-Empoli.jpg");
