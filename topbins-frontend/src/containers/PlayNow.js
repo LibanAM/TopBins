@@ -10,7 +10,7 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
     // const [allPlayers, setAllPlayers] = usePersistedState('allPlayers', []);
     const [allPlayers, setAllPlayers] = useState([]);
     const [foundPlayer, setFoundPlayer] = useState({})
-    let [foundNextPlayer, setNextFoundPlayer] = useState({})
+    const [foundNextPlayer, setNextFoundPlayer] = useState({})
     const [gameStarted, setGameStarted] = useState(false);
     const [valueLeft, setValueLeft] = useState("")
     const [valueRight, setValueRight] = useState("")
@@ -92,11 +92,7 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
 
     const nextPlayer = () => {
         const listOfPlayers = allPlayers.filter(players => players.id != foundPlayer.id)
-        console.log(listOfPlayers.length);
-        if (listOfPlayers == 100) {
-            listOfPlayers = allPlayers.filter(players => players.id != foundPlayer.id)
-
-        }
+        // console.log(listOfPlayers.length);
         let nextRandomNumber = Math.round(Math.random() * 98);
         while (nextRandomNumber === randomPlayerNumber) {
             nextRandomNumber = Math.round(Math.random() * 98);
@@ -124,7 +120,7 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
 
     useEffect(() => {
         randomAttributeNextPlayer()
-    }, [variableName])
+    }, [propertyName])
 
 
     const hasGameStarted = () => {
@@ -278,6 +274,7 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
                 <button onClick={restartGame}>RESTART</button>
             </div>}
             <DarkMode />
+
 
         </>
     );

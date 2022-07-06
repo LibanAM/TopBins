@@ -7,6 +7,7 @@
     border-style: ridge;
     border-color: #35393C;
     padding-bottom: 30px;
+    margin-bottom: 5vh;
 
     /* box-shadow: 7px 11px 5px 5px #eae8e8; */
 
@@ -153,3 +154,10 @@
   }
 
 
+@media only screen and (max-width: 600px) {
+  .home-btn {
+    width: fit-content;
+    font-size: 10px;
+  }
+
+}
