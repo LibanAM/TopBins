@@ -9,8 +9,8 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
 
     // const [allPlayers, setAllPlayers] = usePersistedState('allPlayers', []);
     const [allPlayers, setAllPlayers] = useState([]);
-    let [foundPlayer, setFoundPlayer] = useState([])
-    let [foundNextPlayer, setNextFoundPlayer] = useState([])
+    const [foundPlayer, setFoundPlayer] = useState({})
+    let [foundNextPlayer, setNextFoundPlayer] = useState({})
     const [gameStarted, setGameStarted] = useState(false);
     const [valueLeft, setValueLeft] = useState("")
     const [valueRight, setValueRight] = useState("")
@@ -85,7 +85,7 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
 
     useEffect(() => {
         randomAttribute()
-    }, [foundPlayer], [variableName])
+    }, [foundPlayer])
 
 
 
@@ -93,6 +93,10 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
     const nextPlayer = () => {
         const listOfPlayers = allPlayers.filter(players => players.id != foundPlayer.id)
         console.log(listOfPlayers.length);
+        if (listOfPlayers == 100) {
+            listOfPlayers = allPlayers.filter(players => players.id != foundPlayer.id)
+
+        }
         let nextRandomNumber = Math.round(Math.random() * 98);
         while (nextRandomNumber === randomPlayerNumber) {
             nextRandomNumber = Math.round(Math.random() * 98);
@@ -102,6 +106,10 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
         console.log(nextRandomPlayer);
 
     }
+
+    useEffect(() => {
+        nextPlayer()
+    }, [foundPlayer])
 
     const randomAttributeNextPlayer = () => {
         const keys = Object.keys(foundNextPlayer);
@@ -122,6 +130,7 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
     const hasGameStarted = () => {
         setGameStarted(!gameStarted)
     }
+
     const start = () => {
         hasGameStarted()
         fetchRandomPlayer()
@@ -129,7 +138,6 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
         randomAttribute()
         randomAttributeNextPlayer()
 
-        // console.log(currentAcc);
     }
 
     const higher = () => {
@@ -140,9 +148,9 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
             setScore(i);
             setTimeout(() => {
                 setFoundPlayer(foundNextPlayer)
-                nextPlayer()
+                // nextPlayer()
                 randomAttribute()
-                randomAttributeNextPlayer()
+                // randomAttributeNextPlayer()
                 setGuessed(false)
             }, 1000)
         } else if (valueLeft == valueRight) {
@@ -150,9 +158,9 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
             setScore(i);
             setTimeout(() => {
                 setFoundPlayer(foundNextPlayer)
-                nextPlayer()
+                // nextPlayer()
                 randomAttribute()
-                randomAttributeNextPlayer()
+                // randomAttributeNextPlayer()
                 setGuessed(false)
             }, 1000)
         } else {
@@ -169,9 +177,9 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
             setScore(i);
             setTimeout(() => {
                 setFoundPlayer(foundNextPlayer)
-                nextPlayer()
+                // nextPlayer()
                 randomAttribute()
-                randomAttributeNextPlayer()
+                // randomAttributeNextPlayer()
                 setGuessed(false)
             }, 1500)
         } else if (valueLeft == valueRight) {
@@ -179,9 +187,9 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
             setScore(i);
             setTimeout(() => {
                 setFoundPlayer(foundNextPlayer)
-                nextPlayer()
+                // nextPlayer()
                 randomAttribute()
-                randomAttributeNextPlayer()
+                // randomAttributeNextPlayer()
                 setGuessed(false)
             }, 1500)
         } else {
