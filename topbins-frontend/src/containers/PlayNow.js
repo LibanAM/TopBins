@@ -279,7 +279,6 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
             </div>}
             <DarkMode />
 
-
         </>
     );
 }

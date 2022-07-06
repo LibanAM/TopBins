@@ -933,11 +933,10 @@ h1 {
 
 .password-shown-btn {
   border-style: none;
-  background-color: red;
+  background-color: transparent;
   position: relative;
-  margin-top: -10%;
-  margin-left: 10%;
-
+  margin-top: -14%;
+  margin-left: 85%;
 
   
 }

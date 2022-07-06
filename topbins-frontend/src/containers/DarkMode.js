@@ -1,4 +1,5 @@
 import { HiLightBulb, HiOutlineLightBulb } from 'react-icons/hi';
+import 'font-awesome/css/font-awesome.min.css';
 import usePersistedState from '../usePersistedState';
 import './DarkMode.css'
 
@@ -20,7 +21,7 @@ const DarkMode = () => {
   }
 
   return (
-    <button className='darkMode' onClick={handleClick}>{darkMode ? <HiLightBulb /> : <HiOutlineLightBulb />}</button>
+    <button className='darkMode' onClick={handleClick}>{darkMode ? <i className="fa fa-toggle-off"/> : <i className="fa fa-toggle-on"/>}</button>
   )
 }
 
