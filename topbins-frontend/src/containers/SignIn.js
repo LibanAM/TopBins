@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useRef, useState } from "react";
 import './SignIn.css';
-import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
+import 'font-awesome/css/font-awesome.min.css';
 import { useNavigate } from "react-router-dom";
 import DarkMode from "./DarkMode";
 
@@ -92,7 +92,7 @@ const SignIn = ({ setCurrentAcc, setLoggedIn, loggedIn, currentAcc }) => {
             ref={inputPassword}
           />
           <button onClick={handlePasswordShown} className="password-shown-btn">
-            {passwordShown ? <AiOutlineEye className="password-eye" /> : <AiOutlineEyeInvisible className="password-eye" />}
+            {passwordShown ? <i className="fa fa-eye"/> : <i className="fa fa-eye-slash"/>}
           </button>
           <button className="signin-btn" type="submit" onClick={handleLogin}> Sign In</button>
 
