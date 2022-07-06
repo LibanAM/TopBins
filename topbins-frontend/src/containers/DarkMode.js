@@ -1,4 +1,3 @@
-import { HiLightBulb, HiOutlineLightBulb } from 'react-icons/hi';
 import 'font-awesome/css/font-awesome.min.css';
 import usePersistedState from '../usePersistedState';
 import './DarkMode.css'

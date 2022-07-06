@@ -1,3 +1,4 @@
+
 /* to show that we have an actual nav bar - clearer -- find another colour for nav bar */
 .nav-bar>ul {
     background-color: #35393C;
@@ -94,3 +95,35 @@ nav>ul>li>a:hover {
     border-radius: 10%;
     /* padding: 20px; */
 }
+@font-face {
+    font-family: Clip;
+    src: url("https://acupoftee.github.io/fonts/Clip.ttf");
+  }
+
+.logo{
+    font-size:20px;
+    font-family:'Marker Felt';
+    font-variation-settings:"wght" 400;
+    letter-spacing:0.25vw;
+    color:whitesmoke;
+    transition:all 1s;
+    text-shadow: 
+     0.5vw 0.5vw 0vw black,
+     1vw 1vw 0vw transparent,
+     1.5vw 1.5vw 0vw transparent,
+     4vw 4vw 2vw transparent,
+     4vw 4vw 4vw transparent;
+    caret-color:transparent;
+    cursor:default;
+}
+
+.logo:hover{
+    font-variation-settings:"wght" 200;
+    text-shadow:none;
+}
+   
+.fa.fa-futbol-o{
+
+    color: #63CCCA;
+}
+
