@@ -35,9 +35,9 @@ const CoverPage = ({ loggedIn }) => {
                 <ul>
                     <h2>Can You Guess Correctly?</h2>
                     <h3>A frustratingly addictive game of higher or lower using football player attributes!</h3>
-                    <li>Do you like quiz, trivia games and love football? Then this is the game for you!</li>
-                    <li>Simply click higher or lower on the player on the right and see if you’re correct, the results may surprise you!</li>
-                    <li>Curious to see how many you can get in a row? Get playing and check the leaderboard to see if your score made it on there!</li>
+                    <li className="cp-li">Do you like quiz, trivia games and love football? Then this is the game for you!</li>
+                    <li className="cp-li">Simply click higher or lower on the player on the right and see if you’re correct, the results may surprise you!</li>
+                    <li className="cp-li">Curious to see how many you can get in a row? Get playing and check the leaderboard to see if your score made it on there!</li>
                   
 
                 </ul>

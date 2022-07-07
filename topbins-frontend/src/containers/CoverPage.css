@@ -52,6 +52,10 @@
     transition: 0.5s ease-in-out;
 }
 
+.cp-li{
+  list-style: none;
+}
+
 .home-btn:before {
     content: '';
     background: linear-gradient(45deg, #397367, #63CCCA, #5DA399, #42858C, #3FF4EB, #397367, #63CCCA, #5DA399, #42858C);
