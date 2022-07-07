@@ -116,7 +116,7 @@ const Account = ({ currentAcc, setCurrentAcc, loggedIn, setLoggedIn }) => {
       <div class="firefly"></div>
       <div class="firefly"></div>
       {/* html BELOW */}
-      <h1>My Account</h1>
+      <h1 className="acc-title">My Account</h1>
       <div className="account-container">
         <div className="account-inner">
           <h2 className="account-heading">{currentAcc.admin ? "ADMIN" : "USER"} PROFILE</h2>
