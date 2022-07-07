@@ -58,3 +58,12 @@
     font-variation-settings:"wght" 200;
     text-shadow:none;
    }
+
+   .leaderboard-title{
+     margin-top: 0%;
+   }
+
+   .table{
+     margin-top: -20px;
+     margin-bottom: 28px;
+   }

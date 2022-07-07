@@ -32,8 +32,8 @@ const Leaderboard = () => {
       <div class="firefly"></div>
 
       {/* // html BELOW */}
-      <h1>Leaderboard</h1>
-      <table>
+      <h1 className="leaderboard-title">Leaderboard</h1>
+      <table className="table">
         <thead>
           <tr>
             <th>NAME</th>
