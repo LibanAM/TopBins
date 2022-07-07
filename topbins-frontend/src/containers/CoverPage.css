@@ -157,7 +157,8 @@
 @media only screen and (max-width: 600px) {
   .home-btn {
     width: fit-content;
-    font-size: 10px;
+    font-size: 8px;
+    justify-content: space-evenly;
   }
 
 }

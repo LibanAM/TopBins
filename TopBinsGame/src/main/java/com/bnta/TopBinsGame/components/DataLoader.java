@@ -76,11 +76,11 @@ public class DataLoader implements ApplicationRunner {
         Player jadonSancho = new Player("Jadon Sancho", Nationality.ENGLISH, Position.FORWARD, 41, 3, 175,  48, 4, 0, manUnited,"https://i2-prod.manchestereveningnews.co.uk/sport/football/football-news/article21887482.ece/ALTERNATES/s1200c/0_GettyImages-1235925105.jpg");
         Player deGea = new Player("David De Gea", Nationality.SPANISH, Position.GOALKEEPER, 0, 0, 571, 0, 8,0, manUnited, "https://i2-prod.manchestereveningnews.co.uk/incoming/article19607244.ece/ALTERNATES/s1200c/0_GettyImages-1230351411.jpg");
         Player harryMaguire = new Player("Harry Maguire", Nationality.ENGLISH, Position.DEFENDER, 11, 7, 203, 8, 43, 2, manUnited, "https://pbs.twimg.com/media/FJyzcmcXoAY-vL1.jpg");
-        Player fred = new Player("Fred", Nationality.BRAZILIAN, Position.MIDFIELDER, 23, 0, 111, 5, 28, 0, manUnited, "https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTg3NjIyMTUxNTY0NTY4NDYz/imago1009558286h.jpg");
+        Player fred = new Player("Fred", Nationality.BRAZILIAN, Position.MIDFIELDER, 23, 0, 111, 5, 28, 0, manUnited, "https://img.bleacherreport.net/img/images/photos/003/860/940/hi-res-dd4978da5d24fa05028738a52c5dde3a_crop_exact.jpg?w=1200&h=1200&q=75");
 
         Player edouardMendy = new Player("Edouard Mendy", Nationality.SENEGALESE, Position.GOALKEEPER, 0, 0, 128, 0, 5, 0, chelsea, "https://i2-prod.manchestereveningnews.co.uk/incoming/article22530085.ece/ALTERNATES/s1200c/0_GettyImages-1356173992.jpg");
         Player reeceJames = new Player("Reece James", Nationality.ENGLISH, Position.DEFENDER, 6, 0, 82, 13, 8, 1, chelsea, "https://i2-prod.football.london/incoming/article23770360.ece/ALTERNATES/s1200c/0_GettyImages-1392623238.jpg");
-        Player kante = new Player("N'Golo Kante", Nationality.FRENCH, Position.MIDFIELDER, 14, 2, 247, 21, 35, 1, chelsea, "https://www.si.com/.image/t_share/MTg5NDgzMjMwNjg3MTQzMTc0/imago1011447665h.jpg");
+        Player kante = new Player("N'Golo Kante", Nationality.FRENCH, Position.MIDFIELDER, 14, 2, 247, 21, 35, 1, chelsea, "https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTg1ODEyOTg2NTE3MDA1NzE2/imago1008213173h-1.jpg");
         Player kaiHavertz = new Player("Kai Havertz", Nationality.GERMAN, Position.FORWARD, 48, 8, 174, 28, 15, 0, chelsea, "https://i.guim.co.uk/img/media/bbaa3845164b1a9a18e7d112313656988f19b7c0/0_0_5076_3046/master/5076.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=94de3e587e20c9a9d6e1d41115bc4b26");
         Player masonMount = new Player("Mason Mount", Nationality.ENGLISH, Position.MIDFIELDER, 38, 4, 137, 29, 14, 0, chelsea, "https://i2-prod.football.london/chelsea-fc/players/article20707783.ece/ALTERNATES/s1200c/0_GettyImages-1233174511.jpg");
 
@@ -117,7 +117,7 @@ public class DataLoader implements ApplicationRunner {
         Player volland = new Player("Kevin Volland", Nationality.GERMAN, Position.FORWARD, 102, 1, 316, 81, 51, 1, asMonaco, "https://pbs.twimg.com/media/FRW46-xWUAA6R4l.jpg");
         Player benYedder = new Player("Wissam Ben Yedder", Nationality.FRENCH, Position.FORWARD, 164, 3, 347, 57, 18, 1, asMonaco, "https://pbs.twimg.com/media/FHJP_X5X0AUhzBX.jpg");
 
-        Player mandanda = new Player("Steve Mandanda", Nationality.CONGOLESE, Position.GOALKEEPER, 0, 0, 478, 0, 17, 3, marseille, "https://img.bleacherreport.net/img/images/photos/003/605/380/hi-res-6b952e5abc82fdd1db5e6174c08b7065_crop_exact.jpg?w=1200&h=1200&q=75");
+        Player mandanda = new Player("Steve Mandanda", Nationality.CONGOLESE, Position.GOALKEEPER, 0, 0, 478, 0, 17, 3, marseille, "https://i2-prod.mirror.co.uk/incoming/article7054800.ece/ALTERNATES/s1200c/Steve-Mandanda.jpg");
         Player caletaCar = new Player("Duje Caleta-Car", Nationality.CROATIAN, Position.DEFENDER,9, 1, 186, 7, 37, 4, marseille, "https://i2-prod.mirror.co.uk/incoming/article23512354.ece/ALTERNATES/s1200c/0_Duje-Caleta-Car-Ben-Davies.jpg");
         Player payet = new Player("Dimitri Payet", Nationality.FRENCH, Position.MIDFIELDER, 93, 5, 147, 146, 58,4, marseille, "https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTg4NjI0NTMzNTgwNjg3MDky/dimitri-payet-goal-marseille.jpg");
         Player milik = new Player("Arkadiusz Milik", Nationality.POLISH, Position.FORWARD, 99, 6, 245, 21, 25, 1, marseille, "https://i2-prod.mirror.co.uk/incoming/article22750940.ece/ALTERNATES/s1200c/1_US-Sassuolo-v-SSC-Napoli-Serie-A.jpg");
@@ -129,8 +129,8 @@ public class DataLoader implements ApplicationRunner {
         Player laborde = new Player("Gaëtan Laborde", Nationality.FRENCH, Position.FORWARD, 57, 0, 198, 31, 11, 1, rennes, "https://i.guim.co.uk/img/media/3cf81037d9bb93d7a9595ba797f50b7e3a4f4dc4/1213_0_3195_1917/master/3195.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=6d6cd61d3b45312a1b0c5e9be3d93898");
         Player terrier = new Player("Martin Terrier", Nationality.FRENCH, Position.MIDFIELDER, 44, 0, 162, 17, 9, 1, rennes, "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/20191002_Fu%C3%9Fball%2C_M%C3%A4nner%2C_UEFA_Champions_League%2C_RB_Leipzig_-_Olympique_Lyonnais_by_Stepro_StP_0291.jpg/1200px-20191002_Fu%C3%9Fball%2C_M%C3%A4nner%2C_UEFA_Champions_League%2C_RB_Leipzig_-_Olympique_Lyonnais_by_Stepro_StP_0291.jpg");
 
-        Player lopes = new Player("Anthony Lopes", Nationality.PORTUGUESE, Position.GOALKEEPER, 0,0,315,0,10,1,lyon,"https://medias.lequipe.fr/img-photo-jpg/anthony-lopes-fait-debat-sur-ses-gestes-consideres-parfois-comme-dangereux-a-martin-l-equipe/1500000001418295/446:38,1740:1331-1200-1200-75/32bca.jpg");
-        Player boateng = new Player("Jérôme Boateng", Nationality.GERMAN, Position.DEFENDER,5,1,354,22,62,7, lyon, "https://pbs.twimg.com/media/E-SeDEuXoAAs0on.jpg");
+        Player lopes = new Player("Anthony Lopes", Nationality.PORTUGUESE, Position.GOALKEEPER, 0,0,315,0,10,1,lyon,"https://imgresizer.eurosport.com/unsafe/1200x1200/smart/filters:format(jpeg)/origin-imgresizer.eurosport.com/2015/03/25/1443063-30858211-2560-1440.jpg");
+        Player boateng = new Player("Jérôme Boateng", Nationality.GERMAN, Position.DEFENDER,5,1,354,22,62,7, lyon, "https://img.bleacherreport.net/img/images/photos/003/731/021/hi-res-e3bb967f5ec90af73337c49ba3530c1a_crop_exact.jpg?w=1200&h=1200&q=75");
         Player aouar = new Player("Houssem Aouar", Nationality.FRENCH, Position.MIDFIELDER, 29, 0, 163, 23, 10, 1, lyon, "https://i2-prod.liverpoolecho.co.uk/incoming/article21070539.ece/ALTERNATES/s1200c/0_GettyImages-1233072812.jpg");
         Player lacazette = new Player("Alexandre Lacazette", Nationality.FRENCH, Position.FORWARD, 154, 3, 361, 62, 39, 2, lyon, "https://i2-prod.mirror.co.uk/incoming/article22504143.ece/ALTERNATES/s1200c/0_Arsenal-v-Chelsea-FA-Cup-Final.jpg");
         Player paqueta = new Player("Lucas Paquetá", Nationality.BRAZILIAN, Position.MIDFIELDER, 30, 7, 151, 16, 28, 3, lyon, "https://i2-prod.chroniclelive.co.uk/sport/football/football-news/article23355050.ece/ALTERNATES/s1200c/0_GettyImages-1373397761.jpg");
@@ -146,12 +146,12 @@ public class DataLoader implements ApplicationRunner {
         
         Player terStegen = new Player("Marc-André ter Stegen", Nationality.GERMAN, Position.GOALKEEPER, 0, 0, 325, 2, 9, 0, barcelona, "https://cdn.givemesport.com/wp-content/uploads/2022/03/GettyImages-1347865563-1200x1200-c-default.jpg");
         Player pique = new Player("Gerard Piqué", Nationality.SPANISH, Position.DEFENDER, 32, 6, 425, 9, 107, 8, barcelona, "https://img.bleacherreport.net/img/images/photos/003/331/627/hi-res-fda27e82ef0d644f3bf271472bad76b9_crop_exact.jpg?w=1200&h=1200&q=75");
-        Player busquets = new Player("Sergio Busquets", Nationality.SPANISH, Position.MIDFIELDER, 11, 6, 451, 31, 121, 1, barcelona, "https://imgresizer.eurosport.com/unsafe/1200x1200/smart/filters:format(jpeg)/origin-imgresizer.eurosport.com/2015/11/27/1740487-36807946-2560-1440.jpg");
+        Player busquets = new Player("Sergio Busquets", Nationality.SPANISH, Position.MIDFIELDER, 11, 6, 451, 31, 121, 1, barcelona, "https://img.bleacherreport.net/img/images/photos/002/596/263/hi-res-180702077-sergio-busquets-of-fc-barcelona-looks-on-during-the-la_crop_exact.jpg?w=1200&h=1200&q=75");
         Player dembele = new Player("Ousmane Dembele", Nationality.FRENCH, Position.FORWARD, 37, 3, 160, 45, 17, 1, barcelona, "https://i.guim.co.uk/img/media/e767a2e1d31fbec9ba11b74fb9460111f6f57e9e/338_102_3739_2245/master/3739.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=87e901130d34558303091b70e1ad114a");
         Player aubameyang = new Player("Pierre-Emerick Aubameyang", Nationality.GABONESE, Position.FORWARD, 218, 30, 409, 65, 25, 2, barcelona, "https://i2-prod.dailystar.co.uk/incoming/article26157811.ece/ALTERNATES/s1200c/0_JS256927446.jpg");
 
         Player oblak = new Player("Jan Oblak", Nationality.SLOVENIAN, Position.GOALKEEPER, 0, 0, 360, 0, 12, 1, atleticoMadrid, "https://i2-prod.manchestereveningnews.co.uk/incoming/article20713448.ece/ALTERNATES/s1200c/0_GettyImages-1254221919.jpg");
-        Player giminez = new Player("José María Giménez", Nationality.URUGUAYAN, Position.DEFENDER, 4, 8, 191, 6, 47, 0, atleticoMadrid, "https://imgresizer.eurosport.com/unsafe/1200x1200/smart/filters:format(jpeg)/origin-imgresizer.eurosport.com/2020/09/14/2886921-59446428-2560-1440.jpg" );
+        Player gimenez = new Player("José María Giménez", Nationality.URUGUAYAN, Position.DEFENDER, 4, 8, 191, 6, 47, 0, atleticoMadrid, "https://img.bleacherreport.net/img/images/photos/003/747/145/hi-res-17a2d4470d45fcb816eba0e4f456c812_crop_exact.jpg?w=1200&h=1200&q=75");
         Player koke = new Player("Koke", Nationality.SPANISH, Position.MIDFIELDER, 37, 0, 385, 84, 66, 2, atleticoMadrid, "https://img.bleacherreport.net/img/images/photos/003/538/584/hi-res-7a442f630148cd7ff7e2c64bc61927c7_crop_exact.jpg?w=1200&h=1200&q=75");
         Player griezmann = new Player("Antoine Griezmann", Nationality.FRENCH, Position.FORWARD, 159, 42, 421, 67, 60, 1, atleticoMadrid, "https://i2-prod.liverpoolecho.co.uk/incoming/article21912739.ece/ALTERNATES/s1200c/0_GettyImages-1347634536.jpg");
         Player felix = new Player("João Félix", Nationality.PORTUGUESE, Position.FORWARD, 36, 3, 108, 20, 15, 1, atleticoMadrid, "https://i2-prod.football.london/incoming/article24303906.ece/ALTERNATES/s1200c/0_GettyImages-1389894253.jpg");
@@ -159,7 +159,7 @@ public class DataLoader implements ApplicationRunner {
         Player bounou = new Player("Yassine Bounou", Nationality.MOROCCAN, Position.GOALKEEPER, 1, 0, 186, 2, 10, 0, sevilla, "https://pbs.twimg.com/media/EfkaNugWsAAk6qv.jpg");
         Player kounde = new Player("Jules Kounde", Nationality.FRENCH, Position.DEFENDER, 7, 0, 150, 4, 16, 2, sevilla, "https://i2-prod.manchestereveningnews.co.uk/incoming/article23795754.ece/ALTERNATES/s1200c/0_Jules-Kounde-Chelsea-FC-target.jpg");
         Player rakitic = new Player("Ivan Rakitic", Nationality.CROATIAN, Position.MIDFIELDER, 80, 15, 520, 91, 59, 4, sevilla, "https://img.bleacherreport.net/img/images/photos/002/695/545/hi-res-177655502-ivan-rakitic-of-sevilla-in-action-during-the-la-liga_crop_exact.jpg?w=1200&h=1200&q=75");
-        Player ocampos = new Player("Lucas Ocampos", Nationality.ARGENTINE, Position.FORWARD, 50, 2, 271, 30, 46, 2, sevilla, "https://wallpapercave.com/wp/wp7698338.jpg");
+        Player ocampos = new Player("Lucas Ocampos", Nationality.ARGENTINE, Position.FORWARD, 50, 2, 271, 30, 46, 2, sevilla, "https://i2-prod.mirror.co.uk/incoming/article22782759.ece/ALTERNATES/s1200c/0_FC-Bayern-Munich-v-FC-Sevilla-UEFA-Super-Cup-2020.jpg");
         Player enNesyri = new Player("Youssef En-Nesyri", Nationality.MOROCCAN, Position.FORWARD, 45, 14, 166, 7, 16, 1, sevilla, "https://i2-prod.dailystar.co.uk/incoming/article23345732.ece/ALTERNATES/s1200c/0_GettyImages-1293666766.jpg");
 
         Player ruiSilva = new Player("Rui Silva", Nationality.PORTUGUESE, Position.GOALKEEPER, 0, 0, 139, 0, 11, 0, realBetis, "https://i2-prod.liverpoolecho.co.uk/incoming/article19552665.ece/ALTERNATES/s1200c/0_GettyImages-1229222021.jpg");
@@ -183,10 +183,10 @@ public class DataLoader implements ApplicationRunner {
         Player ibrahimovic = new Player("Zlatan Ibrahimovic", Nationality.SWEDISH, Position.FORWARD, 388, 62, 593, 157, 92, 9, acMilan, "https://i2-prod.mirror.co.uk/incoming/article21466901.ece/ALTERNATES/s1200c/0_FC-Internazionale-v-AC-Milan-Serie-A.jpg");
         Player giroud = new Player("Olivier Giroud", Nationality.FRENCH, Position.FORWARD, 134, 48, 357, 53, 34, 2, acMilan, "https://imgresizer.eurosport.com/unsafe/1200x1200/smart/filters:format(jpeg)/origin-imgresizer.eurosport.com/2022/01/06/3281679-67150848-2560-1440.jpg");
 
-        Player handanovic = new Player("Samir Handanovic", Nationality.SLOVENIAN, Position.GOALKEEPER, 0, 0, 559, 0, 34, 2, acMilan, "https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTY4MTAyNDc1MTk3NTIzMjE3/59b54170d915b20f83000001jpg.jpg");
+        Player handanovic = new Player("Samir Handanovic", Nationality.SLOVENIAN, Position.GOALKEEPER, 0, 0, 559, 0, 34, 2, acMilan, "https://img.bleacherreport.net/img/images/photos/003/657/186/hi-res-64010db6f2a57c331671f84a71bb0100_crop_exact.jpg?w=1200&h=1200&q=75");
         Player skriniar = new Player("Milan Skriniar", Nationality.SLOVAK, Position.DEFENDER, 22, 3, 294, 5, 39, 4, interMilan,"https://i2-prod.football.london/incoming/article19014498.ece/ALTERNATES/s1200c/0_Milan-Skriniar.jpg");
-        Player vidal = new Player("Arturo Vidal", Nationality.CHILEAN, Position.MIDFIELDER, 77, 31, 437, 63, 106, 4, interMilan,"https://pbs.twimg.com/media/Ensk-kgXcAM5xPY.jpg");
-        Player dzeko = new Player("Edin Dzeko", Nationality.BOSNIAN, Position.FORWARD,230, 63, 519, 99, 58, 1, interMilan,"https://i2-prod.mirror.co.uk/incoming/article26235026.ece/ALTERNATES/s1200c/0_FC-Internazionale-v-Venezia-FC-Serie-A.jpg");
+        Player vidal = new Player("Arturo Vidal", Nationality.CHILEAN, Position.MIDFIELDER, 77, 31, 437, 63, 106, 4, interMilan,"https://i2-prod.mirror.co.uk/incoming/article21001119.ece/ALTERNATES/s1200c/0_Champions-League-Group-F-FC-Barcelona-v-SK-Slavia-Prague.jpg");
+        Player dzeko = new Player("Edin Dzeko", Nationality.BOSNIAN, Position.FORWARD,230, 63, 519, 99, 58, 1, interMilan,"https://img.bleacherreport.net/img/images/photos/003/846/318/hi-res-81bdc8508136a93e6984fa800e378596_crop_exact.jpg?w=1200&h=1200&q=75g");
         Player alexisSanchez = new Player("Alexis Sánchez", Nationality.CHILEAN, Position.FORWARD, 141, 48, 439, 100, 52, 3, interMilan,"https://i2-prod.mirror.co.uk/incoming/article21836309.ece/ALTERNATES/s1200c/0_Italy-Inter-Milan-Fiorentina-Copa-dItalia-14.jpg");
 
         Player ospina = new Player("David Ospina", Nationality.COLOMBIAN, Position.GOALKEEPER, 0, 0, 299, 0, 14, 4, napoli,"https://img.bleacherreport.net/img/images/photos/003/791/760/hi-res-d1d4a1b45d771c8305943f3c6d7aa366_crop_exact.jpg?w=1200&h=1200&q=75");
@@ -195,7 +195,7 @@ public class DataLoader implements ApplicationRunner {
         Player mertens = new Player("Dries Mertens", Nationality.BELGIAN, Position.FORWARD, 166, 21, 422, 120, 47, 1, napoli,"https://i2-prod.football.london/chelsea-fc/transfer-news/article18215984.ece/ALTERNATES/s1200c/0_GettyImages-1208688146.jpg");
         Player osimhen = new Player("Victor Osimhen", Nationality.NIGERIAN, Position.FORWARD, 49, 15, 117, 16, 15, 1, napoli,"https://i2-prod.manchestereveningnews.co.uk/sport/football/article24223319.ece/ALTERNATES/s1200c/0_GettyImages-1236122637.jpg");
 
-        Player patricio = new Player("Rui Patricio", Nationality.PORTUGUESE, Position.GOALKEEPER, 0, 0, 476, 0, 28, 1, asRoma,"https://www.sportsbestnews.com/thumb/1x1/images/article/rui-patricio-roma-remain-in-pole-position-to-sign-wolves-goalkeeper-the-athletic-main.webp");
+        Player patricio = new Player("Rui Patricio", Nationality.PORTUGUESE, Position.GOALKEEPER, 0, 0, 476, 0, 28, 1, asRoma,"https://img.bleacherreport.net/img/images/photos/003/618/043/hi-res-9f6098f16c98aaecce0e95f45ca3c48e_crop_exact.jpg?w=1200&h=1200&q=75");
         Player spinazzola = new Player("Leonardo Spinazzola", Nationality.ITALIAN, Position.DEFENDER, 3, 0, 114, 15, 7, 0, asRoma,"https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTgyMTI1OTE3ODg2MjI3Nzg0/sipa_32594744.jpg");
         Player mkhitaryan = new Player("Henrikh Mkhitaryan", Nationality.ARMENIAN, Position.MIDFIELDER, 129, 32, 397, 95, 45, 1, asRoma,"https://i2-prod.mirror.co.uk/incoming/article20076224.ece/ALTERNATES/s1200c/0_Italy-AS-Roma-US-Sassuolo.jpg");
         Player abraham = new Player("Tammy Abraham", Nationality.ENGLISH, Position.FORWARD, 43, 3, 126, 12, 11, 0, asRoma,"https://i2-prod.dailystar.co.uk/incoming/article25136188.ece/ALTERNATES/s1200c/0_Tammy-Abraham-Roma-Empoli.jpg");
@@ -216,7 +216,7 @@ public class DataLoader implements ApplicationRunner {
 
                 courtois, alaba, modric, benzema, viniciusJr,
                 terStegen, pique, busquets, dembele, aubameyang,
-                oblak, giminez, koke, griezmann, felix,
+                oblak, gimenez, koke, griezmann, felix,
                 bounou, kounde, rakitic, ocampos, enNesyri,
                 ruiSilva, bellerin, guardado, fekir, carvalho,
 
