@@ -72,7 +72,7 @@ public class DataLoader implements ApplicationRunner {
         // Premier League Players
         // Player(name, nationality, position, league goals, international goals, apps, assists, yellowCards, redCards, team, img)
 
-        Player cristanoRonaldo = new Player("Cristiano Ronaldo", Nationality.PORTUGUESE, Position.FORWARD, 497, 117, 935, 230, 115, 11, manUnited, "https://i2-prod.mirror.co.uk/incoming/article25114639.ece/ALTERNATES/s1200c/0_Cristiano-Ronaldo.jpg");
+        Player cristanoRonaldo = new Player("Cristiano Ronaldo", Nationality.PORTUGUESE, Position.FORWARD, 497, 117, 641, 165, 78, 8, manUnited, "https://i2-prod.mirror.co.uk/incoming/article25114639.ece/ALTERNATES/s1200c/0_Cristiano-Ronaldo.jpg");
         Player jadonSancho = new Player("Jadon Sancho", Nationality.ENGLISH, Position.FORWARD, 41, 3, 175,  48, 4, 0, manUnited,"https://i2-prod.manchestereveningnews.co.uk/sport/football/football-news/article21887482.ece/ALTERNATES/s1200c/0_GettyImages-1235925105.jpg");
         Player deGea = new Player("David De Gea", Nationality.SPANISH, Position.GOALKEEPER, 0, 0, 571, 0, 8,0, manUnited, "https://i2-prod.manchestereveningnews.co.uk/incoming/article19607244.ece/ALTERNATES/s1200c/0_GettyImages-1230351411.jpg");
         Player harryMaguire = new Player("Harry Maguire", Nationality.ENGLISH, Position.DEFENDER, 11, 7, 203, 8, 43, 2, manUnited, "https://pbs.twimg.com/media/FJyzcmcXoAY-vL1.jpg");
