@@ -29,11 +29,7 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
             .then((data) => setAllPlayers(data));
     }, []);
 
-    // useEffect(() => {
-    //     console.log(allPlayers);
-    //     // setTimeout(fetchRandomPlayer, 50)
-    //     // fetchRandomPlayer()
-    // }, [allPlayers])
+
 
     let randomPlayerNumber;
     const fetchRandomPlayer = () => {
@@ -41,9 +37,7 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
         let randomPlayer = allPlayers.filter(player => player.id == randomPlayerNumber)
         setFoundPlayer(randomPlayer[0])
         console.log(randomPlayer[0]);
-        // setPlayerImage(randomPlayer.imgLink)
-        // console.log(playerImage);
-        // randomAttribute()
+
     }
 
     const randomAttribute = () => {
@@ -51,6 +45,7 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
         const keysFiltered = keys.filter(key => key.search("id") && key.search("imgLink") && key.search("name")
             && key.search("id") && key.search("team") && key.search("position")
             && key.search("nationality"))
+        console.log(keysFiltered);
         const randomNumber = Math.floor(Math.random() * keysFiltered.length);
         const randomKey = keysFiltered[randomNumber];
         console.log(randomKey);
@@ -108,13 +103,13 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
     }, [foundPlayer])
 
     const randomAttributeNextPlayer = () => {
-        const keys = Object.keys(foundNextPlayer);
+        const keysNextPlayer = Object.keys(foundNextPlayer);
         console.log(variableName);
-        const keysFiltered = keys.filter(key => key.match(propertyName))
-        console.log(keysFiltered)
-        const randomNumber = Math.floor(Math.random() * keysFiltered.length);
-        const randomKey = keysFiltered[randomNumber];
-        setValueRight(foundNextPlayer[randomKey])
+        const keysFilteredNextPlayer = keysNextPlayer.filter(key => key.match(propertyName))
+        console.log(keysFilteredNextPlayer)
+        const randomNumberNextPlayer = Math.floor(Math.random() * keysFilteredNextPlayer.length);
+        const randomKeyNextPlayer = keysFilteredNextPlayer[randomNumberNextPlayer];
+        setValueRight(foundNextPlayer[randomKeyNextPlayer])
         console.log(valueRight)
     }
 
@@ -144,9 +139,7 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
             setScore(i);
             setTimeout(() => {
                 setFoundPlayer(foundNextPlayer)
-                // nextPlayer()
-                randomAttribute()
-                // randomAttributeNextPlayer()
+                // randomAttribute()
                 setGuessed(false)
             }, 1000)
         } else if (valueLeft == valueRight) {
@@ -154,9 +147,7 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
             setScore(i);
             setTimeout(() => {
                 setFoundPlayer(foundNextPlayer)
-                // nextPlayer()
-                randomAttribute()
-                // randomAttributeNextPlayer()
+                // randomAttribute()
                 setGuessed(false)
             }, 1000)
         } else {
@@ -173,9 +164,7 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
             setScore(i);
             setTimeout(() => {
                 setFoundPlayer(foundNextPlayer)
-                // nextPlayer()
-                randomAttribute()
-                // randomAttributeNextPlayer()
+                // randomAttribute()
                 setGuessed(false)
             }, 1500)
         } else if (valueLeft == valueRight) {
@@ -183,9 +172,7 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
             setScore(i);
             setTimeout(() => {
                 setFoundPlayer(foundNextPlayer)
-                // nextPlayer()
-                randomAttribute()
-                // randomAttributeNextPlayer()
+                // randomAttribute()
                 setGuessed(false)
             }, 1500)
         } else {
@@ -195,7 +182,10 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
     }
 
     const endGame = () => {
-        if (loggedIn = true) {
+        setScoreMsg("")
+        if (currentAcc.name == undefined) {
+            setScoreMsg("You need to login to set a high score")
+        } else {
             if (score > currentAcc.score) {
                 setScoreMsg("You set a new high score!")
                 const newHighScore = {
@@ -215,8 +205,11 @@ const PlayNow = ({ loggedIn, currentAcc, setCurrentAcc }) => {
                     .then(updatedUser => setCurrentAcc(updatedUser))
             } else if (score < currentAcc.score) {
                 setScoreMsg("You haven't set a new high score")
+            } else if (score == currentAcc.score) {
+                setScoreMsg("You haven't set a new high score")
             }
         }
+
         setTimeout(() => { setLost(!lost) }, 1000)
     }
 
